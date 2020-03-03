@@ -16,17 +16,15 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></li>
 <li><a href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></li>
-<li><a href="#find-event-module-deadline-keywords-code-find-code">3.4. Find event/module/deadline [keywords]: <code>find</code></a></li>
-<li><a href="#finishing-a-task-code-done-code">3.5. Finishing a task : <code>done</code></a></li>
-<li><a href="#export-code-export-code">3.6. Export: <code>export</code></a></li>
-<li><a href="#deleting-a-module-event-deadline-code-delete-code">3.7. Deleting a module/event/deadline: <code>delete</code></a></li>
-<li><a href="#importing-a-calendar-code-import-code">3.8. Importing a Calendar: <code>import</code></a></li>
-<li><a href="#viewing-current-events-deadline-for-module-code-view-code">3.9. Viewing current events/deadline for module : <code>view</code></a></li>
-<li><a href="#view-module-details-code-view-code">3.10. View module details : <code>view</code></a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.11. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-a-deadline-code-deadline-code">3.4. Adding a deadline : <code>deadline</code></a></li>
+<li><a href="#displaying-all-events-and-modules-code-list-calendar-code">3.5. Displaying all events and modules: <code>list / calendar</code></a></li>
+<li><a href="#displaying-all-events-based-on-timeframe-code-today-tomorrow-this-week-next-week-this-month-mmm-e-g-mar-code">3.6. Displaying all events based on timeframe: <code>today / tomorrow / this week / next week / this month / MMM (e.g. Mar)</code></a></li>
+<li><a href="#find-event-module-deadline-keywords-code-find-code">3.7. Find event/module/deadline [keywords]: <code>find</code></a></li>
+<li><a href="#finishing-a-task-code-done-code">3.8. Finishing a task : <code>done</code></a></li>
+<li><a href="#export-code-export-code">3.9. Export: <code>export</code></a></li>
+<li><a href="#deleting-a-module-event-deadline-code-delete-code">3.10. Deleting a module/event/deadline: <code>delete</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
 </ul>
 </div>
 </div>
@@ -150,7 +148,105 @@ Format: event m/MODULE n/NAME t/TIME f/FREQUENCY</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-event-module-deadline-keywords-code-find-code"><a class="link" href="#find-event-module-deadline-keywords-code-find-code">3.4. Find event/module/deadline [keywords]: <code>find</code></a></h3>
+<h3 id="adding-a-deadline-code-deadline-code"><a class="link" href="#adding-a-deadline-code-deadline-code">3.4. Adding a deadline : <code>deadline</code></a></h3>
+<div class="paragraph">
+<p>Adds a deadline to an event.
+Format: <code>deadline m/MODULE e/EVENT NAME n/DESCRIPTION [r/YES/NO]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Automatically adds a deadline to the nearest event of this name</p>
+</li>
+<li>
+<p>If the deadline is to be added to all events of this type, e.g. Tutorials, then set r (repeat) to YES</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deadline m/CS2103 e/Tutorial n/Homework r/NO</code><br>
+Adds a Homework deadline to the nearest upcoming tutorial of CS2103</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="displaying-all-events-and-modules-code-list-calendar-code"><a class="link" href="#displaying-all-events-and-modules-code-list-calendar-code">3.5. Displaying all events and modules: <code>list / calendar</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of modules in the calendar view.<br>
+Format: <code>list / calendar [m/MONTH]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list m/AUGUST</code><br>
+Returns all tasks in August</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the tasks of modules in the calender view during the specified month.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="displaying-all-events-based-on-timeframe-code-today-tomorrow-this-week-next-week-this-month-mmm-e-g-mar-code"><a class="link" href="#displaying-all-events-based-on-timeframe-code-today-tomorrow-this-week-next-week-this-month-mmm-e-g-mar-code">3.6. Displaying all events based on timeframe: <code>today / tomorrow / this week / next week / this month / MMM (e.g. Mar)</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of events happening today or anytime during the timeframe requested<br>
+Format: <code>today / tomorrow / this week / next week / this month / MMM</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>today</code><br>
+Shows a list of events happening today</p>
+</li>
+<li>
+<p><code>this week</code><br>
+Shows a list of events happening this week</p>
+</li>
+<li>
+<p><code>august</code><br>
+Shows a list of events happening in August</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the events happening during the specified period.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-event-module-deadline-keywords-code-find-code"><a class="link" href="#find-event-module-deadline-keywords-code-find-code">3.7. Find event/module/deadline [keywords]: <code>find</code></a></h3>
 <div class="paragraph">
 <p>User able to find module which matches any of the given keywords.</p>
 </div>
@@ -181,7 +277,7 @@ Format: event m/MODULE n/NAME t/TIME f/FREQUENCY</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finishing-a-task-code-done-code"><a class="link" href="#finishing-a-task-code-done-code">3.5. Finishing a task : <code>done</code></a></h3>
+<h3 id="finishing-a-task-code-done-code"><a class="link" href="#finishing-a-task-code-done-code">3.8. Finishing a task : <code>done</code></a></h3>
 <div class="paragraph">
 <p>If the user is currently not viewing an event or is not viewing the event of interest, the following format will be used:
 and bring the closest event to focus e.g. Tutorial 4 happening on Week 6, where the UI will prompt the user: “Which deadline do you wish to complete?”</p>
@@ -198,7 +294,7 @@ and complete the first deadline on the list of deadlines for that event.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-code-export-code"><a class="link" href="#export-code-export-code">3.6. Export: <code>export</code></a></h3>
+<h3 id="export-code-export-code"><a class="link" href="#export-code-export-code">3.9. Export: <code>export</code></a></h3>
 <div class="paragraph">
 <p>User could export all the module, event, and deadlines as a .ics file.</p>
 </div>
@@ -207,19 +303,20 @@ and complete the first deadline on the list of deadlines for that event.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module-event-deadline-code-delete-code"><a class="link" href="#deleting-a-module-event-deadline-code-delete-code">3.7. Deleting a module/event/deadline: <code>delete</code></a></h3>
+<h3 id="deleting-a-module-event-deadline-code-delete-code"><a class="link" href="#deleting-a-module-event-deadline-code-delete-code">3.10. Deleting a module/event/deadline: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes a module and all its associated events.<br>
-The UI will display the event of interest and prompt: Delete event or delete one of its deadlines?<br></p>
+<p>Deletes a module and all its associated events.<br></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>Format: <code>delete m/MODULE_CODE [n/EVENT_NAME]</code></p>
 </div>
 <div class="paragraph">
-<p>The following formats can be used:</p>
+<p>The UI will display the event of interest and prompt: Delete event or delete one of its deadlines?<br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -230,13 +327,13 @@ The UI will display the event of interest and prompt: Delete event or delete one
 </li>
 </ul>
 </div>
-</div>
-</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>In all cases, the UI will confirm with the user. The user can then follow up with:</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -244,11 +341,11 @@ The UI will display the event of interest and prompt: Delete event or delete one
 </li>
 </ul>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>=== Importing a Calendar: <code>import</code></p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="importing-a-calendar-code-import-code"><a class="link" href="#importing-a-calendar-code-import-code">3.8. Importing a Calendar: <code>import</code></a></h3>
 <div class="paragraph">
 <p>Imports an .ics file to be parsed.<br>
 Imports all .ics files within the import directory (if no directory is specified, the default directory will be searched). If filename is specified, only the selected one will be imported.<br>
@@ -257,36 +354,36 @@ Files will be moved to archive once imported.<br></p>
 <div class="paragraph">
 <p>Format: <code>import [d/DIRECTORY] [f/FILENAME]</code></p>
 </div>
+<div class="paragraph">
+<p>=== Viewing current events/deadline for module : <code>view</code></p>
 </div>
-<div class="sect2">
-<h3 id="viewing-current-events-deadline-for-module-code-view-code"><a class="link" href="#viewing-current-events-deadline-for-module-code-view-code">3.9. Viewing current events/deadline for module : <code>view</code></a></h3>
 <div class="paragraph">
 <p>Lets user view a specific event.<br>
 If more than one event fits the criteria, the UI will display the closest event with the greatest match.<br>
 Format: <code>view m/MODULE_CODE n/EVENT_NAME</code></p>
 </div>
+<div class="paragraph">
+<p>=== View module details : <code>view</code></p>
 </div>
-<div class="sect2">
-<h3 id="view-module-details-code-view-code"><a class="link" href="#view-module-details-code-view-code">3.10. View module details : <code>view</code></a></h3>
 <div class="paragraph">
 <p>User able to view details about a specific module (and recurring lectures, tut, lab).<br>
 Format: <code>view m/MODULE_CODE</code></p>
 </div>
+<div class="paragraph">
+<p>=== Encrypting data files <code>[coming in v2.0]</code></p>
 </div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.11. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
+<div class="paragraph">
+<p>== FAQ</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:18:48 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:21:05 UTC</div></div></div></body></html>
