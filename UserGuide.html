@@ -13,11 +13,14 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#deleting-a-module-event-deadline-code-delete-code">3.1. Deleting a module/event/deadline: <code>delete</code></a></li>
-<li><a href="#importing-a-calendar-code-import-code">3.2. Importing a Calendar: <code>import</code></a></li>
-<li><a href="#viewing-current-events-deadline-for-module-code-view-code">3.3. Viewing current events/deadline for module : <code>view</code></a></li>
-<li><a href="#view-module-details-code-view-code">3.4. View module details : <code>view</code></a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.5. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></li>
+<li><a href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></li>
+<li><a href="#deleting-a-module-event-deadline-code-delete-code">3.4. Deleting a module/event/deadline: <code>delete</code></a></li>
+<li><a href="#importing-a-calendar-code-import-code">3.5. Importing a Calendar: <code>import</code></a></li>
+<li><a href="#viewing-current-events-deadline-for-module-code-view-code">3.6. Viewing current events/deadline for module : <code>view</code></a></li>
+<li><a href="#view-module-details-code-view-code">3.7. View module details : <code>view</code></a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -93,23 +96,60 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>module n/NAME</code>, <code>NAME</code> is a parameter
+which can be used as <code>module n/CS2103</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>list [m/MONTH]</code> can be used as <code>list m/July</code> or as <code>list</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
-</li>
-<li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[m/MONTH]&#8230;&#8203;</code> can be used as <code>&#160;</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>(i.e. 0 times), <code>m/JULY</code>, <code>m/JULY m/MARCH</code> etc.
+* Parameters can be in any order e.g. if the command specifies <code>m/MODULE n/NAME</code>, <code>n/NAME m/MODULE</code> is
+also
+acceptable.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module-event-deadline-code-delete-code"><a class="link" href="#deleting-a-module-event-deadline-code-delete-code">3.1. Deleting a module/event/deadline: <code>delete</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-module-code-module-code"><a class="link" href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></h3>
+<div class="paragraph">
+<p>Adds a module to Modulo. The default timeframe is set to the current academic year, AY19/20.<br>
+Format: <code>module n/NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>`module n/cs2103 `</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-event-code-event-code"><a class="link" href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></h3>
+<div class="paragraph">
+<p>Adds an event to a module
+Format: event m/MODULE n/NAME t/TIME f/FREQUENCY</p>
+</div>
+<div class="paragraph">
+<p>Autopopulated based on keyword detection, e.g. Tutorials added for weekly will be populated from Week 3-13, and will have numbers automatically appended, e.g. Tutorial 1, Tutorial 2. A default deadline will also be added to the event, e.g. Tutorial Homework</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module-event-deadline-code-delete-code"><a class="link" href="#deleting-a-module-event-deadline-code-delete-code">3.4. Deleting a module/event/deadline: <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes a module and all its associated events.<br>
 The UI will display the event of interest and prompt: Delete event or delete one of its deadlines?<br></p>
@@ -150,7 +190,7 @@ The UI will display the event of interest and prompt: Delete event or delete one
 </div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-calendar-code-import-code"><a class="link" href="#importing-a-calendar-code-import-code">3.2. Importing a Calendar: <code>import</code></a></h3>
+<h3 id="importing-a-calendar-code-import-code"><a class="link" href="#importing-a-calendar-code-import-code">3.5. Importing a Calendar: <code>import</code></a></h3>
 <div class="paragraph">
 <p>Imports an .ics file to be parsed.<br>
 Imports all .ics files within the import directory (if no directory is specified, the default directory will be searched). If filename is specified, only the selected one will be imported.<br>
@@ -161,7 +201,7 @@ Files will be moved to archive once imported.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-current-events-deadline-for-module-code-view-code"><a class="link" href="#viewing-current-events-deadline-for-module-code-view-code">3.3. Viewing current events/deadline for module : <code>view</code></a></h3>
+<h3 id="viewing-current-events-deadline-for-module-code-view-code"><a class="link" href="#viewing-current-events-deadline-for-module-code-view-code">3.6. Viewing current events/deadline for module : <code>view</code></a></h3>
 <div class="paragraph">
 <p>Lets user view a specific event.<br>
 If more than one event fits the criteria, the UI will display the closest event with the greatest match.<br>
@@ -169,14 +209,14 @@ Format: <code>view m/MODULE_CODE n/EVENT_NAME</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-module-details-code-view-code"><a class="link" href="#view-module-details-code-view-code">3.4. View module details : <code>view</code></a></h3>
+<h3 id="view-module-details-code-view-code"><a class="link" href="#view-module-details-code-view-code">3.7. View module details : <code>view</code></a></h3>
 <div class="paragraph">
 <p>User able to view details about a specific module (and recurring lectures, tut, lab).<br>
 Format: <code>view m/MODULE_CODE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.5. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -225,4 +265,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 14:46:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 14:50:06 UTC</div></div></div></body></html>
