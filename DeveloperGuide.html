@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Modulo - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team Modulo</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -76,14 +76,14 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/docs/diagrams/">diagrams</a> folder.
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103-T09-1/main/docs/diagrams/">diagrams</a> folder.
 Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -170,13 +170,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -202,7 +202,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -254,7 +254,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -299,7 +299,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -628,7 +628,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>has a need to manage their modules and the deadlines for these modules</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -645,7 +645,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: manage modules and deadlines faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -680,32 +680,44 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a deadline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ensure I do not miss any of my module / assignment deadlines</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track all my daily events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">never miss any event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">categorise my work based on module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">don’t have to manually categorise myself</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can track the tutorials which I have done</p></td>
 <td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avoid clashes within my own schedule</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export my data from this app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access the data I’ve created from anywhere</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can assign a maximum number of deadlines within a timeframe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not get overwhelmed by my assigned workload</p></td>
 </tr>
 </tbody>
 </table>
@@ -718,25 +730,24 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Modulo</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-uc01-add-a-a-href-deadline-deadline-a" class="discrete">Use case: UC01 - Add a <a href="#deadline">deadline</a></h3>
 <div class="paragraph">
-<p><strong>MSS</strong></p>
+<p><strong>MSS</strong>
+Preconditions: Module data file is loaded properly.<br>
+Guarantees: Deadline is added, tagged to the correct <a href="#module">module</a> and <a href="#event">event</a>, with the correct details.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User <u>adds a module (UC02)</u>.</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>User adds a deadline to the correct <a href="#module">module</a> and <a href="#event">event</a>, with all the required details.</p>
 </li>
 <li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person</p>
+<p>Modulo shows the newly created deadline.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -749,28 +760,108 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2a. User enters incorrect information.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Modulo shows user the correct format for the deadline creation.</p>
+</li>
+<li>
+<p>2a2. User enters new information following the correct format.</p>
+<div class="paragraph">
+<p>Use case resumes from step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc02-add-a-module" class="discrete">Use case: UC02 - Add a module</h3>
+<div class="paragraph">
+<p><strong>MSS</strong>
+Preconditions: Module data file is loaded properly.<br>
+Guarantees: Module is added to the user&#8217;s calendar.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters a module code or module name.</p>
+</li>
+<li>
+<p>Modulo searches its data files for the closest matching module</p>
+</li>
+<li>
+<p>Modulo prompts the user for his/her confirmation</p>
+</li>
+<li>
+<p>User enters ‘Y’ to confirm his/her module selection</p>
+</li>
+<li>
+<p>Modulo shows the newly created module in the user’s calendar</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given index is invalid.</p>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>1a. User enters incorrect data and the wrong module is found.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Steps 2 and 3 are performed.</p>
+</li>
+<li>
+<p>1a2. User enters ‘N’ to reject his/her module selection.</p>
+</li>
+<li>
+<p>1a3. Steps 1 to 4 are repeated until the correct module is found and User enters ‘Y’.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes from step 5.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. User enters invalid data and no modules are found.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Modulo informs User that no modules with the given information can be found.</p>
+</li>
+<li>
+<p>1b2. Steps 1 to 4 or 1 to 1b1 are repeated until User finds a module.</p>
+<div class="paragraph">
+<p>Use case resumes from step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>4a. User enters something other than ‘Y’.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. Modulo cancels the request by the User.</p>
+</li>
+<li>
+<p>4a2. Modulo informs the User of the cancellation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -780,13 +871,22 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+<p>A NUS student with above-average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java 11 or above installed.</p>
 </li>
 <li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+<p>Should be able to run seamlessly with 10 <a href="#module">module</a>s’ worth of data.</p>
+</li>
+<li>
+<p>Data should be persistent within the local machine and the save file should be editable.</p>
+</li>
+<li>
+<p>The application should not require an installer and be for a single user, with its size being smaller than 100mb.</p>
+</li>
+<li>
+<p>Object-oriented.</p>
 </li>
 </ol>
 </div>
@@ -804,11 +904,19 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <dd>
 <p>Windows, Linux, Unix, OS-X</p>
 </dd>
-<dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
+<dt class="hdlist1"><a id="module"></a> Module</dt>
 <dd>
-<p>A contact detail that is not meant to be shared with others</p>
+<p>Modules that the User is taking for the current semester.</p>
 </dd>
 </dl>
+</div>
+<div class="paragraph">
+<p><a id="event"></a> Event
+These are default events for each module, such as Lectures, Tutorials, Recitations, Sectionals etc. All these events are automatically populated from NUS data upon module creation.</p>
+</div>
+<div class="paragraph">
+<p><a id="deadline"></a> Deadlines
+Individual tasks to complete that can be tagged to a specific event. These can be both recurring or just one-off.</p>
 </div>
 </div>
 </div>
@@ -958,4 +1066,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:26:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 16:48:38 UTC</div></div></div></body></html>
