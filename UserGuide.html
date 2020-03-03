@@ -16,15 +16,17 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></li>
 <li><a href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></li>
-<li><a href="#deleting-a-module-event-deadline-code-delete-code">3.4. Deleting a module/event/deadline: <code>delete</code></a></li>
-<li><a href="#importing-a-calendar-code-import-code">3.5. Importing a Calendar: <code>import</code></a></li>
-<li><a href="#viewing-current-events-deadline-for-module-code-view-code">3.6. Viewing current events/deadline for module : <code>view</code></a></li>
-<li><a href="#view-module-details-code-view-code">3.7. View module details : <code>view</code></a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#find-event-module-deadline-keywords-code-find-code">3.4. Find event/module/deadline [keywords]: <code>find</code></a></li>
+<li><a href="#finishing-a-task-code-done-code">3.5. Finishing a task : <code>done</code></a></li>
+<li><a href="#export-code-export-code">3.6. Export: <code>export</code></a></li>
+<li><a href="#deleting-a-module-event-deadline-code-delete-code">3.7. Deleting a module/event/deadline: <code>delete</code></a></li>
+<li><a href="#importing-a-calendar-code-import-code">3.8. Importing a Calendar: <code>import</code></a></li>
+<li><a href="#viewing-current-events-deadline-for-module-code-view-code">3.9. Viewing current events/deadline for module : <code>view</code></a></li>
+<li><a href="#view-module-details-code-view-code">3.10. View module details : <code>view</code></a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.11. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -103,15 +105,14 @@ which can be used as <code>module n/CS2103</code>.</p>
 <p>Items in square brackets are optional e.g <code>list [m/MONTH]</code> can be used as <code>list m/July</code> or as <code>list</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[m/MONTH]&#8230;&#8203;</code> can be used as <code>&#160;</code></p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[m/MONTH]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>m/JULY</code>, <code>m/JULY m/MARCH</code> etc.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>(i.e. 0 times), <code>m/JULY</code>, <code>m/JULY m/MARCH</code> etc.
-* Parameters can be in any order e.g. if the command specifies <code>m/MODULE n/NAME</code>, <code>n/NAME m/MODULE</code> is
+<li>
+<p>Parameters can be in any order e.g. if the command specifies <code>m/MODULE n/NAME</code>, <code>n/NAME m/MODULE</code> is
 also
 acceptable.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -133,7 +134,7 @@ Format: <code>module n/NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>`module n/cs2103 `</p>
+<p><code>module n/cs2103</code></p>
 </li>
 </ul>
 </div>
@@ -149,7 +150,64 @@ Format: event m/MODULE n/NAME t/TIME f/FREQUENCY</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module-event-deadline-code-delete-code"><a class="link" href="#deleting-a-module-event-deadline-code-delete-code">3.4. Deleting a module/event/deadline: <code>delete</code></a></h3>
+<h3 id="find-event-module-deadline-keywords-code-find-code"><a class="link" href="#find-event-module-deadline-keywords-code-find-code">3.4. Find event/module/deadline [keywords]: <code>find</code></a></h3>
+<div class="paragraph">
+<p>User able to find module which matches any of the given keywords.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g tutorial will match Tutorial</p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. 3 Tutorial will match Tutorial 3</p>
+</li>
+<li>
+<p>Names containing part of the searched words will be matched e.g. tut will match Tutorial 4</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>find m/MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Return registered modules that match module</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find d/Deadline</code></p>
+</div>
+<div class="paragraph">
+<p>Return matched deadline</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finishing-a-task-code-done-code"><a class="link" href="#finishing-a-task-code-done-code">3.5. Finishing a task : <code>done</code></a></h3>
+<div class="paragraph">
+<p>If the user is currently not viewing an event or is not viewing the event of interest, the following format will be used:
+and bring the closest event to focus e.g. Tutorial 4 happening on Week 6, where the UI will prompt the user: “Which deadline do you wish to complete?”</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done m/MODULE_CODE n/EVENT_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>The following command can then be used (or be used instantly should the user already be viewing the event of interest):
+and complete the first deadline on the list of deadlines for that event.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done 1</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-code-export-code"><a class="link" href="#export-code-export-code">3.6. Export: <code>export</code></a></h3>
+<div class="paragraph">
+<p>User could export all the module, event, and deadlines as a .ics file.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export [s/START_DATE] [e/END_DATE] [d/TARGET_DIRECTORY] f/FILENAME</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module-event-deadline-code-delete-code"><a class="link" href="#deleting-a-module-event-deadline-code-delete-code">3.7. Deleting a module/event/deadline: <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes a module and all its associated events.<br>
 The UI will display the event of interest and prompt: Delete event or delete one of its deadlines?<br></p>
@@ -165,10 +223,10 @@ The UI will display the event of interest and prompt: Delete event or delete one
 <div class="ulist">
 <ul>
 <li>
-<p>Format: delete event (deletes the event)</p>
+<p>Format: <code>delete event</code> (deletes the event)</p>
 </li>
 <li>
-<p>Format: delete 1 (deletes the first deadline)</p>
+<p>Format: <code>delete 1</code> (deletes the first deadline)</p>
 </li>
 </ul>
 </div>
@@ -182,7 +240,7 @@ The UI will display the event of interest and prompt: Delete event or delete one
 <div class="ulist">
 <ul>
 <li>
-<p>Format: y</p>
+<p>Format: <code>y</code></p>
 </li>
 </ul>
 </div>
@@ -190,7 +248,7 @@ The UI will display the event of interest and prompt: Delete event or delete one
 </div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-calendar-code-import-code"><a class="link" href="#importing-a-calendar-code-import-code">3.5. Importing a Calendar: <code>import</code></a></h3>
+<h3 id="importing-a-calendar-code-import-code"><a class="link" href="#importing-a-calendar-code-import-code">3.8. Importing a Calendar: <code>import</code></a></h3>
 <div class="paragraph">
 <p>Imports an .ics file to be parsed.<br>
 Imports all .ics files within the import directory (if no directory is specified, the default directory will be searched). If filename is specified, only the selected one will be imported.<br>
@@ -201,7 +259,7 @@ Files will be moved to archive once imported.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-current-events-deadline-for-module-code-view-code"><a class="link" href="#viewing-current-events-deadline-for-module-code-view-code">3.6. Viewing current events/deadline for module : <code>view</code></a></h3>
+<h3 id="viewing-current-events-deadline-for-module-code-view-code"><a class="link" href="#viewing-current-events-deadline-for-module-code-view-code">3.9. Viewing current events/deadline for module : <code>view</code></a></h3>
 <div class="paragraph">
 <p>Lets user view a specific event.<br>
 If more than one event fits the criteria, the UI will display the closest event with the greatest match.<br>
@@ -209,14 +267,14 @@ Format: <code>view m/MODULE_CODE n/EVENT_NAME</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-module-details-code-view-code"><a class="link" href="#view-module-details-code-view-code">3.7. View module details : <code>view</code></a></h3>
+<h3 id="view-module-details-code-view-code"><a class="link" href="#view-module-details-code-view-code">3.10. View module details : <code>view</code></a></h3>
 <div class="paragraph">
 <p>User able to view details about a specific module (and recurring lectures, tut, lab).<br>
 Format: <code>view m/MODULE_CODE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.8. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.11. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -231,38 +289,4 @@ Format: <code>view m/MODULE_CODE</code></p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 14:50:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:18:48 UTC</div></div></div></body></html>
