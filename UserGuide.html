@@ -490,18 +490,59 @@ or <code>list module</code>.</p>
 <div class="sect2">
 <h3 id="finishing-a-task-code-done-code"><a class="link" href="#finishing-a-task-code-done-code">3.8. Finishing a task : <code>done</code></a></h3>
 <div class="paragraph">
-<p>If the user is currently not viewing an event or is not viewing the event of interest, the following format will be used:
-and bring the closest event to focus e.g. Tutorial 4 happening on Week 6, where the UI will prompt the user: “Which deadline do you wish to complete?”</p>
+<p>Command to set a deadline&#8217;s status to be <code>Completed</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>done m/MODULE_CODE n/EVENT_NAME</code></p>
+<p>Scenario 1: If the user is currently not viewing an event or is not viewing the event of interest, the following format will be used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Format: <code>done index m/MODULE_CODE n/EVENT_NAME</code><br></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Every event can only have one deadline.
+Therefore,the index is one-based and always is 1.</p>
+</li>
+<li>
+<p>Searched the deadline from the module&#8217;s event, if deadline exists it will update the status to be completed.</p>
+</li>
+<li>
+<p>Otherwise, it will display deadline does not exists message.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>done 1 m/CS2103 n/Tutorial 1</code><br>
+Set the deadline of the CS2103&#8217;s Tutorial 1 to be completed.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>The following command can then be used (or be used instantly should the user already be viewing the event of interest):
-and complete the first deadline on the list of deadlines for that event.</p>
+<p>Scenario 2: If the user already be viewing the event of interest.
+The following command can then be used :</p>
 </div>
-<div class="paragraph">
-<p>Format: <code>done 1</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Format: <code>done index</code><br>
+The index is one-based also.</p>
+</li>
+<li>
+<p>Example: <code>done 1</code><br>
+Set the deadline on the right panel list to be completed.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -611,4 +652,4 @@ This index is based on the current list being listed.<br></p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 15:35:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 16:40:36 UTC</div></div></div></body></html>
