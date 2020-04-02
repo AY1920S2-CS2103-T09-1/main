@@ -217,13 +217,13 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>ModuloParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding an event).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -232,6 +232,42 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1
 <p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong>STATEFUL LOGIC</strong> Interface:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Stateful Logic is implemented by classes that only manages logic while a state exists. This state, within
+the AddModuleStatefulLogicManager, is created during the adding of modules by the <code>module m/MODULE_CODE</code> function. The
+state is depending on the number of event types (tutorial, lecture, lab etc) that each module has. Following
+the return of the AddModuleCommandResult, the existence of the AddModuleStatefulLogicManager allows the application
+to handle the tutorial, lecture, lab or recitation slot inputs that follows from the <code>module m/MODULE_CODE</code> function.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>WRITER</strong> Component:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Writer component is activated when the ExportCommand is executed. It then calls the writeIcsFile function from the IcsWriter class which
+retrieves the current list of events from the Model component which, along with its deadlines, are converted into IcsEvent and IcsDeadline
+objects, which are then written into the ICS file.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
@@ -1108,4 +1144,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 16:46:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 18:01:12 UTC</div></div></div></body></html>
