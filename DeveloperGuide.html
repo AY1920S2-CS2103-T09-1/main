@@ -179,7 +179,7 @@ The following class plays an important role at the architecture level:</p>
 All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>ListPanel</code> is located at the left  of the application and it consists of UI <code>EventCard</code>, <code>ModuleCard</code>, <code>TitleCard</code> to display list of events or modules.
+<p>The <code>ListPanel</code> is located at the left of the application and it consists of UI <code>EventCard</code>, <code>ModuleCard</code>, <code>TitleCard</code> to display list of events or modules.
 The <code>RightPanel</code> is located at the right of the application and it consists of UI <code>RightPanelDeadlineCard</code> , <code>RightPanelDescription</code>, and <code>RightPanelEvent</code> to display the details of the module or event.
 For the example, user can do <code>view</code> command to view the deadlines of the event in the <code>ListPanel</code> and the details and deadlines of the event will be displayed at the <code>RightPanel</code>.</p>
 </div>
@@ -275,10 +275,10 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores Modulo data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Module&gt;</code> and <code>ObservableList&lt;Event&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -292,9 +292,9 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference.
-This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object.
-An example of how such a model may look like is given below.<br>
+As of now, there are two separate <code>ObservableList</code> being maintained, and with each individual <code>Module</code> keeping its own list of <code>Event</code> as well.
+In the future, to better enable the concept of a single source of truth, we can discard the use of a
+<code>ObservableList&lt;Event&gt;</code> and expose solely the unmodifiable <code>ObservableList&lt;Module&gt;</code>, and have <code>Event</code> accessed through its parent <code>Module</code>.<br>
 <br>
 <span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
 </td>
@@ -306,7 +306,7 @@ An example of how such a model may look like is given below.<br>
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModuloStorage.png" alt="ModuloStorage">
+<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
@@ -1108,4 +1108,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 13:35:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 15:35:13 UTC</div></div></div></body></html>
