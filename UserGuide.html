@@ -19,7 +19,7 @@
 <li><a href="#AddingDeadline">3.4. Adding a deadline : <code>deadline</code></a></li>
 <li><a href="#ListAll">3.5. Displaying all events and modules: <code>list all</code></a></li>
 <li><a href="#List">3.6. Displaying all events based on current timeframe: <code>list</code></a></li>
-<li><a href="#find-an-event-module-keywords-code-find-code">3.7. Find an event / module [keywords]: <code>find</code></a></li>
+<li><a href="#Find">3.7. Find an event / module [keywords]: <code>find</code></a></li>
 <li><a href="#finishing-a-task-code-done-code">3.8. Finishing a task : <code>done</code></a></li>
 <li><a href="#export-calendar-code-export-code">3.9. Export calendar: <code>export</code></a></li>
 <li><a href="#Delete">3.10. Deleting a module/event/deadline: <code>delete</code></a></li>
@@ -54,7 +54,7 @@ Enjoy!</p>
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>modulo.jar</code> <a href="https://github.com/AY1920S2-CS2103-T09-1/main/releases">here</a>.</p>
+<p>Download the latest <code>modulo.jar</code> <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for Modulo.</p>
@@ -159,7 +159,7 @@ You will be prompted to enter the slot numbers for all events under this module,
 <p><code>Enter slot for CS2100 Lab:</code></p>
 </li>
 <li>
-<p><code>Enter slot for LAJ1201 Tutorial Type 2:</code></p>
+<p><code>Enter slot for LAJ1201 Tutorial Type Two:</code></p>
 </li>
 </ul>
 </div>
@@ -295,10 +295,10 @@ There are two possible scenarios:<br></p>
 <p>Repeated deadlines are added to events of the same type as the one specified, and have yet to occur.</p>
 </li>
 <li>
-<p>By default, the deadline will not repeat.</p>
+<p>This may result in what seems like a "bug" when you try to add repeated deadlines, starting with an event that has already passed, since the deadline will be added to that event itself.</p>
 </li>
 <li>
-<p>This may result in what seems like a "bug" when you try to add repeated deadlines, starting with an event that has already passed, since the deadline will be added to that event itself.</p>
+<p>By default, the deadline will not repeat.</p>
 </li>
 </ul>
 </div>
@@ -352,21 +352,22 @@ Adds a Homework deadline to the nearest upcoming tutorial of CS2103</p>
 <div class="sect2">
 <h3 id="ListAll"><a class="link" href="#ListAll">3.5. Displaying all events and modules: <code>list all</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all events or modules in the left panel of Modulo.<br>
-Format: <code>list all event / list all module</code></p>
+<p>Shows a list of all events or modules in the left panel of Modulo.
+This helps you to toggle between the two lists.<br>
+Format: <code>list all events</code> OR <code>list all modules</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Shorthands:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list all event / list all e</code><br>
-Shows all the events in the left display panel</p>
+<p><code>list all e</code><br>
+Same behaviour as <code>list all events</code> - lists all the events under the left display panel</p>
 </li>
 <li>
-<p><code>list all module / list all m</code><br>
-Shows all the modules in the left display panel</p>
+<p><code>list all m</code><br>
+Same behaviour as <code>list all modules</code> - Shows all the modules under the left display panel</p>
 </li>
 </ul>
 </div>
@@ -375,7 +376,7 @@ Shows all the modules in the left display panel</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Shows all events or modules recorded in Modulo, depending on the current list.</p>
+<p>Lists all events or modules recorded in Modulo.</p>
 </li>
 <li>
 <p>For events, this would include events that have already passed.</p>
@@ -392,21 +393,22 @@ Do see the above section on <a href="#AddingDeadline">adding a deadline</a> for 
 <div class="sect2">
 <h3 id="List"><a class="link" href="#List">3.6. Displaying all events based on current timeframe: <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows the list of future events or modules happening from the current date onwards.<br>
-Format: <code>list event / list module</code></p>
+<p>Shows the list of future events or modules happening from the current date onwards.
+This allows you to toggle between the two lists, as well as hide events or modules that have already passed.<br>
+Format: <code>list events</code> OR <code>list modules</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Shorthands:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list event / list e</code><br>
-Shows all the events happening from the current date onwards on the left display panel.</p>
+<p><code>list e</code><br>
+Same behaviour as <code>list events</code> - lists all the events happening from the current date onwards under the left display panel.</p>
 </li>
 <li>
-<p><code>list module / list m</code><br>
-Shows all the modules happening from the current date onwards on the left display panel.</p>
+<p><code>list m</code><br>
+Same behaviour as <code>list modules</code> - lists all the modules happening from the current date onwards under the left display panel.</p>
 </li>
 </ul>
 </div>
@@ -415,7 +417,7 @@ Shows all the modules happening from the current date onwards on the left displa
 <div class="ulist">
 <ul>
 <li>
-<p>This is the default filter!</p>
+<p>This is the default list filter!</p>
 </li>
 </ul>
 </div>
@@ -423,7 +425,7 @@ Shows all the modules happening from the current date onwards on the left displa
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-an-event-module-keywords-code-find-code"><a class="link" href="#find-an-event-module-keywords-code-find-code">3.7. Find an event / module [keywords]: <code>find</code></a></h3>
+<h3 id="Find"><a class="link" href="#Find">3.7. Find an event / module [keywords]: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Allows the user to find a module or event which matches any of the given keywords.</p>
 </div>
@@ -435,21 +437,24 @@ Shows all the modules happening from the current date onwards on the left displa
 <li>
 <p>Names containing part of the searched words will be matched e.g. <code>find tut</code> will match Tutorial 4.</p>
 </li>
-<li>
-<p>Modules can be searched according to their Module code, Name as well as Academic Year.</p>
-</li>
-<li>
-<p>Events can be searched according to their Module code and Name.</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Format: <code>find SEARCH TERM</code> while the left panel of Modulo is <a href="#List">listing</a> modules:</p>
+<p>There are two possible scenarios:</p>
+</div>
+<div class="paragraph">
+<p><strong>You&#8217;re <a href="#List">listing</a> Modules on your left panel</strong></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find SEARCH TERM</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
+<li>
+<p>Modules will be searched according to their Module Code, Name as well as Academic Year.</p>
+</li>
 <li>
 <p>Shows the modules with Name / Module Code / Academic Year that match the search term.</p>
 </li>
@@ -458,12 +463,18 @@ Shows all the modules happening from the current date onwards on the left displa
 </div>
 </div>
 <div class="paragraph">
+<p><strong>You&#8217;re <a href="#List">listing</a> Events on your left panel</strong></p>
+</div>
+<div class="paragraph">
 <p>Format: <code>find SEARCH TERM</code> while the left panel of Modulo is <a href="#List">listing</a> events:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
+<li>
+<p>Events will be searched according to their Module Code and Name.</p>
+</li>
 <li>
 <p>Shows the events with Name / Module Code that match the search term</p>
 </li>
@@ -490,57 +501,38 @@ or <code>list module</code>.</p>
 <div class="sect2">
 <h3 id="finishing-a-task-code-done-code"><a class="link" href="#finishing-a-task-code-done-code">3.8. Finishing a task : <code>done</code></a></h3>
 <div class="paragraph">
-<p>Command to set a deadline&#8217;s status to be <code>Completed</code><br></p>
+<p>Toggles the completion status of a deadline.
+If the deadline was incomplete, it would be completed, and vice versa.<br></p>
 </div>
 <div class="paragraph">
-<p>Scenario 1: If the user is currently not viewing an event or is not viewing the event of interest, the following format will be used:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Format: <code>done index m/MODULE_CODE n/EVENT_NAME</code><br></p>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Every event can only have one deadline.
-Therefore,the index is one-based and always is 1.</p>
-</li>
-<li>
-<p>Searched the deadline from the module&#8217;s event, if deadline exists it will update the status to be completed.</p>
-</li>
-<li>
-<p>Otherwise, it will display deadline does not exists message.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Example: <code>done 1 m/CS2103 n/Tutorial 1</code><br>
-Set the deadline of the CS2103&#8217;s Tutorial 1 to be completed.</p>
-</li>
-</ul>
+<p>There are two possible scenarios:</p>
 </div>
 <div class="paragraph">
-<p>Scenario 2: If the user already be viewing the event of interest.
-The following command can then be used :</p>
+<p><strong>You&#8217;re currently <a href="#View">viewing</a> an event on the right UI panel.</strong></p>
+</div>
+<div class="paragraph">
+<p>You can complete the deadline using its displayed index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done index</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>You&#8217;re not <a href="#View">viewing</a> an event or you&#8217;re completing a deadline for an event not being viewed.</strong></p>
+</div>
+<div class="paragraph">
+<p>This is not very useful, since the index of the deadline needs to be known beforehand.
+Nevertheless, it&#8217;s possible.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done index m/MODULE CODE e/EVENT NAME</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Format: <code>done index</code><br>
-The index is one-based also.</p>
-</li>
-<li>
-<p>Example: <code>done 1</code><br>
-Set the deadline on the right panel list to be completed.</p>
+<p><code>done 1 m/CS2103 e/Tutorial 1</code></p>
 </li>
 </ul>
 </div>
@@ -548,15 +540,16 @@ Set the deadline on the right panel list to be completed.</p>
 <div class="sect2">
 <h3 id="export-calendar-code-export-code"><a class="link" href="#export-calendar-code-export-code">3.9. Export calendar: <code>export</code></a></h3>
 <div class="paragraph">
-<p>Allows user to export all events and deadlines as a .ics file. File will be named modulo.ics inside the export directory.</p>
+<p>Exports all events and deadlines into a .ics file.
+File will be named modulo.ics inside the export directory.</p>
 </div>
 <div class="paragraph">
-<p>If no directory is defined, Modulo will deposit the .ics file in the data folder.</p>
+<p>If no directory is provided, Modulo will deposit the .ics file into the data folder.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>.ics file will be generated with Singapore (Asia) timezone.</p>
+<p>.ics file will be generated with the Singapore (Asia) timezone.</p>
 </li>
 <li>
 <p>Event entity will be converted as VEVENT.</p>
@@ -565,74 +558,116 @@ Set the deadline on the right panel list to be completed.</p>
 <p>Deadline entity will be exported as VTODO.</p>
 </li>
 <li>
-<p>However, as certain common calendar applications (e.g. Google Calendars, Microsoft Outlook) do not parse VTODO, summarized deadlines are also displayed under event description.</p>
+<p>However, as certain common calendar applications (e.g. Google Calendars, Microsoft Outlook) do not parse VTODO, summarized deadlines are also displayed under the event&#8217;s description.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Format: <code>export [d/TARGET_DIRECTORY]</code></p>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>export d/data/</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If the given export directory does not exist, it will be created.
+So do be careful with the given directory!</p>
+</li>
+<li>
+<p>The directory must end with a <code>/</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="Delete"><a class="link" href="#Delete">3.10. Deleting a module/event/deadline: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Allows the user to delete a module, event, or deadline.
+<p>Deletes a module, event, or deadline by its index, a search term, or delete all.
 Deleting a module will delete all its associated events.
 Deleting an event with delete all its associated deadlines.</p>
+</div>
+<div class="paragraph">
+<p>There are three possible scenarios:</p>
+</div>
+<div class="paragraph">
+<p><strong>You&#8217;re <a href="#List">listing</a> Modules on your left panel</strong></p>
+</div>
+<div class="paragraph">
+<p>You can delete a module based on its displayed index on the left panel or a search term.
+You can also delete all modules.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete INDEX</code> OR <code>delete SEARCH TERM</code> OR <code>delete all</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletion will depend on whether modules or events are displayed in the left panel of Modulo</p>
+<p><code>delete 1</code></p>
 </li>
 <li>
-<p>Users can choose to delete modules or events by index: <code>delete 1</code></p>
-</li>
-<li>
-<p>Users can choose to delete modules or events based on description E.g. <code>delete tut</code></p>
-</li>
-<li>
-<p>For deadlines, users are required to click on the event containing the deadline - <code>delete d/1</code> will then delete the deadline of index 1 of the event.</p>
+<p><code>delete cs2103</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Examples:<br></p>
+<p><strong>You&#8217;re <a href="#List">listing</a> Events on your left panel</strong></p>
+</div>
+<div class="paragraph">
+<p>You can delete an event based on its displayed index on the left panel.
+You can also delete all events.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete INDEX</code> OR <code>delete SEARCH TERM</code> OR <code>delete all</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-Deletes the module / event of index 1</p>
+<p><code>delete 1</code></p>
 </li>
 <li>
-<p><code>delete DESCRIPTION</code><br></p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If the left panel of Modulo displays Modules, deletes all Modules which Name / Module code / Academic Year contains <code>DESCRIPTION</code></p>
-</li>
-<li>
-<p>If the left panel of Modulo displays Events, deletes all Events which Name / Module code contains <code>DESCRIPTION</code>
-&#160;<br>
-&#160;<br></p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><code>delete all</code><br>
-Deletes all modules / events depending on what is being <a href="#View">viewed</a> on the left panel of Modulo.</p>
-</li>
-<li>
-<p><code>delete d/1</code><br>
-Deletes the deadline of index 1 from the event <a href="#View">viewed</a> on the right panel of Modulo.</p>
-</li>
-<li>
-<p><code>delete d/all</code><br>
-Deletes all the deadlines from the event <a href="#View">viewed</a> on the right panel of Modulo.</p>
+<p><code>delete tut</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong>You&#8217;re <a href="#View">viewing</a> an Event on your right panel UI</strong></p>
+</div>
+<div class="paragraph">
+<p>You can delete an event&#8217;s deadline using the deadline&#8217;s index.
+You can also delete all deadlines of that event.
+This event needs to be currently viewed on the right panel.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete d/INDEX</code> OR <code>delete d/all</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The logic of the search term follows that of the <a href="#Find">find command</a>.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -671,4 +706,4 @@ This index is based on the current list being listed.<br></p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 18:01:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 18:47:31 UTC</div></div></div></body></html>
