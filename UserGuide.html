@@ -17,17 +17,28 @@
 <li><a href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></li>
 <li><a href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></li>
 <li><a href="#AddingDeadline">3.4. Adding a deadline : <code>deadline</code></a></li>
-<li><a href="#ListAll">3.5. Displaying all events and modules: <code>list all</code></a></li>
-<li><a href="#List">3.6. Displaying all events based on current timeframe: <code>list</code></a></li>
+<li><a href="#List">3.5. Displaying events and modules that have yet to pass: <code>list</code></a></li>
+<li><a href="#ListAll">3.6. Displaying all events and modules: <code>list all</code></a></li>
 <li><a href="#Find">3.7. Find an event / module [keywords]: <code>find</code></a></li>
 <li><a href="#finishing-a-task-code-done-code">3.8. Finishing a task : <code>done</code></a></li>
 <li><a href="#export-calendar-code-export-code">3.9. Export calendar: <code>export</code></a></li>
 <li><a href="#Delete">3.10. Deleting a module/event/deadline: <code>delete</code></a></li>
 <li><a href="#View">3.11. Viewing module or event details : <code>view</code></a></li>
-<li><a href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">3.12. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></li>
+<li><a href="#editing-added-events-and-deadlines-code-coming-in-v2-0-code">3.12. Editing added Events and Deadlines: <code>[coming in v2.0]</code></a></li>
+<li><a href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">3.13. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
+<li><a href="#ui">4. UI</a>
+<ul class="sectlevel2">
+<li><a href="#menu-bar-buttons">4.1. Menu Bar Buttons</a></li>
+<li><a href="#module-and-event-list">4.2. Module and Event List</a></li>
+<li><a href="#module-details">4.3. Module Details</a></li>
+<li><a href="#description-window">4.4. Description Window</a></li>
+<li><a href="#event-details">4.5. Event Details</a></li>
+<li><a href="#status-bar-footer">4.6. Status Bar Footer</a></li>
+</ul>
+</li>
+<li><a href="#faq">5. FAQ</a></li>
 </ul>
 </div>
 </div>
@@ -125,6 +136,11 @@ is a parameter which can be used as <code>module m/CS2103</code>.</p>
 <p>Opens the pop-up help window with the link to this user guide.<br>
 Format: <code>help</code></p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HelpWindow.png" alt="HelpWindow" width="790">
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="adding-a-module-code-module-code"><a class="link" href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></h3>
@@ -163,6 +179,11 @@ You will be prompted to enter the slot numbers for all events under this module,
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SamplePrompt1.png" alt="SamplePrompt1" width="500">
+</div>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -186,6 +207,11 @@ Do see the section on <a href="#Delete">deleting a module</a> below.</p>
 <p>Adds an event to a module.
 This is perhaps the lengthiest command in Modulo.
 Events refer to Tutorials, Lectures, Examinations, etc.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SampleEvents.png" alt="SampleEvents" width="500">
+</div>
 </div>
 <div class="paragraph">
 <p>There are two possible scenarios:<br></p>
@@ -266,7 +292,15 @@ Examples of recognised types would be:
 <h3 id="AddingDeadline"><a class="link" href="#AddingDeadline">3.4. Adding a deadline : <code>deadline</code></a></h3>
 <div class="paragraph">
 <p>Adds a deadline to an event.
-There are two possible scenarios:<br></p>
+This deadline will be due when the event starts.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SampleDeadline.png" alt="SampleDeadline" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>There are two possible scenarios:<br></p>
 </div>
 <div class="paragraph">
 <p><strong>You&#8217;re currently <a href="#View">viewing</a> an event on the right UI panel.</strong></p>
@@ -350,11 +384,57 @@ Adds a Homework deadline to the nearest upcoming tutorial of CS2103</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ListAll"><a class="link" href="#ListAll">3.5. Displaying all events and modules: <code>list all</code></a></h3>
+<h3 id="List"><a class="link" href="#List">3.5. Displaying events and modules that have yet to pass: <code>list</code></a></h3>
+<div class="paragraph">
+<p>Shows the list of future events or modules happening from the current date onwards.
+This allows you to toggle between the two lists, as well as hide events or modules that have already passed.<br></p>
+</div>
+<div class="paragraph">
+<p>You can always check which list you&#8217;re viewing by looking at the menu bar above:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MenuButtons.png" alt="MenuButtons" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>list events</code> OR <code>list modules</code></p>
+</div>
+<div class="paragraph">
+<p>Shorthands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list e</code><br>
+Same behaviour as <code>list events</code> - lists all the events happening from the current date onwards under the left display panel.</p>
+</li>
+<li>
+<p><code>list m</code><br>
+Same behaviour as <code>list modules</code> - lists all the modules happening from the current date onwards under the left display panel.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This is the default list filter!</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ListAll"><a class="link" href="#ListAll">3.6. Displaying all events and modules: <code>list all</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all events or modules in the left panel of Modulo.
-This helps you to toggle between the two lists.<br>
-Format: <code>list all events</code> OR <code>list all modules</code></p>
+This helps you to toggle between the two lists.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list all events</code> OR <code>list all modules</code></p>
 </div>
 <div class="paragraph">
 <p>Shorthands:</p>
@@ -384,40 +464,6 @@ Same behaviour as <code>list all modules</code> - Shows all the modules under th
 <li>
 <p>Do note that adding deadlines to these past events may result in unexpected behaviour.
 Do see the above section on <a href="#AddingDeadline">adding a deadline</a> for more information.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="List"><a class="link" href="#List">3.6. Displaying all events based on current timeframe: <code>list</code></a></h3>
-<div class="paragraph">
-<p>Shows the list of future events or modules happening from the current date onwards.
-This allows you to toggle between the two lists, as well as hide events or modules that have already passed.<br>
-Format: <code>list events</code> OR <code>list modules</code></p>
-</div>
-<div class="paragraph">
-<p>Shorthands:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list e</code><br>
-Same behaviour as <code>list events</code> - lists all the events happening from the current date onwards under the left display panel.</p>
-</li>
-<li>
-<p><code>list m</code><br>
-Same behaviour as <code>list modules</code> - lists all the modules happening from the current date onwards under the left display panel.</p>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>This is the default list filter!</p>
 </li>
 </ul>
 </div>
@@ -482,6 +528,11 @@ Same behaviour as <code>list modules</code> - lists all the modules happening fr
 </div>
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SampleFind.png" alt="SampleFind" width="500">
+</div>
+</div>
 <div class="paragraph">
 <p>Points to note:</p>
 </div>
@@ -532,24 +583,40 @@ Nevertheless, it&#8217;s possible.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>done 1 m/CS2103 e/Tutorial 1</code></p>
+<p><code>done 1 m/CS2103 e/Tutorial 13</code></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeadlinesComplete.png" alt="DeadlinesComplete" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>All deadlines completed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeadlinesIncomplete.png" alt="DeadlinesIncomplete" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>At least one incomplete deadline.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="export-calendar-code-export-code"><a class="link" href="#export-calendar-code-export-code">3.9. Export calendar: <code>export</code></a></h3>
 <div class="paragraph">
-<p>Exports all events and deadlines into a .ics file.
-File will be named modulo.ics inside the export directory.</p>
+<p>Exports all events and deadlines into a <code>.ics</code> file.
+File will be named <code>modulo.ics</code> inside the export directory.</p>
 </div>
 <div class="paragraph">
-<p>If no directory is provided, Modulo will deposit the .ics file into the data folder.</p>
+<p>If no directory is provided, Modulo will deposit the <code>.ics</code> file into the <code>data</code> folder.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>.ics file will be generated with the Singapore (Asia) timezone.</p>
+<p><code>.ics</code> file will be generated with the Singapore (Asia) timezone.</p>
 </li>
 <li>
 <p>Event entity will be converted as VEVENT.</p>
@@ -647,6 +714,11 @@ You can also delete all events.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteAll.png" alt="DeleteAll" width="500">
+</div>
+</div>
 <div class="paragraph">
 <p><strong>You&#8217;re <a href="#View">viewing</a> an Event on your right panel UI</strong></p>
 </div>
@@ -685,13 +757,24 @@ This index is based on the current list being listed.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>view 1</code></p>
+<p><code>view 2</code></p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SampleView.png" alt="SampleView" width="790">
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-nusmods-calendar-code-coming-in-v2-0-code"><a class="link" href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">3.12. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></h3>
+<h3 id="editing-added-events-and-deadlines-code-coming-in-v2-0-code"><a class="link" href="#editing-added-events-and-deadlines-code-coming-in-v2-0-code">3.12. Editing added Events and Deadlines: <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can edit an added Event or Deadline}</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-a-nusmods-calendar-code-coming-in-v2-0-code"><a class="link" href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">3.13. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can import a NUSMods Calendar}</em></p>
 </div>
@@ -699,11 +782,128 @@ This index is based on the current list being listed.<br></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<h2 id="ui"><a class="link" href="#ui">4. UI</a></h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Although this app is designed with a fast CLI user in mind, there are UI features that can help to enhance a user&#8217;s experience.
+This may be of use should one&#8217;s fingers get tired.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-bar-buttons"><a class="link" href="#menu-bar-buttons">4.1. Menu Bar Buttons</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/MenuButtons.png" alt="MenuButtons" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>These buttons perform the equivalent of <code>list modules</code> and <code>list events</code> respectively.
+Just click them!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-and-event-list"><a class="link" href="#module-and-event-list">4.2. Module and Event List</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleList.png" alt="ModuleList" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on any of these list items to view them on the right panel.
+They perform the equivalent of <code>view INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>Modules are separated accordingly into their academic years and semesters, and events are separated based on their dates.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> There is unfortunately an unfixed bug with how the focus of the UI is handled.
+After performing an action such as typing into the Command Box or clicking the Menu Buttons, you may need to double click the list item for it to show.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-details"><a class="link" href="#module-details">4.3. Module Details</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleDetails.png" alt="ModuleDetails" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>The right panel displays the details of the module.
+You can click "Click to view description" to open the <a href="#DescriptionWindow">Description Window</a>.</p>
+</div>
+<div class="paragraph">
+<p>Clicking any of the events listed below will also bring you to the event list and display the event.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="description-window"><a class="link" href="#description-window">4.4. Description Window</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/DescriptionWindow.png" alt="DescriptionWindow" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>This window displays the description of the module.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>This is currently the only feature that is only accessible via the UI. This will be updated in subsequent releases.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event-details"><a class="link" href="#event-details">4.5. Event Details</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/EventDetails.png" alt="EventDetails" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>The right panel displays the details of the event.
+You can check any of the deadlines to mark them as complete or incomplete, performing the equivalent of <code>done INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>The second tag / label indicates whether all deadlines have been completed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status-bar-footer"><a class="link" href="#status-bar-footer">4.6. Status Bar Footer</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatusBarFooter.png" alt="StatusBarFooter" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>This status bar displays where your data is being saved at.
+You can head over to that folder to find the <code>.json</code> file for your usage.</p>
+</div>
+<div class="paragraph">
+<p>Your exported <code>modulo.ics</code> will also be found in the same directory, unless otherwise specified when exporting.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
+<div class="paragraph">
+<p><strong>Q</strong>: My tutorial starts in Week 3. Why does it show up from Week 1 on Modulo?<br>
+<strong>A</strong>: Modulo uses NUS module data to do the event autopopulation.
+Unfortunately, there are discrepancies between the data they have and what actually happens on the ground.
+To overcome this, you can either manually create a repeating event, or delete the first two occurrences of the event.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 01:59:05 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 03:17:30 UTC</div></div></div></body></html>
