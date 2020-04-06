@@ -46,8 +46,9 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Modulo is for those who <strong>prefer to use a desktop app for managing their school work on a modular level</strong>.
+<p>Modulo is for <strong>NUS students</strong> who <strong>prefer to use a desktop app for managing their school work on a modular level</strong>.
 It helps you to break down your modules into deadlines and track their progress.
+Currently Modulo is made for NUS students taking modules this Academic Year AY2019/2020 Semester 2!
 More importantly, Modulo is <strong>optimized for those who prefer to work with a Command Line Interface (CLI)</strong> while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Modulo can get your module management tasks done faster than traditional GUI apps.
 Interested?
@@ -217,10 +218,10 @@ Events refer to Tutorials, Lectures, Examinations, etc.<br></p>
 <p>There are two possible scenarios:<br></p>
 </div>
 <div class="paragraph">
-<p><strong>You&#8217;re currently <a href="#View">viewing</a> a module on the right UI panel.</strong></p>
+<p><strong>1. You&#8217;re currently <a href="#View">viewing</a> a module on the right UI panel.</strong></p>
 </div>
 <div class="paragraph">
-<p>You can add an event straight to the module you&#8217;re currently viewing.</p>
+<p>This allows you to be able to add an event straight to the module you&#8217;re currently viewing.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>event n/EVENT NAME s/START DATETIME e/END DATETIME v/VENUE [r/REPEAT] [f/FREQUENCY]
@@ -232,7 +233,7 @@ Events refer to Tutorials, Lectures, Examinations, etc.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>event n/Tutorial s/2020-01-30 11:00 e/2020-01-30 10:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
+<p><code>event n/Tutorial s/2020-01-30 10:00 e/2020-01-30 11:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
 </li>
 </ul>
 </div>
@@ -255,10 +256,10 @@ The default repeat end date, if not specified, is Week 13 of the semester.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>You&#8217;re not <a href="#View">viewing</a> a module or you&#8217;re adding the event to a module not being viewed.</strong></p>
+<p><strong>2. You&#8217;re not <a href="#View">viewing</a> a module or you&#8217;re adding the event to a module not being viewed.</strong></p>
 </div>
 <div class="paragraph">
-<p>You can add an event to a specified module that you have already created before.</p>
+<p>This allows you to be able to add an event to a specified module that you have already created before.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>event m/MODULE CODE n/EVENT NAME s/START DATETIME e/END DATETIME v/VENUE [r/REPEAT] [f/FREQUENCY]
@@ -270,7 +271,7 @@ The default repeat end date, if not specified, is Week 13 of the semester.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>event m/CS2103 n/Tutorial s/2020-01-30 11:00 e/2020-01-30 10:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
+<p><code>event m/CS2103 n/Tutorial s/2020-01-30 10:00 e/2020-01-30 11:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
 </li>
 </ul>
 </div>
@@ -286,6 +287,19 @@ Examples of recognised types would be:
 </ul>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Both function formats will work regardless of the right panel UI view. The first function type simply
+provides the additional convenience to the user so that the user can avoid typing the module code again.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -492,7 +506,7 @@ Do see the above section on <a href="#AddingDeadline">adding a deadline</a> for 
 <p><strong>You&#8217;re <a href="#List">listing</a> Modules on your left panel</strong></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find SEARCH TERM</code></p>
+<p>Format: <code>find SEARCH_TERM</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -512,7 +526,7 @@ Do see the above section on <a href="#AddingDeadline">adding a deadline</a> for 
 <p><strong>You&#8217;re <a href="#List">listing</a> Events on your left panel</strong></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find SEARCH TERM</code> while the left panel of Modulo is <a href="#List">listing</a> events:</p>
+<p>Format: <code>find SEARCH_TERM</code> while the left panel of Modulo is <a href="#List">listing</a> events:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -905,5 +919,15 @@ You can head over to that folder to find the <code>.json</code> file for your us
 Unfortunately, there are discrepancies between the data they have and what actually happens on the ground.
 To overcome this, you can either manually create a repeating event, or delete the first two occurrences of the event.</p>
 </div>
+<div class="paragraph">
+<p><strong>Q</strong>: Does Modulo work for other semesters?<br>
+<strong>A</strong>: For now, Modulo is made for students taking modules this Academic Year AY2019/2020, Semester 2! Upon the new Academic Year,
+Modulo will updated! Stay Tuned!</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 09:41:15 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p><strong>Q</strong>: Does Modulo only work for NUS students?<br>
+<strong>A</strong>: Unfortunately for now, Modulo is only caterred to NUS students. For other universities, feel free to reach out to our team to
+discuss a possible collaboration!</p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-06 03:41:07 UTC</div></div></div></body></html>
