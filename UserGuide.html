@@ -11,33 +11,48 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#Features">3. Features</a>
+<li><a href="#Tutorial">3. Tutorial</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></li>
-<li><a href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></li>
-<li><a href="#AddingDeadline">3.4. Adding a deadline : <code>deadline</code></a></li>
-<li><a href="#List">3.5. Displaying events or modules on Modulo: <code>list</code></a></li>
-<li><a href="#Find">3.6. Find an event / module [keywords]: <code>find</code></a></li>
-<li><a href="#finishing-a-task-code-done-code">3.7. Finishing a task : <code>done</code></a></li>
-<li><a href="#export-calendar-code-export-code">3.8. Export calendar: <code>export</code></a></li>
-<li><a href="#Delete">3.9. Deleting a module/event/deadline: <code>delete</code></a></li>
-<li><a href="#View">3.10. Viewing module or event details : <code>view</code></a></li>
-<li><a href="#editing-added-events-and-deadlines-code-coming-in-v2-0-code">3.11. Editing added Events and Deadlines: <code>[coming in v2.0]</code></a></li>
-<li><a href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">3.12. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></li>
+<li><a href="#multistep-commands">3.1. Multistep Commands</a></li>
+<li><a href="#AddingModule">3.2. Adding Our First Module</a></li>
+<li><a href="#viewing-the-events-we-just-added">3.3. Viewing the Events we just added</a></li>
+<li><a href="#adding-our-first-deadline">3.4. Adding our first Deadline</a></li>
+<li><a href="#completing-our-first-deadline">3.5. Completing our first Deadline</a></li>
+<li><a href="#what-next">3.6. What next?</a></li>
 </ul>
 </li>
-<li><a href="#ui">4. UI</a>
+<li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#menu-bar-buttons">4.1. Menu Bar Buttons</a></li>
-<li><a href="#module-and-event-list">4.2. Module and Event List</a></li>
-<li><a href="#module-details">4.3. Module Details</a></li>
-<li><a href="#description-window">4.4. Description Window</a></li>
-<li><a href="#event-details">4.5. Event Details</a></li>
-<li><a href="#status-bar-footer">4.6. Status Bar Footer</a></li>
+<li><a href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-module-code-module-code-multistep">4.2. Adding a module: <code>module</code> (Multistep)</a></li>
+<li><a href="#adding-an-event-code-event-code">4.3. Adding an event: <code>event</code></a></li>
+<li><a href="#AddingDeadline">4.4. Adding a deadline: <code>deadline</code></a></li>
+<li><a href="#List">4.5. Listing events or modules on the left: <code>list</code></a></li>
+<li><a href="#View">4.6. Viewing module or event details: <code>view</code></a></li>
+<li><a href="#finishing-a-deadline-code-done-code">4.7. Finishing a deadline: <code>done</code></a></li>
+<li><a href="#Find">4.8. Finding events or modules using keywords: <code>find</code></a></li>
+<li><a href="#Delete">4.9. Deleting a module/event/deadline: <code>delete</code></a></li>
+<li><a href="#exporting-events-and-deadlines-code-export-code">4.10. Exporting Events and Deadlines: <code>export</code></a></li>
+<li><a href="#editing-added-events-and-deadlines-code-coming-in-v2-0-code">4.11. Editing added Events and Deadlines: <code>[coming in v2.0]</code></a></li>
+<li><a href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">4.12. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">5. FAQ</a></li>
+<li><a href="#ui">5. UI</a>
+<ul class="sectlevel2">
+<li><a href="#menu-bar-buttons">5.1. Menu Bar Buttons</a></li>
+<li><a href="#module-and-event-list">5.2. Module and Event List</a></li>
+<li><a href="#module-details">5.3. Module Details</a></li>
+<li><a href="#description-window">5.4. Description Window</a></li>
+<li><a href="#event-details">5.5. Event Details</a></li>
+<li><a href="#status-bar-footer">5.6. Status Bar Footer</a></li>
+</ul>
+</li>
+<li><a href="#faq">6. FAQ</a></li>
+<li><a href="#appendix">7. Appendix</a>
+<ul class="sectlevel2">
+<li><a href="#EventTypes">7.1. Official Event Types</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -46,9 +61,10 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Modulo is for <strong>NUS students</strong> who <strong>prefer to use a desktop app for managing their school work on a modular level</strong>.
-It helps you to break down your modules into deadlines and track their progress.
-Currently Modulo is made for NUS students taking modules this Academic Year AY2019/2020 Semester 2!
-More importantly, Modulo is <strong>optimized for those who prefer to work with a Command Line Interface (CLI)</strong> while still having the benefits of a Graphical User Interface (GUI).
+It helps you to break down your modules into deadlines and track their progress.<br></p>
+</div>
+<div class="paragraph">
+<p>Currently Modulo is made for NUS students taking modules this Academic Year AY2019/2020 Semester 2! More importantly, Modulo is <strong>optimized for those who prefer to work with a Command Line Interface (CLI)</strong> while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, Modulo can get your module management tasks done faster than traditional GUI apps.
 Interested?
 Jump to Section 2, <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started.
@@ -65,17 +81,19 @@ Enjoy!</p>
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>modulo.jar</code> <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/releases">here</a>.</p>
+<p>Download the latest <code>modulo.jar</code> <a href="https://github.com/AY1920S2-CS2103-T09-1/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for Modulo.</p>
 </li>
 <li>
 <p>Double-click the file to start the app.
-The GUI should appear in a few seconds.</p>
+The GUI should appear in a few seconds.
+Don&#8217;t worry if it&#8217;s empty!
+We&#8217;ll be getting it populated in a matter of minutes in <a href="#Tutorial">Section 3, &#8220;Tutorial&#8221;</a>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/UiBlank.png" alt="UiBlank" width="790">
 </div>
 </div>
 </li>
@@ -84,30 +102,207 @@ The GUI should appear in a few seconds.</p>
 e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
 </li>
 <li>
-<p>Some example commands you can try:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><code>module</code></strong><code>m/CS2103</code> : add new module</p>
+<p>Refer to <a href="#Tutorial">Section 3, &#8220;Tutorial&#8221;</a> for a quick tutorial to Modulo!</p>
 </li>
 <li>
-<p><strong><code>list e</code></strong>: list events occuring from today onwards</p>
-</li>
-<li>
-<p><strong><code>exit</code></strong> : exits the app</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Used Modulo before?
+Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each command.
+Note: We highly recommend going through the <a href="#Tutorial">tutorial</a> before starting!</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<h2 id="Tutorial"><a class="link" href="#Tutorial">3. Tutorial</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Isn&#8217;t the empty application just ugly?
+Let us get your modules into the app in just a matter of minutes!</p>
+</div>
+<div class="sect2">
+<h3 id="multistep-commands"><a class="link" href="#multistep-commands">3.1. Multistep Commands</a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Wait&#8230;&#8203; Multistep?</strong></p>
+</div>
+<div class="paragraph">
+<p>We understand that many may be used to instant, one-step commands when using CLI apps.
+Here at Modulo, we strongly believe in smooth and seamless user experiences.<br></p>
+</div>
+<div class="paragraph">
+<p>Why type the same thing twice when you can do it once, or even never?
+Modulo builds onto what you&#8217;ve already entered, to reduce the amount of typing required, and make everything easier for you!</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In Modulo, some commands are multistep commands.
+These commands <strong>require you to go through all the steps</strong> before you can move on to other commands.<br></p>
+</div>
+<div class="paragraph">
+<p>You will know you&#8217;re in the middle of a multistep command when you see the colour of your command box change:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Multistep.png" alt="Multistep" width="790">
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Warning:</strong> Quitting the app in the middle of a multistep command will terminate the command!
+Any undone operations will be lost.<br></p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re interested to help us with improving Modulo, do take a look at our <a href="DeveloperGuide.html">Developer Guide</a>!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="AddingModule"><a class="link" href="#AddingModule">3.2. Adding Our First Module</a></h3>
+<div class="paragraph">
+<p>Our first command, <code>module</code>, is a multistep command!
+This command helps you to add a module and all of its related events in one go!<br></p>
+</div>
+<div class="paragraph">
+<p>Let us start with <code>module m/cs2103</code>!
+This add <code>CS2103 - Software Engineering</code> into our list of modules.</p>
+</div>
+<div class="paragraph">
+<p>Now you may see the following prompt:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Multistep.png" alt="Multistep" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Simply type in your slot and press <kbd>Enter</kbd>!
+Modulo is from slot 4, so we&#8217;ll type that in.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll see two changes.
+Firstly, the event is added:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SlotAdded.png" alt="SlotAdded" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Secondly, the command prompt changes:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MultistepLecture.png" alt="MultistepLecture" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Key in your lecture slot as well.
+When you see the below message, you know you&#8217;re done!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AllSlotsAdded.png" alt="AllSlotsAdded" width="500">
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>For users who may be taking <code>CS2103T</code> instead, go ahead and add that instead.
+You&#8217;ll only have your lecture to add, so enter your lecture slot when prompted, e.g. <code>G01</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-events-we-just-added"><a class="link" href="#viewing-the-events-we-just-added">3.3. Viewing the Events we just added</a></h3>
+<div class="paragraph">
+<p>Now that we&#8217;ve added our events, it&#8217;s time to start planning!
+Go ahead to switch to the Event list with the following command: <code>list event</code>.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SwitchEventList.png" alt="SwitchEventList" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll see the events that you just added on the left!
+Let us try to view the details for Tutorial 2. We just need to type: <code>view 3</code>, where 3 is the index of Tutorial 2!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewEvent.png" alt="ViewEvent" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Now we get to see the details of the event on the right!</p>
+</div>
+<div id="Focused" class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Tutorial 2 is now the <strong>focused</strong> event.
+We call the item that is displayed on the right the <strong>focused</strong> item.
+For example, earlier, CS2103 was the <strong>focused</strong> module.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-our-first-deadline"><a class="link" href="#adding-our-first-deadline">3.4. Adding our first Deadline</a></h3>
+<div class="paragraph">
+<p>With Tutorial 2 in focus, we can now add deadlines easily to it.
+Let&#8217;s say we want to practice drawing UML diagrams before the tutorial starts.<br></p>
+</div>
+<div class="paragraph">
+<p>We can create a suitable deadline by typing: <code>deadline n/Practice UML Diagrams</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeadlineAdded.png" alt="DeadlineAdded" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>We have now just added the deadline to Tutorial 2, which is the <a href="#Focused"><strong>focused</strong></a> event!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="completing-our-first-deadline"><a class="link" href="#completing-our-first-deadline">3.5. Completing our first Deadline</a></h3>
+<div class="paragraph">
+<p>Hopefully, everyone here is hardworking!
+We&#8217;re now done with creating a deadline.
+How about completing it?<br></p>
+</div>
+<div class="paragraph">
+<p>Let us complete the deadline we&#8217;ve just added by simply typing: <code>done 2</code>, where <code>2</code> is the index of the deadline shown!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeadlineCompleted.png" alt="DeadlineCompleted" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>And we&#8217;re done with the tutorial!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-next"><a class="link" href="#what-next">3.6. What next?</a></h3>
+<div class="paragraph">
+<p>Of course, Modulo supports CLI usage, i.e. minimal references to the GUI!
+For that, our commands have variations that do not depend on the <a href="#Focused"><strong>focused</strong></a> item, and commands that reduce the need for scrolling!</p>
+</div>
+<div class="paragraph">
+<p>Want to find out more?
+Head over to <a href="#Features">Section 4, &#8220;Features&#8221;</a> now!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -117,21 +312,22 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>module m/MODULE CODE</code>, <code>MODULE CODE</code>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>module m/MODULE_CODE</code>, <code>MODULE_CODE</code>
 is a parameter which can be used as <code>module m/CS2103</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>list [all] e</code> can be used as <code>list all e</code> or as <code>list e</code>.</p>
+<p>Items in square brackets are optional e.g <code>deadline n/NAME [r/REPEAT]</code> can be used as <code>deadline n/Work r/YES</code> or as
+<code>deadline n/Work</code>.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>m/MODULE CODE n/NAME</code>, <code>n/NAME m/MODULE CODE</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>m/MODULE_CODE n/NAME</code>, <code>n/NAME m/MODULE_CODE</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Opens the pop-up help window with the link to this user guide.<br>
 Format: <code>help</code></p>
@@ -143,20 +339,16 @@ Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-module-code-module-code"><a class="link" href="#adding-a-module-code-module-code">3.2. Adding a module: <code>module</code></a></h3>
+<h3 id="adding-a-module-code-module-code-multistep"><a class="link" href="#adding-a-module-code-module-code-multistep">4.2. Adding a module: <code>module</code> (Multistep)</a></h3>
 <div class="paragraph">
-<p>Adds a module to Modulo.
-The default timeframe is set to the current academic year and semester.<br>
-Format: <code>module m/MODULE CODE [ay/ACADEMIC YEAR] [s/SEMESTER NUMBER]</code></p>
+<p>Adds a module for AY 19/20 Sem 2 to Modulo.<br>
+Format: <code>module m/MODULE_CODE</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><code>module m/cs2103 ay/2019/2020 s/2</code></p>
-</li>
 <li>
 <p><code>module m/cs2100</code></p>
 </li>
@@ -164,7 +356,10 @@ Format: <code>module m/MODULE CODE [ay/ACADEMIC YEAR] [s/SEMESTER NUMBER]</code>
 </div>
 <div class="paragraph">
 <p>This command will kickstart the autopopulation of module events.
-You will be prompted to enter the slot numbers for all events under this module, e.g. tutorial slot 2, lecture slot 1, lab slot 13, etc.</p>
+Refer to <a href="#AddingModule">our tutorial</a> for more information!<br></p>
+</div>
+<div class="paragraph">
+<p>You will be prompted to enter the slot numbers for all events under this module, e.g. tutorial slot 2, lecture slot 1, lab slot 13, etc.</p>
 </div>
 <div class="paragraph">
 <p>Example of prompts by Modulo:</p>
@@ -202,11 +397,19 @@ Do see the section on <a href="#Delete">deleting a module</a> below.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-event-code-event-code"><a class="link" href="#adding-an-event-code-event-code">3.3. Adding an event : <code>event</code></a></h3>
+<h3 id="adding-an-event-code-event-code"><a class="link" href="#adding-an-event-code-event-code">4.3. Adding an event: <code>event</code></a></h3>
 <div class="paragraph">
-<p>Adds an event to a module.
+<p>Adds a custom event to a module.
 This is perhaps the lengthiest command in Modulo.
 Events refer to Tutorials, Lectures, Examinations, etc.<br></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> You&#8217;re only able to add by slot when going through the multistep <code>module</code> command!
+The <code>event</code> command requires manual entry.</p>
+</div>
+</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -214,55 +417,36 @@ Events refer to Tutorials, Lectures, Examinations, etc.<br></p>
 </div>
 </div>
 <div class="paragraph">
-<p>There are two possible scenarios:<br></p>
-</div>
-<div class="paragraph">
-<p><strong>1. You&#8217;re currently <a href="#View">viewing</a> a module on the right UI panel.</strong></p>
-</div>
-<div class="paragraph">
-<p>This allows you to be able to add an event straight to the module you&#8217;re currently viewing.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>event n/EVENT NAME s/START DATETIME e/END DATETIME v/VENUE [r/REPEAT] [f/FREQUENCY]
+<p>Format: <code>event m/MODULE_CODE n/EVENT_NAME s/START_DATETIME e/END_DATE v/VENUE [r/REPEAT] [f/FREQUENCY]
 [until/REPEAT_STOP_DATE]</code></p>
 </div>
 <div class="paragraph">
-<p>Example (while viewing CS2103):</p>
+<p>Limitations:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>event n/Tutorial s/2020-01-30 10:00 e/2020-01-30 11:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
+<p>You cannot add events of the same name under a single module.</p>
+</li>
+<li>
+<p>The datetime format recognised is YYYY-MM-DD HH:MM.</p>
+</li>
+<li>
+<p>The date format is YYYY-MM-DD.</p>
+</li>
+<li>
+<p>The start and end times of the event must be within AY 19/20 Sem 2, and the end time must be after the start time.</p>
+</li>
+<li>
+<p>By default, the event will not repeat.</p>
+</li>
+<li>
+<p>The default repeat frequency (in weeks) is 1 week.</p>
+</li>
+<li>
+<p>If no repeat end datetime is specified, the event will repeat until the end of the semester (Week 16).</p>
 </li>
 </ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Modulo recognises datetime formats of YYYY-MM-DD HH:MM.</p>
-</li>
-<li>
-<p>The default repeat frequency (in weeks) is 1.</p>
-</li>
-<li>
-<p>By default, the event will not repeat.
-The default repeat end date, if not specified, is Week 13 of the semester.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>2. You&#8217;re not <a href="#View">viewing</a> a module or you&#8217;re adding the event to a module not being viewed.</strong></p>
-</div>
-<div class="paragraph">
-<p>This allows you to be able to add an event to a specified module that you have already created before.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>event m/MODULE CODE n/EVENT NAME s/START DATETIME e/END DATETIME v/VENUE [r/REPEAT] [f/FREQUENCY]
-[until/REPEAT_STOP_DATE]</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -270,39 +454,29 @@ The default repeat end date, if not specified, is Week 13 of the semester.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>event m/CS2103 n/Tutorial s/2020-01-30 10:00 e/2020-01-30 11:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
+<p><code>event m/CS2103 n/Make Up Tutorial s/2020-01-30 10:00 e/2020-01-30 11:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
 </li>
 </ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>All events with types that are recognised come with a default <code>deadline</code> created.
-Examples of recognised types would be:
-<code>Tutorial</code>, <code>Lecture</code>, etc.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>All events with types that are recognised come with a default <code>deadline</code> created.<br></p>
+</div>
+<div class="paragraph">
+<p>You can view the full list of event types <a href="#EventTypes">here</a>.</p>
 </div>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Both function formats will work regardless of the right panel UI view. The first function type simply
-provides the additional convenience to the user so that the user can avoid typing the module code again.
-</td>
-</tr>
-</table>
+<div class="sect3">
+<h4 id="pro-tip-gui-dependent"><a class="link" href="#pro-tip-gui-dependent">4.3.1. Pro-tip (GUI-dependent)</a></h4>
+<div class="paragraph">
+<p>If you&#8217;re already viewing a module (i.e. <a href="#Focused">focused</a> on a module), you can actually drop the <code>m/MODULE_CODE</code>!</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="AddingDeadline"><a class="link" href="#AddingDeadline">3.4. Adding a deadline : <code>deadline</code></a></h3>
+<h3 id="AddingDeadline"><a class="link" href="#AddingDeadline">4.4. Adding a deadline: <code>deadline</code></a></h3>
 <div class="paragraph">
 <p>Adds a deadline to an event.
 This deadline will be due when the event starts.</p>
@@ -313,91 +487,45 @@ This deadline will be due when the event starts.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>There are two possible scenarios:<br></p>
+<p>Format: <code>deadline m/MODULE_CODE e/EVENT_NAME n/DEADLINE_NAME [r/REPEAT]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>You&#8217;re currently <a href="#View">viewing</a> an event on the right UI panel.</strong></p>
-</div>
-<div class="paragraph">
-<p>You can add a deadline straight to the event you&#8217;re currently viewing.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deadline n/DEADLINE NAME [r/REPEAT]</code></p>
-</div>
-<div class="paragraph">
-<p>Example (while viewing CS2103 Tutorial 3):</p>
+<p>Limitations:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>deadline n/Practice UML Diagrams r/YES</code></p>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Repeated deadlines are added to events of the same type as the one specified, and have yet to occur.</p>
+<p>Deadlines are due when the event starts!</p>
 </li>
 <li>
-<p>This may result in what seems like a "bug" when you try to add repeated deadlines, starting with an event that has already passed, since the deadline will be added to that event itself.</p>
+<p>Repeat refers to the creation of the same deadline for events of the same type, occuring <strong>after</strong> the specified event.</p>
 </li>
 <li>
 <p>By default, the deadline will not repeat.</p>
 </li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>You&#8217;re not <a href="#View">viewing</a> an event or you&#8217;re adding the deadline to an event not being viewed.</strong></p>
-</div>
-<div class="paragraph">
-<p>You can add a deadline to a specified event that you have already created before.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deadline m/MODULE CODE e/EVENT NAME n/DEADLINE NAME [r/REPEAT]</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><code>deadline m/CS2103 e/Tutorial 3 n/Practice UML Diagrams r/YES</code></p>
+<p>The deadline repeat function only works for events of recognised types, e.g. <code>Tutorial</code>, <code>Lecture</code> etc.
+This is to prevent the creation of irrelevant deadlines for unrecognised types of events.</p>
 </li>
 </ul>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Automatically adds a deadline to the nearest event of this name</p>
-</li>
-<li>
-<p>If the deadline is to be added to all events of this type, e.g. Tutorials, then set r (repeat) to YES</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
+<div class="sect3">
+<h4 id="pro-tip-gui-dependent-2"><a class="link" href="#pro-tip-gui-dependent-2">4.4.1. Pro-tip (GUI-dependent)</a></h4>
 <div class="paragraph">
-<p>Examples:</p>
+<p>If you&#8217;re already viewing an event (i.e. <a href="#Focused">focused</a> on an event), you can actually drop the <code>m/MODULE_CODE</code>
+AND the <code>e/EVENT_NAME</code>!</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>deadline m/CS2103 e/Tutorial n/Homework r/NO</code><br>
-Adds a Homework deadline to the nearest upcoming tutorial of CS2103</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="List"><a class="link" href="#List">3.5. Displaying events or modules on Modulo: <code>list</code></a></h3>
+<h3 id="List"><a class="link" href="#List">4.5. Listing events or modules on the left: <code>list</code></a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command changes the list being listed on the left, it is largely GUI-dependent.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Shows a list of all events or modules in the left panel of Modulo.
 This helps you to toggle between the two lists.<br></p>
@@ -436,8 +564,7 @@ Same behaviour as <code>list modules</code> - lists all the modules on the left 
 <p>Lists all events or modules recorded in Modulo.</p>
 </li>
 <li>
-<p>Switching of the lists can also be done by clicking the 'Modules' or 'Events' buttons
-at the top of the left display panel.</p>
+<p>Switching of the lists can also be done by clicking the <code>Modules</code> or <code>Events</code> buttons at the top of the left display panel.</p>
 </li>
 </ul>
 </div>
@@ -445,111 +572,50 @@ at the top of the left display panel.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Find"><a class="link" href="#Find">3.6. Find an event / module [keywords]: <code>find</code></a></h3>
-<div class="paragraph">
-<p>Allows the user to find a module or event which matches any of the given keywords.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>find tutorial</code> will produce all events that match Tutorial.</p>
-</li>
-<li>
-<p>Names containing part of the searched words will be matched e.g. <code>find tut</code> will match Tutorial 4.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>There are two possible scenarios:</p>
-</div>
-<div class="paragraph">
-<p><strong>You&#8217;re <a href="#List">listing</a> Modules on your left panel</strong></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>find SEARCH_TERM</code></p>
-</div>
-<div class="sidebarblock">
+<h3 id="View"><a class="link" href="#View">4.6. Viewing module or event details: <code>view</code></a></h3>
+<div class="exampleblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Modules will be searched according to their Module Code, Name as well as Academic Year.</p>
-</li>
-<li>
-<p>Shows the modules with Name / Module Code / Academic Year that match the search term.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command changes the item being <a href="#Focused"><strong>focused on</strong></a> on the right, it is largely GUI-dependent.</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>You&#8217;re <a href="#List">listing</a> Events on your left panel</strong></p>
+<p>Lets user view the details for a module or event on the right panel based on its index on the left panel.
+This index is based on the current list being <a href="#List">listed</a>.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find SEARCH_TERM</code> while the left panel of Modulo is <a href="#List">listing</a> events:</p>
+<p>Format: <code>view INDEX</code></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>Example:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Events will be searched according to their Module Code and Name.</p>
-</li>
-<li>
-<p>Shows the events with Name / Module Code that match the search term</p>
+<p><code>view 3</code></p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SampleFind.png" alt="SampleFind" width="500">
+<img src="images/SampleView.png" alt="SampleView" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p>Points to note:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>find</code> command allows the user to continually filter their list of searches. E.g.
-While viewing the list of events, entering <code>find cs2103</code> and then <code>find tutorial</code> right after will allow the user to view CS2103 tutorials.</p>
-</li>
-<li>
-<p>After finding a module / event, to undo and <a href="#List">list</a> the whole list of modules or events again, users are recommended to enter <code>list event</code>
-or <code>list module</code>.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finishing-a-task-code-done-code"><a class="link" href="#finishing-a-task-code-done-code">3.7. Finishing a task : <code>done</code></a></h3>
+<h3 id="finishing-a-deadline-code-done-code"><a class="link" href="#finishing-a-deadline-code-done-code">4.7. Finishing a deadline: <code>done</code></a></h3>
 <div class="paragraph">
 <p>Toggles the completion status of a deadline.
 If the deadline was incomplete, it would be completed, and vice versa.<br></p>
 </div>
 <div class="paragraph">
-<p>There are two possible scenarios:</p>
+<p>Format: <code>done index m/MODULE_CODE e/EVENT_NAME</code><br></p>
 </div>
 <div class="paragraph">
-<p><strong>You&#8217;re currently <a href="#View">viewing</a> an event on the right UI panel.</strong></p>
-</div>
-<div class="paragraph">
-<p>You can complete the deadline using its displayed index.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>done index</code><br></p>
-</div>
-<div class="paragraph">
-<p><strong>You&#8217;re not <a href="#View">viewing</a> an event or you&#8217;re completing a deadline for an event not being viewed.</strong></p>
-</div>
-<div class="paragraph">
-<p>This is not very useful, since the index of the deadline needs to be known beforehand.
-Nevertheless, it&#8217;s possible.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>done index m/MODULE CODE e/EVENT NAME</code><br></p>
+<p>The index in question here is the index of the deadline.
+This may be a bit tough to know without first using the
+<a href="#View"><code>view</code></a> command.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -577,18 +643,166 @@ Nevertheless, it&#8217;s possible.</p>
 <div class="paragraph">
 <p>At least one incomplete deadline.</p>
 </div>
+<div class="sect3">
+<h4 id="pro-tip-gui-dependent-3"><a class="link" href="#pro-tip-gui-dependent-3">4.7.1. Pro-tip (GUI-dependent)</a></h4>
+<div class="paragraph">
+<p>If you&#8217;re already viewing an event (i.e. <a href="#Focused">focused</a> on an event), you can actually drop the <code>m/MODULE_CODE</code>
+AND the <code>e/EVENT_NAME</code>!</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Known Bug:</strong> When you complete a deadline, the list on the left side will refresh, and the item that was selected will unselect itself.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="export-calendar-code-export-code"><a class="link" href="#export-calendar-code-export-code">3.8. Export calendar: <code>export</code></a></h3>
+<h3 id="Find"><a class="link" href="#Find">4.8. Finding events or modules using keywords: <code>find</code></a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command searches through the list being listed on the left, it is largely GUI-dependent.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Allows the user to search through the current list for items which match any of the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find SEARCH_TERM</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>find tutorial</code> will produce all events that match Tutorial.</p>
+</li>
+<li>
+<p>Names containing part of the searched words will be matched e.g. <code>find tut</code> will match Tutorial 4.</p>
+</li>
+<li>
+<p>Modules will be searched according to their Module Code, Name as well as Academic Year.</p>
+</li>
+<li>
+<p>Events will be searched according to their Module Code and Name.</p>
+</li>
+<li>
+<p>After finding, to get back the whole list again, users can simply enter <code>list events</code> or <code>list modules</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SampleFind.png" alt="SampleFind" width="500">
+</div>
+</div>
+<div class="sect3">
+<h4 id="pro-tip"><a class="link" href="#pro-tip">4.8.1. Pro-tip</a></h4>
+<div class="paragraph">
+<p>The <code>find</code> command allows the user to continually filter their list of searches.
+For example, while viewing the list of events, entering <code>find cs2103</code> and then <code>find tutorial</code> right after will allow the user to view CS2103 tutorials.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Delete"><a class="link" href="#Delete">4.9. Deleting a module/event/deadline: <code>delete</code></a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command deletes based on the list being listed, it is largely GUI-dependent.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes a module, event, or deadline by its index, a search term, or delete all.</p>
+</div>
+<div class="sect3">
+<h4 id="deleting-modules-and-events"><a class="link" href="#deleting-modules-and-events">4.9.1. Deleting Modules and Events</a></h4>
+<div class="paragraph">
+<p>Format: <code>delete INDEX</code> OR <code>delete SEARCH TERM</code> OR <code>delete all</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting a module will delete all its associated events.</p>
+</li>
+<li>
+<p>Deleting an event with delete all its associated deadlines.</p>
+</li>
+<li>
+<p>You can delete a module or an event based on its displayed index on the left panel or using a search term.
+You can also delete all modules or events.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>The logic of the search term follows that of the <a href="#Find">find command</a>.</p>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteAll.png" alt="DeleteAll" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-deadlines"><a class="link" href="#deleting-deadlines">4.9.2. Deleting Deadlines</a></h4>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> You <strong>NEED</strong> to have the event you want <a href="#Focused">focused</a> to do this.
+We will work on removing the need for this in future versions.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete d/INDEX</code> OR <code>delete d/all</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can delete an event&#8217;s deadline using the deadline&#8217;s index.</p>
+</li>
+<li>
+<p>You can also delete all deadlines of that event.</p>
+</li>
+<li>
+<p>This event needs to be currently viewed on the right panel.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-events-and-deadlines-code-export-code"><a class="link" href="#exporting-events-and-deadlines-code-export-code">4.10. Exporting Events and Deadlines: <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports all events and deadlines into a <code>.ics</code> file.
 File will be named <code>modulo.ics</code> inside the export directory.</p>
 </div>
 <div class="paragraph">
-<p>If no directory is provided, by default Modulo will deposit the <code>.ics</code> file into the <code>data</code> folder.</p>
+<p>Format: <code>export [d/TARGET_DIRECTORY]</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:</p>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p>If no directory is provided, by default Modulo will deposit the <code>.ics</code> file into the <code>data</code> folder.</p>
+</li>
 <li>
 <p><code>.ics</code> file will be generated with the Singapore (Asia) timezone.</p>
 </li>
@@ -599,18 +813,18 @@ File will be named <code>modulo.ics</code> inside the export directory.</p>
 <p>Deadline entity will be exported as VTODO.</p>
 </li>
 <li>
-<p>However, as certain common calendar applications (e.g. Google Calendars, Microsoft Outlook) do not parse VTODO, summarized deadlines are also displayed under the event&#8217;s description.</p>
+<p>However, as certain common calendar applications (e.g. Google Calendars, Microsoft Outlook) do not parse VTODO, summarised deadlines are also displayed under the event&#8217;s description.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Format: <code>export [d/TARGET_DIRECTORY]</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><code>export</code></p>
+</li>
 <li>
 <p><code>export d/data/</code></p>
 </li>
@@ -622,7 +836,7 @@ File will be named <code>modulo.ics</code> inside the export directory.</p>
 <ul>
 <li>
 <p>If the given export directory does not exist, it will be created.
-So do be careful with the given directory!</p>
+So do be careful with the directory given!</p>
 </li>
 </ul>
 </div>
@@ -630,122 +844,13 @@ So do be careful with the given directory!</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Delete"><a class="link" href="#Delete">3.9. Deleting a module/event/deadline: <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes a module, event, or deadline by its index, a search term, or delete all.
-Deleting a module will delete all its associated events.
-Deleting an event with delete all its associated deadlines.</p>
-</div>
-<div class="paragraph">
-<p>There are three possible scenarios:</p>
-</div>
-<div class="paragraph">
-<p><strong>You&#8217;re <a href="#List">listing</a> Modules on your left panel</strong></p>
-</div>
-<div class="paragraph">
-<p>You can delete a module based on its displayed index on the left panel or a search term.
-You can also delete all modules.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete INDEX</code> OR <code>delete SEARCH TERM</code> OR <code>delete all</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code></p>
-</li>
-<li>
-<p><code>delete cs2103</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>You&#8217;re <a href="#List">listing</a> Events on your left panel</strong></p>
-</div>
-<div class="paragraph">
-<p>You can delete an event based on its displayed index on the left panel.
-You can also delete all events.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete INDEX</code> OR <code>delete SEARCH TERM</code> OR <code>delete all</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code></p>
-</li>
-<li>
-<p><code>delete tut</code></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteAll.png" alt="DeleteAll" width="500">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>You&#8217;re <a href="#View">viewing</a> an Event on your right panel UI</strong></p>
-</div>
-<div class="paragraph">
-<p>You can delete an event&#8217;s deadline using the deadline&#8217;s index.
-You can also delete all deadlines of that event.
-This event needs to be currently viewed on the right panel.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete d/INDEX</code> OR <code>delete d/all</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The logic of the search term follows that of the <a href="#Find">find command</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="View"><a class="link" href="#View">3.10. Viewing module or event details : <code>view</code></a></h3>
-<div class="paragraph">
-<p>Lets user view the details for a module or event on the right panel based on its index on the left panel.
-This index is based on the current list being listed.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>view INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>view 2</code></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SampleView.png" alt="SampleView" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-added-events-and-deadlines-code-coming-in-v2-0-code"><a class="link" href="#editing-added-events-and-deadlines-code-coming-in-v2-0-code">3.11. Editing added Events and Deadlines: <code>[coming in v2.0]</code></a></h3>
+<h3 id="editing-added-events-and-deadlines-code-coming-in-v2-0-code"><a class="link" href="#editing-added-events-and-deadlines-code-coming-in-v2-0-code">4.11. Editing added Events and Deadlines: <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can edit an added Event or Deadline}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="importing-a-nusmods-calendar-code-coming-in-v2-0-code"><a class="link" href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">3.12. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></h3>
+<h3 id="importing-a-nusmods-calendar-code-coming-in-v2-0-code"><a class="link" href="#importing-a-nusmods-calendar-code-coming-in-v2-0-code">4.12. Importing a NUSMods Calendar: <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can import a NUSMods Calendar}</em></p>
 </div>
@@ -753,7 +858,7 @@ This index is based on the current list being listed.<br></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ui"><a class="link" href="#ui">4. UI</a></h2>
+<h2 id="ui"><a class="link" href="#ui">5. UI</a></h2>
 <div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
@@ -764,7 +869,7 @@ This may be of use should one&#8217;s fingers get tired.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="menu-bar-buttons"><a class="link" href="#menu-bar-buttons">4.1. Menu Bar Buttons</a></h3>
+<h3 id="menu-bar-buttons"><a class="link" href="#menu-bar-buttons">5.1. Menu Bar Buttons</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/MenuButtons.png" alt="MenuButtons" width="500">
@@ -776,7 +881,7 @@ Just click them!</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="module-and-event-list"><a class="link" href="#module-and-event-list">4.2. Module and Event List</a></h3>
+<h3 id="module-and-event-list"><a class="link" href="#module-and-event-list">5.2. Module and Event List</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModuleList.png" alt="ModuleList" width="500">
@@ -799,7 +904,7 @@ After performing an action such as typing into the Command Box or clicking the M
 </div>
 </div>
 <div class="sect2">
-<h3 id="module-details"><a class="link" href="#module-details">4.3. Module Details</a></h3>
+<h3 id="module-details"><a class="link" href="#module-details">5.3. Module Details</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModuleDetails.png" alt="ModuleDetails" width="500">
@@ -807,14 +912,17 @@ After performing an action such as typing into the Command Box or clicking the M
 </div>
 <div class="paragraph">
 <p>The right panel displays the details of the module.
-You can click "Click to view description" to open the <a href="#DescriptionWindow">Description Window</a>.</p>
+Only official events added using slots will be listed here.</p>
 </div>
 <div class="paragraph">
-<p>Clicking any of the events listed below will also bring you to the event list and display the event.</p>
+<p>You can click "Click to view description" to open the <a href="#DescriptionWindow">Description Window</a>.</p>
+</div>
+<div class="paragraph">
+<p>Clicking any of the events listed below will also bring you to the first event of that type and slot.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="description-window"><a class="link" href="#description-window">4.4. Description Window</a></h3>
+<h3 id="description-window"><a class="link" href="#description-window">5.4. Description Window</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/DescriptionWindow.png" alt="DescriptionWindow" width="790">
@@ -832,7 +940,7 @@ You can click "Click to view description" to open the <a href="#DescriptionWindo
 </div>
 </div>
 <div class="sect2">
-<h3 id="event-details"><a class="link" href="#event-details">4.5. Event Details</a></h3>
+<h3 id="event-details"><a class="link" href="#event-details">5.5. Event Details</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/EventDetails.png" alt="EventDetails" width="500">
@@ -847,7 +955,7 @@ You can check any of the deadlines to mark them as complete or incomplete, perfo
 </div>
 </div>
 <div class="sect2">
-<h3 id="status-bar-footer"><a class="link" href="#status-bar-footer">4.6. Status Bar Footer</a></h3>
+<h3 id="status-bar-footer"><a class="link" href="#status-bar-footer">5.6. Status Bar Footer</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StatusBarFooter.png" alt="StatusBarFooter" width="790">
@@ -864,11 +972,11 @@ You can head over to that folder to find the <code>.json</code> file for your us
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">6. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Modulo.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: My tutorial starts in Week 3. Why does it show up from Week 1 on Modulo?<br>
@@ -878,13 +986,61 @@ To overcome this, you can either manually create a repeating event, or delete th
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: Does Modulo work for other semesters?<br>
-<strong>A</strong>: For now, Modulo is made for students taking modules this Academic Year AY2019/2020, Semester 2! Upon the new Academic Year,
-Modulo will updated! Stay Tuned!</p>
+<strong>A</strong>: For now, Modulo is made for students taking modules this Academic Year AY2019/2020, Semester 2! Upon the new Academic Year, Modulo will be updated!
+Stay Tuned!</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: Does Modulo only work for NUS students?<br>
-<strong>A</strong>: Unfortunately for now, Modulo is only caterred to NUS students. For other universities, feel free to reach out to our team to
-discuss a possible collaboration!</p>
+<strong>A</strong>: Unfortunately for now, Modulo is only catered to NUS students.
+For other universities, feel free to reach out to our team to discuss a possible collaboration!</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 08:36:17 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="appendix"><a class="link" href="#appendix">7. Appendix</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="EventTypes"><a class="link" href="#EventTypes">7.1. Official Event Types</a></h3>
+<div class="paragraph">
+<p>Recognised official event types are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tutorial</p>
+</li>
+<li>
+<p>Lecture</p>
+</li>
+<li>
+<p>Sectional</p>
+</li>
+<li>
+<p>Seminar</p>
+</li>
+<li>
+<p>Recitation</p>
+</li>
+<li>
+<p>Laboratory</p>
+</li>
+<li>
+<p>Workshop</p>
+</li>
+<li>
+<p>Packaged Tutorial</p>
+</li>
+<li>
+<p>Packaged Lecture</p>
+</li>
+<li>
+<p>Tutorial Type Two</p>
+</li>
+<li>
+<p>Design Lecture</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:10:04 UTC</div></div></div></body></html>
