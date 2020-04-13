@@ -39,11 +39,12 @@
 <li><a href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#effort">Appendix G: Effort</a></li>
+<li><a href="#instructions-for-manual-testing">Appendix H: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-module">G.2. Deleting a module</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">H.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-module">H.2. Deleting a module</a></li>
+<li><a href="#saving-data">H.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -568,31 +569,33 @@ If a new type of state is required, the changes required will be heavy as well, 
 <div class="sect2">
 <h3 id="done-feature"><a class="link" href="#done-feature">3.2. Done Feature</a></h3>
 <div class="paragraph">
-<p>This features allow user to set deadline&#8217;status to be completed or not completed.The user input is handled and retrieved by the <code>MainWindow</code> class in Ui first, after that passed to the <code>LogicManager</code> to process the input.
-First,<code>LogicManager</code> will call the <code>ModuleParser</code> which will pass the input to the <code>DoneCommandParser</code>.
-Then`DoneCommandParser` will invoked <code>DoneCommand</code> to set the status of deadline to be true(Completed) and update the model.
-Invalid input such as invalid index(i.e done 1000) also handled properly and error message will be displayed to user.
-The command is implemented corresponding to the operation in the logic module:</p>
+<p>This feature allows the User to set the deadline&#8217;s status to be completed or not completed.
+The user input is handled and retrieved by the <code>MainWindow</code> class in the Ui component first, before being passed to the <code>LogicManager</code> to execute.
+First,<code>LogicManager</code> will call <code>ModuleParser</code>, which will parse the input to give a <code>DoneCommandParser</code>.
+Then, <code>DoneCommandParser</code> will return a <code>DoneCommand</code>, which will help to set the status of deadline and update the
+<code>Model</code>.
+Invalid inputs such as an invalid index (e.g. <code>done 1000</code>) are also handled properly, with suitable error messages being displayed to the user.
+The <code>DoneCommand</code> is implemented according to the operation in the <code>Logic</code> module:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DoneCommand</code>&#8201;&#8212;&#8201;Set the status of the deadline to be true.</p>
+<p><code>DoneCommand</code>&#8201;&#8212;&#8201;Sets the status of the deadline.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>For the command, a parser is implemented to parse the input into arguments.</p>
+<p>For the command, a <code>DoneCommandParser</code> is implemented to parse the input into the required index.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DoneCommandParser</code> --Parse the done command input and generates <code>DoneCommand</code>.</p>
+<p><code>DoneCommandParser</code>&#8201;&#8212;&#8201;Parses the <code>done</code> command input and generates a <code>DoneCommand</code>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Given below is a sequence diagram to show how the done mechanism behaves at each step.</p>
+<p>Given below is a sequence diagram to show how the <code>done</code> mechanism behaves at each step.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -600,7 +603,7 @@ The command is implemented corresponding to the operation in the logic module:</
 </div>
 </div>
 <div class="paragraph">
-<p>Given below is a activity diagram to show how the how operations work.</p>
+<p>Given below is an activity diagram to show how the <code>done</code> operation works.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -610,51 +613,61 @@ The command is implemented corresponding to the operation in the logic module:</
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.1. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-done-features-executes"><a class="link" href="#aspect-how-done-features-executes">Aspect: How done features executes</a></h5>
+<h5 id="aspect-how-code-done-code-is-executed"><a class="link" href="#aspect-how-code-done-code-is-executed">Aspect: How <code>done</code> is executed</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Done 1 deadline at one time</p>
+<p><strong>Alternative 1 (current choice):</strong> User can <code>done</code> one deadline at a time.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement,not likely to create bugs.</p>
+<p>Pros: Easy to implement and not likely to create bugs.</p>
 </li>
 <li>
-<p>Cons: More steps required for user if she/he wants to complete different deadlines.</p>
+<p>Cons: More steps are required for the user if they wish to complete different deadlines.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2 :</strong> Done multiple deadlines at one time</p>
+<p><strong>Alternative 2 :</strong> User can <code>done</code> multiple deadlines at a time.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: More time consuming for user to complete list of deadline at one time.</p>
+<p>Pros: Less time-consuming than if the user were to complete a list of deadlines, one at a time.</p>
 </li>
 <li>
-<p>Cons: User input will be complex as it required to check for different modules and events then finally can set the status to be true.
-Difficult to troubleshoot if bugs occur.</p>
+<p>Cons: User input will be highly complex, as we may need to consider the different use cases, e.g. deadlines of different events, of different modules etc.
+We will be required to check and account for various possibilities before the operation can be done.
+Difficult to implement, and even harder to troubleshoot if bugs occur.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="other-considerations"><a class="link" href="#other-considerations">Other considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Modulo will keep track of all the deadlines' statuses and send reminders to the user accordingly.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: A good feature that helps to remind users of their incomplete deadlines.</p>
+</li>
+<li>
+<p>Cons: Hard to implement and it increases coupling.
+Difficult to write test cases as well.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 3 :</strong> Modulo will keep track of deadline&#8217;s status and send reminder to user</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Remind user which deadline he/she have not completed yet.</p>
-</li>
-<li>
-<p>Cons: Hard to implement and it increase coupling.Difficult to write test cases.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Future Extension:</strong> Modulo can have another ui panel to display every deadline that needs to be done for every weeks, then user can enter done command to update deadlines' status from there.</p>
+<p><strong>Future Extension:</strong> Modulo can have another UI panel to display every deadline that needs to be done a certain week.
+The user can then use the <code>done</code> command to update the deadlines' statuses from there.</p>
 </li>
 </ul>
 </div>
@@ -1373,7 +1386,13 @@ User-added are events that are not recognised.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="effort"><a class="link" href="#effort">Appendix G: Effort</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix H: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -1391,7 +1410,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">H.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1440,7 +1459,7 @@ Expected: Both the main window and the help window should close.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">G.2. Deleting a module</a></h3>
+<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">H.2. Deleting a module</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1503,7 +1522,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">H.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1519,6 +1538,13 @@ Another way may be to add random characters that make the JSON format unreadable
 <p>Double-click the jar file<br>
 Expected: Shows the GUI with no data.</p>
 </li>
+<li>
+<p>Delete the current save file under <code>./data/</code>.</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with no data.</p>
+</li>
 </ol>
 </div>
 </li>
@@ -1526,4 +1552,4 @@ Expected: Shows the GUI with no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:38:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:16:03 UTC</div></div></div></body></html>
