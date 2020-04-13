@@ -452,7 +452,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram" width="690">
 </div>
 <div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
 </div>
@@ -546,10 +546,8 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>This Deletion feature allows the user to delete modules, events or deadlines.
 The user input is first retrieved by the <code>MainWindow</code> class which is then passed to the <code>LogicManager</code> via the <code>execute</code>
 function.
-<code>LogicManager</code> will call the <code>parseCommand</code> function of ModuloParser`, which will parse the input to create a temporary <code>DeleteCommandParser</code> object,
- parsing the input and returning a <code>DeleteCommand</code>.
-The command will then be executed in the <code>LogicManager</code>, returning a <code>CommandResult</code> object which will then be returned as
-feedback to the user.</p>
+<code>LogicManager</code> will call the <code>parseCommand</code> function of ModuloParser`, which will parse the input to create a temporary <code>DeleteCommandParser</code> object, parsing the input and returning a <code>DeleteCommand</code>.
+The command will then be executed in the <code>LogicManager</code>, returning a <code>CommandResult</code> object which will then be returned as feedback to the user.</p>
 </div>
 <div class="paragraph">
 <p>Given below is a sequence diagram to show how the <code>delete</code> feature parsing an input of '1' behaves at each step:</p>
@@ -578,13 +576,11 @@ feedback to the user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Allows the user more flexibility in deleting modules and events instead of just deleting them one
-by one. For example users can choose to delete one, many or even all modules and events, depending on
-their command input.</p>
+<p>Pros: Allows the user more flexibility in deleting modules and events instead of just deleting them one by one.
+For example users can choose to delete one, many or even all modules and events, depending on their command input.</p>
 </li>
 <li>
-<p>Cons: This has caused the code to become more complex in dealing with the many possible inputs
-and scenarios, leading to a higher amount of potential errors.</p>
+<p>Cons: This has caused the code to become more complex in dealing with the many possible inputs and scenarios, leading to a higher amount of potential errors.</p>
 </li>
 </ul>
 </div>
@@ -598,10 +594,8 @@ and scenarios, leading to a higher amount of potential errors.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-With respect to deadlines, users can only delete one or all deadlines of a particular event. This
-is to avoid any confusion and unnecessary complexity which may be caused by deleting deadlines across
-all events, especially since the user may only observe deadlines of one event at any one time and do
-not have access to the overall list of deadlines.
+With respect to deadlines, users can only delete one or all deadlines of a particular event.
+This is to avoid any confusion and unnecessary complexity which may be caused by deleting deadlines across all events, especially since the user may only observe deadlines of one event at any one time and do not have access to the overall list of deadlines.
 </td>
 </tr>
 </table>
@@ -616,16 +610,14 @@ not have access to the overall list of deadlines.
 <p>Pros: Reduces the lack of potential errors due to the decreased complexity of the code.</p>
 </li>
 <li>
-<p>Cons: It is less intuitive for the user as users are now limited by deleting one or all the events /
-modules / deadlines.</p>
+<p>Cons: It is less intuitive for the user as users are now limited by deleting one or all the events / modules / deadlines.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
 <p><strong>Future Extension:</strong> Modulo can have another UI panel to display every deadline that needs to be done a certain week.
-The user can then use the <code>delete</code> command to delete multiple deadlines at one go, making it more convenient
-for the user.</p>
+The user can then use the <code>delete</code> command to delete multiple deadlines at one go, making it more convenient for the user.</p>
 </li>
 </ul>
 </div>
@@ -679,4 +671,4 @@ Step 2 takes place.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:13:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:21:33 UTC</div></div></div></body></html>

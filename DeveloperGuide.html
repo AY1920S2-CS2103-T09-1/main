@@ -173,7 +173,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram" width="690">
 </div>
 <div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
 </div>
@@ -352,7 +352,7 @@ In the future, to better enable the concept of a single source of truth, we can 
 </table>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span></p>
+<p><span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram" width="500"></span></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -417,7 +417,7 @@ It is an interface with three methods exposed, and currently only has one class 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StatefulLogicClassDiagram.png" alt="StatefulLogicClassDiagram">
+<img src="images/StatefulLogicClassDiagram.png" alt="StatefulLogicClassDiagram" width="750">
 </div>
 <div class="title">Figure 9. Structure of the Stateful Logic Component</div>
 </div>
@@ -431,7 +431,7 @@ It is an interface with three methods exposed, and currently only has one class 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddModuleHasStateSequenceDiagram.png" alt="AddModuleHasStateSequenceDiagram">
+<img src="images/AddModuleHasStateSequenceDiagram.png" alt="AddModuleHasStateSequenceDiagram" width="750">
 </div>
 <div class="title">Figure 10. The current implementation</div>
 </div>
@@ -440,7 +440,7 @@ It is an interface with three methods exposed, and currently only has one class 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/MultipleHasStateSequenceDiagram.png" alt="MultipleHasStateSequenceDiagram">
+<img src="images/MultipleHasStateSequenceDiagram.png" alt="MultipleHasStateSequenceDiagram" width="750">
 </div>
 <div class="title">Figure 11. If more Stateful Logic Managers are added</div>
 </div>
@@ -478,7 +478,7 @@ The differences lie in the state preparation and state loading.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StatePreparationSequenceDiagram.png" alt="StatePreparationSequenceDiagram">
+<img src="images/StatePreparationSequenceDiagram.png" alt="StatePreparationSequenceDiagram" width="750">
 </div>
 <div class="title">Figure 13. State Preparation for <code>AddModuleCommandResult</code></div>
 </div>
@@ -491,7 +491,7 @@ This <code>CommandResult</code> is then passed back to the default <code>LogicMa
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StateLoadingSequenceDiagram.png" alt="StateLoadingSequenceDiagram">
+<img src="images/StateLoadingSequenceDiagram.png" alt="StateLoadingSequenceDiagram" width="750">
 </div>
 <div class="title">Figure 14. State Loading for <code>AddModuleStatefulLogicManager</code></div>
 </div>
@@ -740,8 +740,7 @@ The user can then use the <code>done</code> command to update the deadlines' sta
 </div>
 </li>
 <li>
-<p><strong>Alternative 3 (current choice):</strong> Combine both options
-Users are able to make full use of .ics importing capabilities, while also providing a quick overview of <code>Deadline</code></p>
+<p><strong>Alternative 3 (current choice):</strong> Combine both options Users are able to make full use of .ics importing capabilities, while also providing a quick overview of <code>Deadline</code></p>
 </li>
 </ul>
 </div>
@@ -754,10 +753,8 @@ Users are able to make full use of .ics importing capabilities, while also provi
 <p>This Deletion feature allows the user to delete modules, events or deadlines.
 The user input is first retrieved by the <code>MainWindow</code> class which is then passed to the <code>LogicManager</code> via the <code>execute</code>
 function.
-<code>LogicManager</code> will call the <code>parseCommand</code> function of ModuloParser`, which will parse the input to create a temporary <code>DeleteCommandParser</code> object,
- parsing the input and returning a <code>DeleteCommand</code>.
-The command will then be executed in the <code>LogicManager</code>, returning a <code>CommandResult</code> object which will then be returned as
-feedback to the user.</p>
+<code>LogicManager</code> will call the <code>parseCommand</code> function of ModuloParser`, which will parse the input to create a temporary <code>DeleteCommandParser</code> object, parsing the input and returning a <code>DeleteCommand</code>.
+The command will then be executed in the <code>LogicManager</code>, returning a <code>CommandResult</code> object which will then be returned as feedback to the user.</p>
 </div>
 <div class="paragraph">
 <p>Given below is a sequence diagram to show how the <code>delete</code> feature parsing an input of '1' behaves at each step:</p>
@@ -786,13 +783,11 @@ feedback to the user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Allows the user more flexibility in deleting modules and events instead of just deleting them one
-by one. For example users can choose to delete one, many or even all modules and events, depending on
-their command input.</p>
+<p>Pros: Allows the user more flexibility in deleting modules and events instead of just deleting them one by one.
+For example users can choose to delete one, many or even all modules and events, depending on their command input.</p>
 </li>
 <li>
-<p>Cons: This has caused the code to become more complex in dealing with the many possible inputs
-and scenarios, leading to a higher amount of potential errors.</p>
+<p>Cons: This has caused the code to become more complex in dealing with the many possible inputs and scenarios, leading to a higher amount of potential errors.</p>
 </li>
 </ul>
 </div>
@@ -806,10 +801,8 @@ and scenarios, leading to a higher amount of potential errors.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-With respect to deadlines, users can only delete one or all deadlines of a particular event. This
-is to avoid any confusion and unnecessary complexity which may be caused by deleting deadlines across
-all events, especially since the user may only observe deadlines of one event at any one time and do
-not have access to the overall list of deadlines.
+With respect to deadlines, users can only delete one or all deadlines of a particular event.
+This is to avoid any confusion and unnecessary complexity which may be caused by deleting deadlines across all events, especially since the user may only observe deadlines of one event at any one time and do not have access to the overall list of deadlines.
 </td>
 </tr>
 </table>
@@ -824,16 +817,14 @@ not have access to the overall list of deadlines.
 <p>Pros: Reduces the lack of potential errors due to the decreased complexity of the code.</p>
 </li>
 <li>
-<p>Cons: It is less intuitive for the user as users are now limited by deleting one or all the events /
-modules / deadlines.</p>
+<p>Cons: It is less intuitive for the user as users are now limited by deleting one or all the events / modules / deadlines.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
 <p><strong>Future Extension:</strong> Modulo can have another UI panel to display every deadline that needs to be done a certain week.
-The user can then use the <code>delete</code> command to delete multiple deadlines at one go, making it more convenient
-for the user.</p>
+The user can then use the <code>delete</code> command to delete multiple deadlines at one go, making it more convenient for the user.</p>
 </li>
 </ul>
 </div>
@@ -852,7 +843,7 @@ for the user.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
+<img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram" width="650">
 </div>
 </div>
 <div class="paragraph">
@@ -879,9 +870,9 @@ for the user.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If an <code>EditCommand</code> is successfully created, it will be executed on the <code>Model</code>. It will work mainly through the
-<code>setEvent</code> method already exposed in the <code>Model</code> interface, as well as a <code>setDeadline</code> that will be exposed through
-the parent event.</p>
+<p>If an <code>EditCommand</code> is successfully created, it will be executed on the <code>Model</code>.
+It will work mainly through the
+<code>setEvent</code> method already exposed in the <code>Model</code> interface, as well as a <code>setDeadline</code> that will be exposed through the parent event.</p>
 </div>
 <div class="paragraph">
 <p>Here&#8217;s an example of how it may look like if the <code>EditCommand</code> was to modify an event&#8217;s venue.</p>
@@ -891,15 +882,14 @@ the parent event.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditCommandSequenceDiagram.png" alt="EditCommandSequenceDiagram">
+<img src="images/EditCommandSequenceDiagram.png" alt="EditCommandSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="limitations"><a class="link" href="#limitations">3.5.2. Limitations</a></h4>
 <div class="paragraph">
-<p>Due to the fact that repeated events are not currently being tagged or grouped in any way, it is difficult to allow
-mass editing of repeated events.</p>
+<p>Due to the fact that repeated events are not currently being tagged or grouped in any way, it is difficult to allow mass editing of repeated events.</p>
 </div>
 <div class="paragraph">
 <p>If there&#8217;s a need to edit a repeated event, there would be a need to edit the events one by one.</p>
@@ -932,8 +922,8 @@ mass editing of repeated events.</p>
 <p>Pros: Less code to write <strong>for this feature</strong> specifically, in terms of the <code>setDeadline</code> method.</p>
 </li>
 <li>
-<p>Cons: Increases complexity of the application, since now three lists are maintained. There is also the same issue
-with events and modules in terms of the source of truth.</p>
+<p>Cons: Increases complexity of the application, since now three lists are maintained.
+There is also the same issue with events and modules in terms of the source of truth.</p>
 </li>
 </ul>
 </div>
@@ -978,7 +968,7 @@ The <code>VersionedModulo</code> will be initialized with the initial modulo sta
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
+<img src="images/UndoRedoState0.png" alt="UndoRedoState0" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -988,7 +978,7 @@ command executes to be saved in the <code>moduloStateList</code>, and the <code>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
+<img src="images/UndoRedoState1.png" alt="UndoRedoState1" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -997,7 +987,7 @@ The <code>deadline</code> command also calls <code>Model#commitModulo()</code>, 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
+<img src="images/UndoRedoState2.png" alt="UndoRedoState2" width="500">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1019,7 +1009,7 @@ The <code>undo</code> command will call <code>Model#undoModulo()</code>, which w
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
+<img src="images/UndoRedoState3.png" alt="UndoRedoState3" width="500">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1081,7 +1071,7 @@ Thus, the <code>moduloStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
+<img src="images/UndoRedoState4.png" alt="UndoRedoState4" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -1093,7 +1083,7 @@ This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
+<img src="images/UndoRedoState5.png" alt="UndoRedoState5" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -1517,8 +1507,12 @@ User added a module with no events.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
+<div class="ulist none">
+<ul class="none">
+<li>
 <p>Use case resumes from step 5.</p>
+</li>
+</ul>
 </div>
 <div class="ulist none">
 <ul class="none">
@@ -1769,7 +1763,7 @@ Guarantees: A list of added Modules is displayed.<br></p>
 <ul class="none">
 <li>
 <p>1a.
-User enters invalid command. e.g: list CS2103</p>
+User enters invalid command. e.g: <code>list CS2103</code></p>
 </li>
 </ul>
 </div>
@@ -1896,7 +1890,8 @@ Guarantees: An .ics file is generated containing <code>Event</code> and <code>De
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Modulo is unable to find the directory specified by user.</p>
+<p>2a.
+Modulo is unable to find the directory specified by user.</p>
 </li>
 </ul>
 </div>
@@ -2133,8 +2128,10 @@ Expected: Lecture slot 1 should be added.</p>
 </li>
 <li>
 <p>Test case: <code>event n/Exam m/CS2103 s/2020-01-15 09:00 e/2020-01-15 10:00 v/Home</code><br>
-Expected: Event named Exam should appear in the list of events. To check, enter <code>list events</code>. It should be near the
-top of the list. The details should be as entered.</p>
+Expected: Event named Exam should appear in the list of events.
+To check, enter <code>list events</code>.
+It should be near the top of the list.
+The details should be as entered.</p>
 </li>
 </ol>
 </div>
@@ -2148,8 +2145,7 @@ top of the list. The details should be as entered.</p>
 </li>
 <li>
 <p>Test case: <code>event n/Self Study m/CS2103 s/2020-01-20 09:00 e/2020-01-20 10:00 v/Home r/YES until/2020-02-20</code><br>
-Expected: Events named Self Study 1, Self Study 2, until Self Study 5 should appear, with a frequency of 1 week, and
-stopping before 2020-02-20.</p>
+Expected: Events named Self Study 1, Self Study 2, until Self Study 5 should appear, with a frequency of 1 week, and stopping before 2020-02-20.</p>
 </li>
 </ol>
 </div>
@@ -2171,7 +2167,8 @@ the event yet.</p>
 </li>
 <li>
 <p>Test case: <code>deadline n/Study hard for exam m/CS2103 e/Exam</code><br>
-Expected: Deadline added to Exam. To check, first make sure you&#8217;re listing events with <code>list events</code>, then enter
+Expected: Deadline added to Exam.
+To check, first make sure you&#8217;re listing events with <code>list events</code>, then enter
 <code>view INDEX</code>, where <code>INDEX</code> is the index of the event on the list.</p>
 </li>
 </ol>
@@ -2278,7 +2275,8 @@ Expected: Details of the first event should show on the right panel.</p>
 </li>
 <li>
 <p>Test case: <code>find self study</code><br>
-Expected: All events with Self Study in their names would appear. You can operate on this filtered list.</p>
+Expected: All events with Self Study in their names would appear.
+You can operate on this filtered list.</p>
 </li>
 </ol>
 </div>
@@ -2434,7 +2432,8 @@ Expected: Similar to previous.</p>
 <ol class="loweralpha" type="a">
 <li>
 <p>Prerequisites: List all events using the <code>list events</code> command. Events in the list. View first event with
-<code>view 1</code>. First event has a deadline.</p>
+<code>view 1</code>.
+First event has a deadline.</p>
 </li>
 <li>
 <p>Test case: <code>delete d/1</code><br>
@@ -2466,8 +2465,8 @@ Expected: Similar to previous.</p>
 <ol class="loweralpha" type="a">
 <li>
 <p>Test case: <code>export</code><br>
-Expected: A <code>modulo.ics</code> file should be created in the same <code>./data/</code> folder. You can use this <code>.ics</code> file to add
-your events and deadlines into your calendar.</p>
+Expected: A <code>modulo.ics</code> file should be created in the same <code>./data/</code> folder.
+You can use this <code>.ics</code> file to add your events and deadlines into your calendar.</p>
 </li>
 </ol>
 </div>
@@ -2551,4 +2550,4 @@ Expected: Shows the GUI with no data.</p>
 <div class="sectionbody">
 
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:13:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:21:33 UTC</div></div></div></body></html>

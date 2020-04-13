@@ -1,0 +1,1843 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Zhu Hanming - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Modulo</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Zhu Hanming - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-modulo"><a class="link" href="#project-modulo">PROJECT: Modulo</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Modulo is a desktop module management application written for students with fast fingers.
+A GUI created with JavaFX is also provided.
+It is written in Java, and has about 16 kLoC.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement: <code>StatefulLogic</code> - Enabling Multistep Commands</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature allows the user to perform elaborate multistep commands by having their inputs build onto what was previously entered.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> This feature greatly reduces the amount of repetitive commands that a user needs to enter to achieve the same result.
+It also helps to connect related processes.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> This feature was implemented from scratch with minimal changes to existing logic and classes, and instead extended on the Command Pattern.
+The brainstorming and implementation process required an in-depth analysis of design alternatives.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement: <code>ModuleLibrary</code> - Understanding NUS Module JSONs</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature allows the user to add modules and events using official NUS module data.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> This feature makes the app a lot more useful and convenient to use.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> A lot of difficulties were faced when analysing the patterns and inconsistencies within the NUS JSON files.
+<code>ModuleLibrary</code> now makes sense of the highly nested files to give users the required data meaningfully.</p>
+</li>
+<li>
+<p><strong>Credits:</strong> Google&#8217;s Gson.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement: JavaFX - Pleasing to the Eye</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>I designed and built the current GUI for Modulo.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement: <code>Storage</code> - Saving Your Progress</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>I adapted the code for the <code>Storage</code> classes to work with the new <code>Model</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My code contributions can be found here: <a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=zhuhanming&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">RepoSense Code Dashboard</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Project Management</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.2.1</code> - <code>v1.4</code> (9 releases) on GitHub.</p>
+</li>
+<li>
+<p>Managed the issue tracker and milestones <code>v1.1</code> - <code>v1.4</code> (7 milestones) on GitHub.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to Existing Features</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Designed the mockups for the app using Adobe XD.</p>
+</li>
+<li>
+<p>Wrote tests to increase coverage by 16.5% approximately (PRs
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/129">#129</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/130">#130</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/138">#138</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/140">#140</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/151">#151</a>).</p>
+</li>
+<li>
+<p>Did up JavaDocs: <a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/73">#73</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/129">#129</a>.</p>
+</li>
+<li>
+<p>Did cosmetic tweaks to both the app (e.g. app icon) and docs (screenshots).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (non-trivial):
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/24">#24</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/37">#37</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/44">#44</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/131">#131</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/153">#153</a>,</p>
+</li>
+<li>
+<p>PRs reviewed (semi-trivial):
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/36">#36</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/52">#52</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/53">#53</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/59">#59</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/137">#137</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/152">#152</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/155">#155</a>,
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/160">#160</a></p>
+</li>
+<li>
+<p>Clarified and shared tips when module first started.
+(<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/8">#8</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/5">#5</a>)</p>
+</li>
+<li>
+<p>Actively answered questions and responded to help requests on the forums.
+(<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/11">#11</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/12">#12</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/15">#15</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/23">#23</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/28">#28</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/31">#31</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/34">#34</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/37">#37</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/38">#38</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/40">#40</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/55">#55</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/61">#61</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/64">#64</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/74">#74</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/118">#118</a>)</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples:
+<a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3/pull/37#pullrequestreview-369246753">1</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3/pull/21#pullrequestreview-381647317">2</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated and managed the following GitHub plugins:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Travis CI - to ensure that our product builds on UNIX platforms:
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/commit/efdb85f4f3c821d9f751382ef1bb0312f215ce38">efdb85f</a></p>
+</li>
+<li>
+<p>AppVeyor - to ensure that our product builds on Windows platforms:
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/commit/3b5300a57fa00dadb1c8475d2f7cf8fad71f8d80">3b5300a</a></p>
+</li>
+<li>
+<p>Coveralls - to track the coverage of our code:
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/commit/9846966ae2981d003d0515ea5dd648a22a8a7ccd">9846966</a></p>
+</li>
+<li>
+<p>Codacy - to track the code quality of our project:
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/commit/da9c64098ad2637349b28ee941179a1f9e7e2137">da9c640</a></p>
+</li>
+<li>
+<p>Netlify - to deploy a preview of our documentation for PRs</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Integrated a third party library (GSON) to the project (<a href="https://github.com/AY1920S2-CS2103-T09-1/main/pull/54">#54</a>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Tutorial"><a class="link" href="#Tutorial">Tutorial</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Isn&#8217;t the empty application just ugly?
+Let us get your modules into the app in just a matter of minutes!</p>
+</div>
+<div class="sect2">
+<h3 id="multistep-commands"><a class="link" href="#multistep-commands">Multistep Commands</a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Wait&#8230;&#8203; Multistep?</strong></p>
+</div>
+<div class="paragraph">
+<p>We understand that many may be used to instant, one-step commands when using CLI apps.
+Here at Modulo, we strongly believe in smooth and seamless user experiences.<br></p>
+</div>
+<div class="paragraph">
+<p>Why type the same thing twice when you can do it once, or even never?
+Modulo builds onto what you&#8217;ve already entered, to reduce the amount of typing required, and make everything easier for you!</p>
+</div>
+<div class="paragraph">
+<p>And for the testers out there: No, we don&#8217;t believe this reduces testability.
+In fact, it helps you jump right into testing the exciting stuff!</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In Modulo, some commands are multistep commands.
+These commands <strong>require you to go through all the steps</strong> before you can move on to other commands.<br></p>
+</div>
+<div class="paragraph">
+<p>You will know you&#8217;re in the middle of a multistep command when you see the colour of your command box change:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Multistep.png" alt="Multistep" width="790">
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Warning:</strong> Quitting the app in the middle of a multistep command will terminate the command!
+Any undone operations will be lost.<br></p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re interested to help us with improving Modulo, do take a look at our <a href="DeveloperGuide.html">Developer Guide</a>!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="AddingModule"><a class="link" href="#AddingModule">Adding Our First Module</a></h3>
+<div class="paragraph">
+<p>Our first command, <code>module</code>, is a multistep command!
+This command helps you to add a module and all of its related events in one go!<br></p>
+</div>
+<div class="paragraph">
+<p>Let us start with <code>module m/cs2103</code>!
+This add <code>CS2103 - Software Engineering</code> into our list of modules.</p>
+</div>
+<div class="paragraph">
+<p>Now you may see the following prompt:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Multistep.png" alt="Multistep" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Simply type in your slot and press <kbd>Enter</kbd>!
+Modulo is from slot 4, so we&#8217;ll type that in.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll see two changes.
+Firstly, the event is added:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SlotAdded.png" alt="SlotAdded" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Secondly, the command prompt changes:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MultistepLecture.png" alt="MultistepLecture" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Key in your lecture slot as well.
+When you see the below message, you know you&#8217;re done!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AllSlotsAdded.png" alt="AllSlotsAdded" width="500">
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>For users who may be taking <code>CS2103T</code> instead, go ahead and add that instead.
+You&#8217;ll only have your lecture to add, so enter your lecture slot when prompted, e.g. <code>G01</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-events-we-just-added"><a class="link" href="#viewing-the-events-we-just-added">Viewing the Events we just added</a></h3>
+<div class="paragraph">
+<p>Now that we&#8217;ve added our events, it&#8217;s time to start planning!
+Go ahead to switch to the Event list with the following command: <code>list event</code>.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SwitchEventList.png" alt="SwitchEventList" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll see the events that you just added on the left!
+Let us try to view the details for Tutorial 2. We just need to type: <code>view 3</code>, where 3 is the index of Tutorial 2!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ViewEvent.png" alt="ViewEvent" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Now we get to see the details of the event on the right!</p>
+</div>
+<div id="Focused" class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Tutorial 2 is now the <strong>focused</strong> event.
+We call the item that is displayed on the right the <strong>focused</strong> item.
+For example, earlier, CS2103 was the <strong>focused</strong> module.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-our-first-deadline"><a class="link" href="#adding-our-first-deadline">Adding our first Deadline</a></h3>
+<div class="paragraph">
+<p>With Tutorial 2 in focus, we can now add deadlines easily to it.
+Let&#8217;s say we want to practice drawing UML diagrams before the tutorial starts.<br></p>
+</div>
+<div class="paragraph">
+<p>We can create a suitable deadline by typing: <code>deadline n/Practice UML Diagrams</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeadlineAdded.png" alt="DeadlineAdded" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>We have now just added the deadline to Tutorial 2, which is the <a href="#Focused"><strong>focused</strong></a> event!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="completing-our-first-deadline"><a class="link" href="#completing-our-first-deadline">Completing our first Deadline</a></h3>
+<div class="paragraph">
+<p>Hopefully, everyone here is hardworking!
+We&#8217;re now done with creating a deadline.
+How about completing it?<br></p>
+</div>
+<div class="paragraph">
+<p>Let us complete the deadline we&#8217;ve just added by simply typing: <code>done 2</code>, where <code>2</code> is the index of the deadline shown!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeadlineCompleted.png" alt="DeadlineCompleted" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>And we&#8217;re done with the tutorial!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-next"><a class="link" href="#what-next">What next?</a></h3>
+<div class="paragraph">
+<p>Of course, Modulo supports CLI usage, i.e. minimal references to the GUI!
+For that, our commands have variations that do not depend on the <a href="#Focused"><strong>focused</strong></a> item, and commands that reduce the need for scrolling!</p>
+</div>
+<div class="paragraph">
+<p>Want to find out more?
+Head over to <a href="#Features">[Features]</a> now!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-module-code-module-code-multistep"><a class="link" href="#adding-a-module-code-module-code-multistep">Adding a module: <code>module</code> (Multistep)</a></h3>
+<div class="paragraph">
+<p>Adds a module for AY 19/20 Sem 2 to Modulo.<br>
+Format: <code>module m/MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module m/cs2100</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This command will kickstart the autopopulation of module events.
+Refer to <a href="#AddingModule">our tutorial</a> for more information!<br></p>
+</div>
+<div class="paragraph">
+<p>You will be prompted to enter the slot numbers for all events under this module, e.g. tutorial slot 2, lecture slot 1, lab slot 13, etc.</p>
+</div>
+<div class="paragraph">
+<p>Example of prompts by Modulo:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Enter slot for CS2100 Lab:</code></p>
+</li>
+<li>
+<p><code>Enter slot for LAJ1201 Tutorial Type Two:</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SamplePrompt1.png" alt="SamplePrompt1" width="500">
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Known Issue:</strong> There are limitations with module data obtained from NUS. For example, based on official records, some tutorials will start from Week 1, despite actually only starting in Week 3.</p>
+</li>
+<li>
+<p>If you quit Modulo in the middle of this process, your autopopulation will be incomplete!
+You may have to restart the process by deleting the module and re-adding it.
+Do see the section on <a href="#Delete">deleting a module</a> below.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-event-code-event-code"><a class="link" href="#adding-an-event-code-event-code">Adding an event: <code>event</code></a></h3>
+<div class="paragraph">
+<p>Adds a custom event to a module.
+This is perhaps the lengthiest command in Modulo.
+Events refer to Tutorials, Lectures, Examinations, etc.<br></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> You&#8217;re only able to add by slot when going through the multistep <code>module</code> command!
+The <code>event</code> command requires manual entry.</p>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SampleEvents.png" alt="SampleEvents" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>event m/MODULE_CODE n/EVENT_NAME s/START_DATETIME e/END_DATE v/VENUE [r/REPEAT] [f/FREQUENCY]
+[until/REPEAT_STOP_DATE]</code></p>
+</div>
+<div class="paragraph">
+<p>Limitations:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot add events of the same name under a single module.</p>
+</li>
+<li>
+<p>The datetime format recognised is YYYY-MM-DD HH:MM.</p>
+</li>
+<li>
+<p>The date format is YYYY-MM-DD.</p>
+</li>
+<li>
+<p>The start and end times of the event must be within AY 19/20 Sem 2, and the end time must be after the start time.</p>
+</li>
+<li>
+<p>Your event cannot be longer than a day.</p>
+</li>
+<li>
+<p>By default, the event will not repeat.</p>
+</li>
+<li>
+<p>The default repeat frequency (in weeks) is 1 week.</p>
+</li>
+<li>
+<p>If no repeat end datetime is specified, the event will repeat until the end of the semester (Week 16).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>event m/CS2103 n/Make Up Tutorial s/2020-01-30 10:00 e/2020-01-30 11:00 v/COM1-B103 r/YES until/2020-05-08</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>All events with types that are recognised come with a default <code>deadline</code> created.<br></p>
+</div>
+<div class="paragraph">
+<p>You can view the full list of event types <a href="#EventTypes">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="pro-tip-gui-dependent"><a class="link" href="#pro-tip-gui-dependent">Pro-tip (GUI-dependent)</a></h4>
+<div class="paragraph">
+<p>If you&#8217;re already viewing a module (i.e. <a href="#Focused">focused</a> on a module), you can actually drop the <code>m/MODULE_CODE</code>!</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="AddingDeadline"><a class="link" href="#AddingDeadline">Adding a deadline: <code>deadline</code></a></h3>
+<div class="paragraph">
+<p>Adds a deadline to an event.
+This deadline will be due when the event starts.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SampleDeadline.png" alt="SampleDeadline" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>deadline m/MODULE_CODE e/EVENT_NAME n/DEADLINE_NAME [r/REPEAT]</code></p>
+</div>
+<div class="paragraph">
+<p>Limitations:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deadlines are due when the event starts!</p>
+</li>
+<li>
+<p>Repeat refers to the creation of the same deadline for events of the same type, occuring <strong>after</strong> the specified event.</p>
+</li>
+<li>
+<p>By default, the deadline will not repeat.</p>
+</li>
+<li>
+<p>The deadline repeat function only works for events of recognised types, e.g. <code>Tutorial</code>, <code>Lecture</code> etc.
+This is to prevent the creation of irrelevant deadlines for unrecognised types of events.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="pro-tip-gui-dependent-2"><a class="link" href="#pro-tip-gui-dependent-2">Pro-tip (GUI-dependent)</a></h4>
+<div class="paragraph">
+<p>If you&#8217;re already viewing an event (i.e. <a href="#Focused">focused</a> on an event), you can actually drop the <code>m/MODULE_CODE</code>
+AND the <code>e/EVENT_NAME</code>!</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-data-code-clear-code"><a class="link" href="#clearing-all-data-code-clear-code">Clearing all data: <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Clears all data from Modulo and starts the app from a clean slate.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> This command cannot be undone! So do use it wisely.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>clear</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ui"><a class="link" href="#ui">UI</a></h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Although this app is designed with a fast CLI user in mind, there are UI features that can help to enhance a user&#8217;s experience.
+This may be of use should one&#8217;s fingers get tired.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-bar-buttons"><a class="link" href="#menu-bar-buttons">Menu Bar Buttons</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MenuButtons.png" alt="MenuButtons" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>These buttons perform the equivalent of <code>list modules</code> and <code>list events</code> respectively.
+Just click them!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-and-event-list"><a class="link" href="#module-and-event-list">Module and Event List</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleList.png" alt="ModuleList" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on any of these list items to view them on the right panel.
+They perform the equivalent of <code>view INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>Modules are separated accordingly into their academic years and semesters, and events are separated based on their dates.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> There is unfortunately an unfixed bug with how the focus of the UI is handled.
+After performing an action such as typing into the Command Box or clicking the Menu Buttons, you may need to double click the list item for it to show.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-details"><a class="link" href="#module-details">Module Details</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleDetails.png" alt="ModuleDetails" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>The right panel displays the details of the module.
+Only official events added using slots will be listed here.</p>
+</div>
+<div class="paragraph">
+<p>You can click "Click to view description" to open the <a href="#DescriptionWindow">Description Window</a>.</p>
+</div>
+<div class="paragraph">
+<p>Clicking any of the events listed below will also bring you to the first event of that type and slot.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="description-window"><a class="link" href="#description-window">Description Window</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DescriptionWindow.png" alt="DescriptionWindow" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>This window displays the description of the module.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Known Issue:</strong> This is currently the only feature that is only accessible via the UI. This will be updated in subsequent releases.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event-details"><a class="link" href="#event-details">Event Details</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EventDetails.png" alt="EventDetails" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>The right panel displays the details of the event.
+You can check any of the deadlines to mark them as complete or incomplete, performing the equivalent of <code>done INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>The second tag / label indicates whether all deadlines have been completed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status-bar-footer"><a class="link" href="#status-bar-footer">Status Bar Footer</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatusBarFooter.png" alt="StatusBarFooter" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>This status bar displays where your data is being saved at.
+You can head over to that folder to find the <code>.json</code> file for your usage.</p>
+</div>
+<div class="paragraph">
+<p>Your exported <code>modulo.ics</code> will also be found in the same directory, unless otherwise specified when exporting.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendix"><a class="link" href="#appendix">Appendix</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="EventTypes"><a class="link" href="#EventTypes">Official Event Types</a></h3>
+<div class="paragraph">
+<p>Recognised official event types are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tutorial</p>
+</li>
+<li>
+<p>Lecture</p>
+</li>
+<li>
+<p>Sectional</p>
+</li>
+<li>
+<p>Seminar</p>
+</li>
+<li>
+<p>Recitation</p>
+</li>
+<li>
+<p>Laboratory</p>
+</li>
+<li>
+<p>Workshop</p>
+</li>
+<li>
+<p>Packaged Tutorial</p>
+</li>
+<li>
+<p>Packaged Lecture</p>
+</li>
+<li>
+<p>Tutorial Type Two</p>
+</li>
+<li>
+<p>Design Lecture</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 1. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/modulo/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores Modulo data.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Module&gt;</code> and <code>ObservableList&lt;Event&gt;</code> that can be 'observed' e.g. the UI can be bound to these lists so that the UI automatically updates when the data in the lists change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of now, there are two separate <code>ObservableList</code> being maintained, and with each individual module keeping its own list of events as well.
+In the future, to better enable the concept of a single source of truth, we can discard the use of a
+<code>ObservableList&lt;Event&gt;</code> and expose solely the unmodifiable <code>ObservableList&lt;Module&gt;</code>, and have events accessed through its parent module.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram" width="500"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Alternatively, we can remove the list of events under each module and instead just maintain the two separate
+<code>UniqueModuleList</code> and <code>UniqueEventList</code>.
+This may, however, make it costly to render the module list, since we now need to search through the entire list of events to find relevant ones.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="StatefulLogic"><a class="link" href="#StatefulLogic">Stateful Logic Feature</a></h3>
+<div class="paragraph">
+<p>Multistep commands are facilitated by <code>StatefulLogic</code>.
+It is an interface with three methods exposed, and currently only has one class implementing it,
+<code>AddModuleStatefulLogicManager</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatefulLogicClassDiagram.png" alt="StatefulLogicClassDiagram" width="750">
+</div>
+<div class="title">Figure 2. Structure of the Stateful Logic Component</div>
+</div>
+<div class="paragraph">
+<p>Let us understand how <code>StatefulLogic</code> works.</p>
+</div>
+<div class="sect3">
+<h4 id="how-code-statefullogic-code-works"><a class="link" href="#how-code-statefullogic-code-works">How <code>StatefulLogic</code> works</a></h4>
+<div class="paragraph">
+<p>As long as a <code>StatefulLogicManager</code>, which is a class that implements <code>StatefulLogic</code>, has state, it will take over the <code>LogicManager</code> in executing the given <code>String</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddModuleHasStateSequenceDiagram.png" alt="AddModuleHasStateSequenceDiagram" width="750">
+</div>
+<div class="title">Figure 3. The current implementation</div>
+</div>
+<div class="paragraph">
+<p>Should there be more <code>StatefulLogicManager</code> instances in play, we will see something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MultipleHasStateSequenceDiagram.png" alt="MultipleHasStateSequenceDiagram" width="750">
+</div>
+<div class="title">Figure 4. If more Stateful Logic Managers are added</div>
+</div>
+<div class="paragraph">
+<p>At any point of time, only one <code>StatefulLogicManager</code> will have state.
+The <code>LogicManager</code> will thus check through them one by one, and will only directly parse the command itself should no <code>StatefulLogicManager</code> have state.
+We can think of these <code>StatefulLogicManager</code> as "consumers" that consume the input if it has state.</p>
+</div>
+<div class="paragraph">
+<p>The abstraction of how these <code>StatefulLogicManager</code> execute the given <code>String</code> helps to maintain the <strong>Single Responsibility Principle</strong>.
+The interaction between the <code>LogicManager</code> and <code>StatefulLogicManager</code> is also facilitated through the interface,
+<code>StatefulLogic</code>, which upholds the <strong>Dependency Inversion Principle</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-state-is-loaded-and-maintained"><a class="link" href="#how-state-is-loaded-and-maintained">How state is loaded and maintained</a></h4>
+<div class="paragraph">
+<p>State is loaded into <code>StatefulLogicManager</code> using special <code>CommandResult</code> subclasses.
+In the instance of the
+<code>AddModuleStatefulLogicManager</code>, its state is loaded by passing a <code>AddModuleCommandResult</code> into its
+<code>loadStateFromCommandResult</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Let us take a look at the full process, using <code>AddModuleCommand</code> as an example:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddModuleOverviewSequenceDiagram.png" alt="AddModuleOverviewSequenceDiagram">
+</div>
+<div class="title">Figure 5. Executing the <code>module m/CS2103</code> command</div>
+</div>
+<div class="paragraph">
+<p>There is no difference for the first part from a regular <code>Command</code> execution.
+The differences lie in the state preparation and state loading.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatePreparationSequenceDiagram.png" alt="StatePreparationSequenceDiagram" width="750">
+</div>
+<div class="title">Figure 6. State Preparation for <code>AddModuleCommandResult</code></div>
+</div>
+<div class="paragraph">
+<p>The state is prepared during the initialising command, and that command will pack that state into a special subclass of <code>CommandResult</code>.
+This <code>CommandResult</code> is then passed back to the default <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>State loading is then done, if suitable.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StateLoadingSequenceDiagram.png" alt="StateLoadingSequenceDiagram" width="750">
+</div>
+<div class="title">Figure 7. State Loading for <code>AddModuleStatefulLogicManager</code></div>
+</div>
+<div class="paragraph">
+<p>The <code>eventList</code> is passed on to the <code>AddModuleStatefulLogicManager</code> to be used as state.
+As long as the list is not empty, it is considered to have state.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-statefullogic-code-should-be-positioned-with-respect-to-code-logic-code"><a class="link" href="#aspect-how-code-statefullogic-code-should-be-positioned-with-respect-to-code-logic-code">Aspect: How <code>StatefulLogic</code> should be positioned with respect to <code>Logic</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Have <code>StatefulLogic</code> exist as a sub-logic-circuit within <code>Logic</code> that activates when conditions are met.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reduce repeated code (<strong>DRY</strong>) and adheres to the <strong>Open Closed Principle</strong>, since the use of a simple interface makes it easy to create future <code>StatefulLogic</code> classes and integrate them.</p>
+</li>
+<li>
+<p>Cons: <code>Logic</code> now has to take care of checking for state prior to execution of command, as well as follow up on special subclasses of <code>CommandResult</code>, thus violating the Single Responsibility Principle.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have <code>StatefulLogic</code> extend <code>Logic</code> and have a separate <code>LogicDispatcher</code> class that decides which <code>Logic</code> to dispatch the command to.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Seems to follow the Single Responsibility Principle better.</p>
+</li>
+<li>
+<p>Cons: A lot of repeated code, and to some extent, this may be an adaptation of the current implementation, where the
+<code>Logic</code> class acts as the <code>LogicDispatcher</code>.
+Furthermore, it may not be correct to say that <code>Logic</code> and <code>StatefulLogic</code> are similar.
+<code>StatefulLogic</code> does operate quite differently from <code>Logic</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Future Extension:</strong> It may be worth looking into this and find a better way to handle this logic without breaking the existing Command Pattern.
+There may be more similarities that can be abstracted out and maximised using OOP.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-multistep-commands-should-be-implemented-and-achieved"><a class="link" href="#aspect-how-multistep-commands-should-be-implemented-and-achieved">Aspect: How multistep commands should be implemented and achieved</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>StatefulLogic</code> to keep relevant states and logic together.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Uses OOP to reduce complexity.
+Adheres to the <strong>Open Closed Principle</strong>, since each class can just implement
+<code>StatefulLogic</code>, and the exact management of its state is open.</p>
+</li>
+<li>
+<p>Cons: <code>Logic</code> now needs to handle the pre and post-command logic.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Maintain a global state that <code>Logic</code> listens to when executing commands.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All commands can push state to this global state without having to go through <code>Logic</code>, reducing the pre and post-command handling.</p>
+</li>
+<li>
+<p>Cons: The implementation of this global state will be highly complex, since the logic required for different states is different as well. <code>Logic</code> would be overwhelmed.
+If a new type of state is required, the changes required will be heavy as well, thus violating the Open Closed Principle.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-edit-feature"><a class="link" href="#proposed-edit-feature">[Proposed] Edit Feature</a></h3>
+<div class="paragraph">
+<p>Currently, Modulo does not allow for the editing of the details of events and deadlines that have been created.</p>
+</div>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>The Edit functionality will be achieved through the introduction of an <code>EditCommand</code> and its parser <code>EditCommandParser</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram" width="650">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>edit</code> command will have the following format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Editing events:
+<code>edit n/EVENT_NAME m/MODULE_CODE [nn/NEW_NAME] [s/NEW_START_DATETIME] [e/NEW_END_DATETIME] [v/NEW_VENUE]</code></p>
+</li>
+<li>
+<p>Editing deadlines:
+<code>edit d/INDEX m/MODULE_CODE e/EVENT_NAME nn/NEW_NAME</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The flow of the command parsing will be as such:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditCommandActivityDiagram.png" alt="EditCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>If an <code>EditCommand</code> is successfully created, it will be executed on the <code>Model</code>.
+It will work mainly through the
+<code>setEvent</code> method already exposed in the <code>Model</code> interface, as well as a <code>setDeadline</code> that will be exposed through the parent event.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of how it may look like if the <code>EditCommand</code> was to modify an event&#8217;s venue.</p>
+</div>
+<div class="paragraph">
+<p>User input: <code>edit n/Tutorial 1 m/CS2103 v/Home</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditCommandSequenceDiagram.png" alt="EditCommandSequenceDiagram" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="limitations"><a class="link" href="#limitations">Limitations</a></h4>
+<div class="paragraph">
+<p>Due to the fact that repeated events are not currently being tagged or grouped in any way, it is difficult to allow mass editing of repeated events.</p>
+</div>
+<div class="paragraph">
+<p>If there&#8217;s a need to edit a repeated event, there would be a need to edit the events one by one.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-easily-modify-deadlines"><a class="link" href="#aspect-how-to-easily-modify-deadlines">Aspect: How to easily modify deadlines</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Manually fetch the deadline from the event and replace.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have slight performance issues in terms of speed, and a lot of coding to be done.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Consolidate the deadlines in a UniqueDeadlineList.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code to write <strong>for this feature</strong> specifically, in terms of the <code>setDeadline</code> method.</p>
+</li>
+<li>
+<p>Cons: Increases complexity of the application, since now three lists are maintained.
+There is also the same issue with events and modules in terms of the source of truth.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc01-add-a-a-href-deadline-deadline-a" class="discrete">Use case: UC01 - Add a <a href="#deadline">deadline</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Module data file is loaded properly.<br>
+Guarantees: Deadline is added under the correct <a href="#module">module</a> and <a href="#event">event</a>, with the correct details.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <a href="#UseCaseTwo">adds a module (UC02)</a>.</p>
+</li>
+<li>
+<p>User adds a deadline to the correct <a href="#module">module</a> and <a href="#event">event</a>, with all the required details.</p>
+</li>
+<li>
+<p>Modulo shows the newly created deadline.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a.
+User enters incorrect information.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Modulo shows user the correct format for the deadline creation.</p>
+</li>
+<li>
+<p>2a2. User enters new information following the correct format.</p>
+<div class="paragraph">
+<p>Use case resumes from step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="UseCaseTwo" class="discrete">Use case: UC02 - Add a module</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Module data files are loaded properly.<br>
+Guarantees: Module is added to the user&#8217;s Modulo.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters a module code, e.g. CS2103.</p>
+</li>
+<li>
+<p>Modulo searches its data files for the module and creates the module using information from the data files.</p>
+</li>
+<li>
+<p>Modulo prompts user to enter the slot for an event type.</p>
+</li>
+<li>
+<p>User enters their slot for the event type.<br>
+Steps 3-4 are repeated for as many times as required until the User has entered slots for all event types of the module.</p>
+</li>
+<li>
+<p>Modulo shows the newly created module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters incorrect data and the wrong module is found.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Steps 2 to 4 are performed.</p>
+</li>
+<li>
+<p>1a2. User <a href="#UseCaseThree">deletes the added module (UC03)</a> and its events.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b.
+User enters invalid data and no modules are found.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Modulo informs User that no modules with the given information can be found.</p>
+</li>
+<li>
+<p>1b2. Step 1 repeated until User enters a correct module code.</p>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+User added a module with no events.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case resumes from step 5.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b.
+User exited Modulo before adding all events.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Modulo saves all events that were already added.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a.
+User enters an invalid slot.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. Modulo cancels the request by the User.</p>
+</li>
+<li>
+<p>4a2. Modulo informs the User of the cancellation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix A: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with no data. The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Shutting down</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Launch the help window by typing <code>help</code>.</p>
+</li>
+<li>
+<p>Quit the app by typing <code>exit</code>.<br>
+Expected: Both the main window and the help window should close.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding CS2103</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 not already added. If added, delete it.</p>
+</li>
+<li>
+<p>Test case: <code>module m/cs2103</code><br>
+Expected: CS2103 to appear in the list of modules, and app to prompt for further input.</p>
+</li>
+<li>
+<p>If prompt is for tutorial, test case: <code>3</code><br>
+Expected: Tutorial slot 3 should be added.</p>
+</li>
+<li>
+<p>If prompt is for lecture, test case: <code>1</code><br>
+Expected: Lecture slot 1 should be added.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-event"><a class="link" href="#adding-an-event">Adding an event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding Exam to CS2103</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 already added. No event named Exam has been added to CS2103 yet.</p>
+</li>
+<li>
+<p>Test case: <code>event n/Exam m/CS2103 s/2020-01-15 09:00 e/2020-01-15 10:00 v/Home</code><br>
+Expected: Event named Exam should appear in the list of events.
+To check, enter <code>list events</code>.
+It should be near the top of the list.
+The details should be as entered.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding recurring events to CS2103</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 already added. No recurring event named Self Study has been added to CS2103 yet.</p>
+</li>
+<li>
+<p>Test case: <code>event n/Self Study m/CS2103 s/2020-01-20 09:00 e/2020-01-20 10:00 v/Home r/YES until/2020-02-20</code><br>
+Expected: Events named Self Study 1, Self Study 2, until Self Study 5 should appear, with a frequency of 1 week, and stopping before 2020-02-20.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-deadline"><a class="link" href="#adding-a-deadline">Adding a deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a deadline to CS2103 Exam</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 added. Event named Exam added. No deadline named "Study hard for exam" has been added to
+the event yet.</p>
+</li>
+<li>
+<p>Test case: <code>deadline n/Study hard for exam m/CS2103 e/Exam</code><br>
+Expected: Deadline added to Exam.
+To check, first make sure you&#8217;re listing events with <code>list events</code>, then enter
+<code>view INDEX</code>, where <code>INDEX</code> is the index of the event on the list.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="completing-a-deadline"><a class="link" href="#completing-a-deadline">Completing a deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Complete Study hard for exam.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 added. Event named Exam added. Deadline named Study hard for exam added, and is not completed.</p>
+</li>
+<li>
+<p>Test case: <code>done 2 m/CS2103 e/Exam</code><br>
+Expected: Deadline named Study hard for exam is completed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switching-lists"><a class="link" href="#switching-lists">Switching lists</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List events</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list events</code><br>
+Expected: If not already listing events, events will now be listed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>List modules</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list modules</code><br>
+Expected: If not already listing modules, modules will not be listed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-event-or-module"><a class="link" href="#view-event-or-module">View event or module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View module</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all modules using the <code>list modules</code> command. At least one module.</p>
+</li>
+<li>
+<p>Test case: <code>view 1</code><br>
+Expected: Details of the first module should show on the right panel.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>View event</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all events using the <code>list events</code> command. At least one event.</p>
+</li>
+<li>
+<p>Test case: <code>view 1</code><br>
+Expected: Details of the first event should show on the right panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-event-or-module"><a class="link" href="#find-event-or-module">Find event or module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find event(s) with Self Study in their names</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all events using the <code>list events</code> command. Has event(s) named Self Study.</p>
+</li>
+<li>
+<p>Test case: <code>find self study</code><br>
+Expected: All events with Self Study in their names would appear.
+You can operate on this filtered list.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Find Software Engineering</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all modules using the <code>list modules</code> command. CS2103 added.</p>
+</li>
+<li>
+<p>Test case: <code>find software engineering</code><br>
+Expected: CS2103 should show, along with any other modules that may have Software Engineering in their names.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">Deleting a module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a module using index while all modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all modules using the <code>list modules</code> command. Multiple modules in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First module is deleted from the list.
+All events of that module are deleted.
+Details of the deleted module shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No module is deleted.
+No events deleted.
+Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a module using search terms while all modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all modules using the <code>list modules</code> command. CS2103 in the list. Other CS modules in the
+list.</p>
+</li>
+<li>
+<p>Test case: <code>delete CS2103</code><br>
+Expected: CS2103 is deleted from the list.
+Details of the deleted module shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete cs</code><br>
+Expected: All CS modules are deleted.
+Number of deleted modules shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete cs2999</code><br>
+Expected: No module is deleted.
+Information shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete x</code> (where x is a term that does not exist in the list).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-an-event"><a class="link" href="#deleting-an-event">Deleting an event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting an event using index while all events are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all events using the <code>list events</code> command. Multiple events in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First event is deleted from the list.
+Details of the deleted event shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No event is deleted.
+Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting an event using search terms while all events are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all events using the <code>list events</code> command. At least one Tutorial 1 in the list.
+Other Tutorials in the list as well.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tutorial 1</code><br>
+Expected: All events with Tutorial 1 in their names are deleted from the list.
+Number of deleted events shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tutorial</code><br>
+Expected: All Tutorials are deleted.
+Number of deleted events shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tvtor!al</code><br>
+Expected: No event is deleted.
+Information shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete x</code> (where x is a term that does not exist in the list).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-deadline"><a class="link" href="#deleting-a-deadline">Deleting a deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a deadline using index while an event is focused</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all events using the <code>list events</code> command. Events in the list. View first event with
+<code>view 1</code>.
+First event has a deadline.</p>
+</li>
+<li>
+<p>Test case: <code>delete d/1</code><br>
+Expected: First deadline is deleted from the list.
+Details of the deleted deadline shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No deadline is deleted.
+Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-data-as-code-ics-code-file"><a class="link" href="#exporting-data-as-code-ics-code-file">Exporting data as <code>.ics</code> file</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Export data</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>export</code><br>
+Expected: A <code>modulo.ics</code> file should be created in the same <code>./data/</code> folder.
+You can use this <code>.ics</code> file to add your events and deadlines into your calendar.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help"><a class="link" href="#viewing-help">Viewing help</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View help</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>help</code><br>
+Expected: Help window appears.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-modulo"><a class="link" href="#clearing-modulo">Clearing Modulo</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear all existing data in Modulo</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Some data has been added to Modulo.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: All data cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with missing/corrupted data files</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Corrupt the current save file under <code>./data/</code>. The easiest way is to type <code>-</code> somewhere in one of the saved
+modules' academic year.
+Another way may be to add random characters that make the JSON format unreadable.</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with no data.</p>
+</li>
+<li>
+<p>Delete the current save file under <code>./data/</code>.</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with no data.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:21:33 UTC</div></div></div></body></html>
