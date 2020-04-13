@@ -1,0 +1,682 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Low Chen Yi, Sean - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Modulo</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103-T09-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Low Chen Yi, Sean - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-modulo"><a class="link" href="#project-modulo">PROJECT: Modulo</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="600">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Modulo is for NUS students who prefer to use a desktop app for managing their school work on a modular level. It helps you to break down your modules into deadlines and track their progress.</p>
+</div>
+<div class="paragraph">
+<p>Currently Modulo is made for NUS students taking modules this Academic Year AY2019/2020 Semester 2! More importantly,
+Modulo is optimized for those who prefer to work with a Command Line Interface (CLI) while still having
+the benefits of a Graphical User Interface (GUI). If you can type fast, Modulo can get your module management tasks done faster than traditional GUI apps.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Implemented <strong>Deletion function to delete modules, events and deadlines</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to delete modules, events or deadlines</p>
+</li>
+<li>
+<p>Justification: This feature is important as it is an essential function should the user want to delete Modules, Events or Deadlines from Modulo.</p>
+</li>
+<li>
+<p>Highlights: This feature also allows for deletion of multiple Modules and Events at a time. For example while on the Module view,
+<code>delete CS</code> will delete all modules containing <code>CS</code>. This provides an added convenience for the user should the user want to delete
+some events / modules containing certain keywords. Modulo will also return the appropriate feedback should the user
+enter invalid inputs or use the command inappropriately.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Initial logic implementation to <strong>switch between left panel views</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Refreshes the list view every time the user switches between module and event views.</p>
+</li>
+<li>
+<p>Justification: This feature was important as our team wanted to ensure that users were able to switch between list views in Modulo.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Implemented <strong>FindCommand</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to find modules or events using certain keywords.</p>
+</li>
+<li>
+<p>Justification: This feature is important as it is an essential function should the user want to find modules or events by certain keywords.</p>
+</li>
+<li>
+<p>Highlights: This FindCommand allows additional filtering (not only once). For example if the user wants to search for <code>tutorial 1</code> from the module
+<code>CS2103</code>, the user can first enter <code>find CS2103</code> and then <code>find tutorial 1</code>. Modulo will also return the appropriate feedback should the user
+enter invalid inputs or use the command inappropriately.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Implemented <strong>ListCommand</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to list modules or events on the left panel of Modulo.</p>
+</li>
+<li>
+<p>Justification: This feature is important as it allows the user to switch between the module and event view.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Created <strong>Module and Event Cards</strong> to display the details of events and modules</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: provides details of modules and events.</p>
+</li>
+<li>
+<p>Justification: This feature is important as it allows the user to see details of modules and events in the list</p>
+</li>
+<li>
+<p>Credit: Modified the Module and Event Cards with help from the original implementation of PersonCard from AddressBook3.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=seanlowcy77&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=seanlowcy77&amp;tabRepo=AY1920S2-CS2103-T09-1%2Fmain%5Bmaster%5D">tP Code Dashboard</a>]</p>
+</li>
+<li>
+<p><strong>Functional Code contributed</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Model</strong>: [<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/model/ModelManager.java">Model Manager</a>]</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>getFilteredDisplayableList()</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>View</strong>: [<a href="https://github.com/AY1920S2-CS2103-T09-1/main/resources/view/ModuleListCard.fxml">Module List Card</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/resources/view/EventListCard.fxml">Event List Card</a>]</p>
+</li>
+<li>
+<p><strong>UI</strong>: [<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/ui/ModuleCard.java">Module Card</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/ui/EventCard.java">Event Card</a>]</p>
+</li>
+<li>
+<p><strong>Logic</strong>: [<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/commands/DeleteCommand.java">Delete Command</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/commands/FindCommand.java">Find Command</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/commands/ListCommand.java">List Command</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/commands/ListCommand.java">View Command</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/parser/DeleteCommandParser.java">Delete Command Parser</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/parser/ListCommandParser.java">List Command Parser</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/parser/ViewCommandParser.java">View Command Parser</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/main/java/modulo/logic/predicate/NameContainsKeywordsPredicate.java">View Command Parser</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Test Code Contributed</strong>: [<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/DeleteCommandTest.java">Delete Command Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/AddEventCommandTest.java">Add Event Command Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/AddDeadlineCommandTest.java">Add Deadline Command Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/DeleteCommandParserTest.java">Delete Command Parser Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/AddDeadlineCommandParserTest.java">Add Deadline Command Parser Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/DoneCommandParserTest.java">Done Command Parser Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/predicate/NameContainsKeywordPredicateTest.java">Name Contains Keyword Predicate test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/ListCommandParserTest.java">List Command Parser Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/ExportCommandParserTest.java">Export Command Parser Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/ListCommandTest.java">List Command Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/FindCommandParserTest.java">Find Command Parser Test</a>][<a href="https://github.com/AY1920S2-CS2103-T09-1/main/blob/master/src/test/java/modulo/logic/commands/ViewCommandParserTest.java">View Command Parser Test</a>]</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_Given below are sections I contributed to the User Guide.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="List"><a class="link" href="#List">Listing events or modules on the left: <code>list</code></a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command changes the list being listed on the left, it is largely GUI-dependent.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Shows a list of all events or modules in the left panel of Modulo.
+This helps you to toggle between the two lists.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MenuButtons.png" alt="MenuButtons" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>You can always check which list you&#8217;re viewing by looking at the menu bar above:</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list events</code> OR <code>list modules</code></p>
+</div>
+<div class="paragraph">
+<p>Shorthands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list event</code> / <code>list e</code><br>
+Same behaviour as <code>list events</code> - lists all the events on the left display panel.</p>
+</li>
+<li>
+<p><code>list module</code> / <code>list m</code><br>
+Same behaviour as <code>list modules</code> - lists all the modules on the left display panel.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all events or modules recorded in Modulo.</p>
+</li>
+<li>
+<p>Switching of the lists can also be done by clicking the <code>Modules</code> or <code>Events</code> buttons at the top of the left display panel.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Find"><a class="link" href="#Find">Finding events or modules using keywords: <code>find</code></a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command searches through the list being listed on the left, it is largely GUI-dependent.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Allows the user to search through the current list for items which match any of the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find SEARCH_TERM</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>find tutorial</code> will produce all events that match Tutorial.</p>
+</li>
+<li>
+<p>Names containing part of the searched words will be matched e.g. <code>find tut</code> will match Tutorial 4.</p>
+</li>
+<li>
+<p>Modules will be searched according to their Module Code, Name as well as Academic Year.</p>
+</li>
+<li>
+<p>Events will be searched according to their Module Code and Name.</p>
+</li>
+<li>
+<p>After finding, to get back the whole list again, users can simply enter <code>list events</code> or <code>list modules</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SampleFind.png" alt="SampleFind" width="500">
+</div>
+</div>
+<div class="sect3">
+<h4 id="pro-tip"><a class="link" href="#pro-tip">Pro-tip</a></h4>
+<div class="paragraph">
+<p>The <code>find</code> command allows the user to continually filter their list of searches.
+For example, while viewing the list of events, entering <code>find cs2103</code> and then <code>find tutorial</code> right after will allow the user to view CS2103 tutorials.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Delete"><a class="link" href="#Delete">Deleting a module/event/deadline: <code>delete</code></a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> Given that this command deletes based on the list being listed, it is largely GUI-dependent.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes a module, event, or deadline by its index, a search term, or delete all.</p>
+</div>
+<div class="sect3">
+<h4 id="deleting-modules-and-events"><a class="link" href="#deleting-modules-and-events">Deleting Modules and Events</a></h4>
+<div class="paragraph">
+<p>Format: <code>delete INDEX</code> OR <code>delete SEARCH_TERM</code> OR <code>delete all</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting a module will delete all its associated events.</p>
+</li>
+<li>
+<p>Deleting an event with delete all its associated deadlines.</p>
+</li>
+<li>
+<p>You can delete a module or an event based on its displayed index on the left panel or using a search term.
+You can also delete all modules or events.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>The logic of the search term follows that of the <a href="#Find">find command</a>.</p>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteAll.png" alt="DeleteAll" width="500">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-deadlines"><a class="link" href="#deleting-deadlines">Deleting Deadlines</a></h4>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Note:</strong> You <strong>NEED</strong> to have the event you want <a href="#Focused">focused</a> to do this.
+We will work on removing the need for this in future versions.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete d/INDEX</code> OR <code>delete d/all</code></p>
+</div>
+<div class="paragraph">
+<p>Things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can delete an event&#8217;s deadline using the deadline&#8217;s index.</p>
+</li>
+<li>
+<p>You can also delete all deadlines of that event.</p>
+</li>
+<li>
+<p>This event needs to be currently viewed on the right panel.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_Given below are sections I contributed to the Developer Guide.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 1. Architecture Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App.
+Given below is a quick overview of each component.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="{repoURL}/docs/diagrams/">diagrams</a> folder.
+Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>Main</code> has two classes called <a href="{repoURL}/src/main/java/modulo/Main.java"><code>Main</code></a> and
+<a href="{repoURL}/src/main/java/modulo/MainApp.java"><code>MainApp</code></a>.
+It is responsible for,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+</li>
+<li>
+<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
+The following class plays an important role at the architecture level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the App consists of four components.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of the four components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+</div>
+<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
+<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 4. Structure of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="{repoURL}/src/main/java/modulo/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>ModuloParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding an event).</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+<li>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="strong-statefullogic-strong-interface"><a class="link" href="#strong-statefullogic-strong-interface"><strong>StatefulLogic</strong> Interface:</a></h4>
+<div class="paragraph">
+<p><code>StatefulLogic</code> is implemented by classes that only manages logic while a state exists.
+This state would be loaded from special <code>CommandResult</code> subclasses, and allows this <code>StatefulLogicManager</code> to take priority over the default <code>LogicManager</code>.
+The exact implementation of state is up to the developer.<br></p>
+</div>
+<div class="paragraph">
+<p>Currently, there is only one class that implements it: <code>AddModuleStatefulLogicManager</code>.
+Its state is loaded from a special <code>AddModuleCommandResult</code> created by the <code>AddModuleCommand</code>, i.e. when the user uses the
+<code>module m/MODULE_CODE</code> command.</p>
+</div>
+<div class="paragraph">
+<p>The state is created using a list of the event types (tutorial, lecture, lab etc.) that the added module has.
+Subsequently, while the list is not empty, the <code>AddModuleStatefulLogicManager</code> handles all inputs, thus allowing Modulo to add the relevant events.</p>
+</div>
+<div class="paragraph">
+<p>More details on the implementation can be found <a href="#StatefulLogic">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="strong-writer-strong-component"><a class="link" href="#strong-writer-strong-component"><strong>Writer</strong> Component:</a></h4>
+<div class="paragraph">
+<p>The Writer component is activated when the <code>ExportCommand</code> is executed.
+It then calls the <code>writeIcsFile()</code> function from the <code>IcsWriter</code> class which retrieves the current list of events from the <code>Model</code> component which, along with its deadlines, are converted into <code>IcsEvent</code> and <code>IcsDeadline</code> objects, which are then written into the ICS file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sample-interactions"><a class="link" href="#sample-interactions">Sample Interactions</a></h4>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-event-deadline-deletion-feature"><a class="link" href="#module-event-deadline-deletion-feature">Module / Event / Deadline Deletion Feature</a></h3>
+<div class="paragraph">
+<p>This Deletion feature allows the user to delete modules, events or deadlines.
+The user input is first retrieved by the <code>MainWindow</code> class which is then passed to the <code>LogicManager</code> via the <code>execute</code>
+function.
+<code>LogicManager</code> will call the <code>parseCommand</code> function of ModuloParser`, which will parse the input to create a temporary <code>DeleteCommandParser</code> object,
+ parsing the input and returning a <code>DeleteCommand</code>.
+The command will then be executed in the <code>LogicManager</code>, returning a <code>CommandResult</code> object which will then be returned as
+feedback to the user.</p>
+</div>
+<div class="paragraph">
+<p>Given below is a sequence diagram to show how the <code>delete</code> feature parsing an input of '1' behaves at each step:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Given below is an activity diagram to show how the <code>delete</code> operation works.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteActivityDiagram.png" alt="DeleteActivityDiagram">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-delete-code-may-be-executed"><a class="link" href="#aspect-how-code-delete-code-may-be-executed">Aspect: How <code>delete</code> may be executed</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> User can delete multiple items using the command at the same time.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows the user more flexibility in deleting modules and events instead of just deleting them one
+by one. For example users can choose to delete one, many or even all modules and events, depending on
+their command input.</p>
+</li>
+<li>
+<p>Cons: This has caused the code to become more complex in dealing with the many possible inputs
+and scenarios, leading to a higher amount of potential errors.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+With respect to deadlines, users can only delete one or all deadlines of a particular event. This
+is to avoid any confusion and unnecessary complexity which may be caused by deleting deadlines across
+all events, especially since the user may only observe deadlines of one event at any one time and do
+not have access to the overall list of deadlines.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 2 :</strong> User can <code>delete</code> only one or all items.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reduces the lack of potential errors due to the decreased complexity of the code.</p>
+</li>
+<li>
+<p>Cons: It is less intuitive for the user as users are now limited by deleting one or all the events /
+modules / deadlines.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Future Extension:</strong> Modulo can have another UI panel to display every deadline that needs to be done a certain week.
+The user can then use the <code>delete</code> command to delete multiple deadlines at one go, making it more convenient
+for the user.</p>
+</li>
+</ul>
+</div>
+<h3 id="UseCaseThree" class="discrete">Use case: UC03 - Delete a module / event / deadline</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters <code>delete</code> followed by an input or <code>delete d/</code> followed by an input for deadlines.</p>
+</li>
+<li>
+<p>Modulo parses the input.</p>
+</li>
+<li>
+<p>The input is parsed and the relevant item is deleted.</p>
+</li>
+<li>
+<p>Modulo displays the item or items that have been deleted.
+Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters an invalid input.</p>
+</li>
+<li>
+<p>1b.
+Step 2 takes place.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Modulo informs the user that the item the user wants to delete does not exist.</p>
+</li>
+<li>
+<p>1b2. User enters a new item to deleteadd</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:04:35 UTC</div></div></div></body></html>
