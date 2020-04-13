@@ -1309,8 +1309,20 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view my events for the week</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my events by week</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">never miss any event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the deadlines of my events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can know the deadlines I have</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view class slots (e.g. tutorial) of my events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remember which class slot I signed up for</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1341,6 +1353,24 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add events to modules easily</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">get started on deadline planning earlier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete modules / events / deadlines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if I finished doing them or made an error while adding them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete all modules / events / deadlines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if I want to save time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find modules / events according to keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find modules / events are relevant to me</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -1533,12 +1563,47 @@ User enters an invalid slot.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters delete function followed by an input</p>
+<p>User enters <code>delete</code> followed by an input or <code>delete d/</code> followed by an input for deadlines.</p>
 </li>
 <li>
-<p>The input is valid and the ModuloParser class parses the input</p>
+<p>Modulo parses the input.</p>
+</li>
+<li>
+<p>The input is parsed and the relevant item is deleted.</p>
+</li>
+<li>
+<p>Modulo displays the item or items that have been deleted.
+Use case ends.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters an invalid input.</p>
+</li>
+<li>
+<p>1b.
+Step 2 takes place.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Modulo informs the user that the item the user wants to delete does not exist.</p>
+</li>
+<li>
+<p>1b2. User enters a new item to deleteadd</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
 </div>
 <h3 id="UseCaseFour" class="discrete">Use case: UC04 - Set Done to Deadline if user viewing a event</h3>
 <div class="paragraph">
@@ -2486,4 +2551,4 @@ Expected: Shows the GUI with no data.</p>
 <div class="sectionbody">
 
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:53:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:00:27 UTC</div></div></div></body></html>
