@@ -60,7 +60,15 @@
 <li><a href="#saving-data">G.15. Saving data</a></li>
 </ul>
 </li>
-<li><a href="#effort">Appendix H: Effort</a></li>
+<li><a href="#effort">Appendix H: Effort</a>
+<ul class="sectlevel2">
+<li><a href="#model">H.1. Model</a></li>
+<li><a href="#logic">H.2. Logic</a></li>
+<li><a href="#storage">H.3. Storage</a></li>
+<li><a href="#ui">H.4. Ui</a></li>
+<li><a href="#overall">H.5. Overall</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1410,9 +1418,6 @@ Guarantees: Deadline is added under the correct <a href="#module">module</a> and
 <li>
 <p>2a.
 User enters incorrect information.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1422,6 +1427,9 @@ User enters incorrect information.</p>
 <p>2a2. User enters new information following the correct format.</p>
 <div class="paragraph">
 <p>Use case resumes from step 3.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -1462,9 +1470,6 @@ Steps 3-4 are repeated for as many times as required until the User has entered 
 <li>
 <p>1a.
 User enters incorrect data and the wrong module is found.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1478,14 +1483,14 @@ User enters incorrect data and the wrong module is found.</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1b.
 User enters invalid data and no modules are found.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1499,18 +1504,21 @@ User enters invalid data and no modules are found.</p>
 </li>
 </ul>
 </div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a.
-User added a module with no events.</p>
 </li>
 </ul>
 </div>
 <div class="ulist none">
 <ul class="none">
 <li>
+<p>3a.
+User added a module with no events.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
 <p>Use case resumes from step 5.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1519,9 +1527,6 @@ User added a module with no events.</p>
 <li>
 <p>3b.
 User exited Modulo before adding all events.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1532,14 +1537,14 @@ User exited Modulo before adding all events.</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>4a.
 User enters an invalid slot.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1549,6 +1554,9 @@ User enters an invalid slot.</p>
 <p>4a2. Modulo informs the User of the cancellation.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -1583,9 +1591,6 @@ User enters an invalid input.</p>
 <li>
 <p>1b.
 Step 2 takes place.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1595,6 +1600,9 @@ Step 2 takes place.</p>
 <p>1b2. User enters a new item to deleteadd</p>
 <div class="paragraph">
 <p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -1631,14 +1639,14 @@ Use case ends.</p>
 <li>
 <p>5a.
 User enters invalid index. e.g: done 1000</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>5a1. Module inform user that index is not valid.<br>
 Use case resumes from step 5.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1668,9 +1676,6 @@ Use case ends.<br></p>
 <li>
 <p>1a.
 User enters wrong module code and no module is found.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1682,14 +1687,14 @@ Use case resumes from step 2.</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1a.
 User enters correct module code but wrong event name and no event is found.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1698,6 +1703,9 @@ User enters correct module code but wrong event name and no event is found.</p>
 <li>
 <p>1b2. Step 1 repeated until User enters a correct event name.
 Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1727,14 +1735,14 @@ Guarantees: A list of added Events are displayed.<br></p>
 <li>
 <p>1a.
 User enters invalid command. e.g: list tutorial</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1a1. Module inform user the command is invalid and display correct format to user<br>
 Use case resumes from step 1.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1764,14 +1772,14 @@ Guarantees: A list of added Modules is displayed.<br></p>
 <li>
 <p>1a.
 User enters invalid command. e.g: <code>list CS2103</code></p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1a1. Module inform user the command is invalid and display correct format to user<br>
 Use case resumes from step 1.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1802,9 +1810,6 @@ Use case ends.</p>
 <li>
 <p>2a.
 User enters invalid index. e.g: view 1000</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1812,6 +1817,9 @@ User enters invalid index. e.g: view 1000</p>
 </li>
 <li>
 <p>2b2. Step 2 repeated until user enters a valid index.<br></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1847,9 +1855,6 @@ Guarantees: Details of selected event will be displayed.<br></p>
 <li>
 <p>2a.
 User enters invalid index. e.g: view 1000</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1857,6 +1862,9 @@ User enters invalid index. e.g: view 1000</p>
 </li>
 <li>
 <p>2b2. Step 2 repeated until user enters a valid index.<br></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1892,15 +1900,15 @@ Guarantees: An .ics file is generated containing <code>Event</code> and <code>De
 <li>
 <p>2a.
 Modulo is unable to find the directory specified by user.</p>
-</li>
-</ul>
-</div>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>2a1. Modulo creates the directory.</p>
 <div class="paragraph">
 <p>Use case resumes from step 3.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -2548,6 +2556,72 @@ Expected: Shows the GUI with no data.</p>
 <div class="sect1">
 <h2 id="effort"><a class="link" href="#effort">Appendix H: Effort</a></h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="model"><a class="link" href="#model">H.1. Model</a></h3>
+<div class="paragraph">
+<p>The <code>Model</code> of Modulo is certainly more complex than that of AddressBook.
+In AddressBook, there was only one key object in play - Person.
+Most of the other classes were ones that served as attributes for the Person object.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:08:33 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>For Modulo, three different objects are managed at once, with the <code>Model</code> class having to juggle two different lists
+at all times.
+As such, there was much greater complexity, especially when the commands used one type of object as a reference for
+another!
+An example would be finding an event that belongs to a certain module.
+The logic behind can be implemented in various ways, and we sought to reduce the complexity of this logic.</p>
+</div>
+<div class="paragraph">
+<p>The process was rough - we didn&#8217;t get it right from the start (and we cannot say for sure that we have gotten it
+right currently), and we had to refactor our code over quite a few times, as we realise the limitations of our
+previous implementations. This is with careful planning right from the start!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logic"><a class="link" href="#logic">H.2. Logic</a></h3>
+<div class="paragraph">
+<p>Modulo implemented its own <code>StatefulLogic</code> that allows users to perform multistep commands.
+This in itself is quite a huge step up from the existing <code>Logic</code> flow in AddressBook, where commands were all
+"one-shot".</p>
+</div>
+<div class="paragraph">
+<p>And as mentioned earlier, with the increased complexity of the <code>Model</code> and its classes, naturally, the complexity of
+<code>Logic</code> follows. Commands are no longer "single-dimensional", and now need to perform various operations before being
+able to determine the correct action to execute.</p>
+</div>
+<div class="paragraph">
+<p>Our team spent quite a lot of effort to come up with ways to implement both the <code>StatefulLogic</code> and the commands.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="storage"><a class="link" href="#storage">H.3. Storage</a></h3>
+<div class="paragraph">
+<p>The complexity of <code>Storage</code> naturally increased as well, as now we have to store objects of three types into a single
+<code>JSON</code> file, and still have a way to recover and restore the associations between all of these "save data" upon
+loading. The process of deriving our current way of doing things took quite a while as well.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ui"><a class="link" href="#ui">H.4. Ui</a></h3>
+<div class="paragraph">
+<p>Lastly, the Ui. Our Modulo team spent quite a bit of effort in ensuring that our interface was pleasing to the eye.
+And we&#8217;re glad that we did, as the Ui turned out the way we wanted! This is not a painless process, however. We did
+spend quite a bit of time undoing what we&#8217;ve designed at times, as we designed and built iteratively.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="overall"><a class="link" href="#overall">H.5. Overall</a></h3>
+<div class="paragraph">
+<p>As a whole, this process was not an easy one for the Modulo team. We started off with a grandiose idea in mind, and
+met obstacle after obstacle. We did fight hard, but for a large part, we were slowly worn down. It&#8217;s rather sad to
+see that we did not achieve the goal we initially set out to due to these challenges. But we&#8217;re also very glad to say
+that, in exchange, we&#8217;ve learnt a lot more than we expected to. In overcoming a lot of the problems mentioned above,
+our team spent sessions discussing, debating and brainstorming, and we learnt together in the end.</p>
+</div>
+<div class="paragraph">
+<p>We wouldn&#8217;t say we&#8217;re the team that spent the most effort, but we can say for sure that we didn&#8217;t spare any effort
+throughout the process.</p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:36:27 UTC</div></div></div></body></html>
