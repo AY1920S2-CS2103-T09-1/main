@@ -1271,6 +1271,270 @@ User enters an invalid slot.</p>
 </ul>
 </div>
 <h3 id="UseCaseThree" class="discrete">Use case: UC03 - Delete a module</h3>
+<h3 id="UseCaseFour" class="discrete">Use case: UC04 - Set Done to Deadline if user viewing a event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Module, Event and deadline are added.<br>
+Guarantees: Status of viewed deadline is updated.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <a href="#UseCaseSix">list all the registered event (UC06)</a>.<br></p>
+</li>
+<li>
+<p>User <a href="#UseCaseNine">view the selected events(UC09)</a>.<br></p>
+</li>
+<li>
+<p>User enter index of deadline. e.g: done 1.<br></p>
+</li>
+<li>
+<p>Modulo checks is if the index is valid or not and toggles the completion status of the deadline.
+If the deadline was incomplete, it would be completed, and vice versa.
+The color of the status changes accordingly and success message will displayed in result box. <br>
+Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5a.
+User enters invalid index. e.g: done 1000</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5a1. Module inform user that index is not valid.<br>
+Use case resumes from step 5.</p>
+</li>
+</ul>
+</div>
+<h3 id="UseCaseFive" class="discrete">Use case: UC05 - Set Done to deadline if user not viewing event.</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Module, Event and deadline are added and exits in Modulo.<br>
+Guarantees: Status of deadline under correct module and event is updated.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enter module code, event name and index of deadline. e.g: done 1 m/CS2103 e/Tutorial 2.<br></p>
+</li>
+<li>
+<p>Modulo searches for the registered module, event and index of the deadline toggles the completion status of the deadline.
+If the deadline was incomplete, it would be completed, and vice versa.
+A success message will displayed in result box<br>
+Use case ends.<br></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters wrong module code and no module is found.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Modulo informs User that the module does not exists.<br></p>
+</li>
+<li>
+<p>1b2. Step 1 repeated until User enters a correct module code.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters correct module code but wrong event name and no event is found.</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Modulo informs User that the event does not exists.<br></p>
+</li>
+<li>
+<p>1b2. Step 1 repeated until User enters a correct event name.
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+<h3 id="UseCaseSix" class="discrete">Use case: UC06 - List Event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Modules and Events are already added in Modulo .<br>
+Guarantees: A list of added Events are displayed.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enter list event.<br></p>
+</li>
+<li>
+<p>Modulo searches for all the events that are added in the system and displayed in the left panel.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters invalid command. e.g: list tutorial</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Module inform user the command is invalid and display correct format to user<br>
+Use case resumes from step 1.</p>
+</li>
+</ul>
+</div>
+<h3 id="UseCaseSeven" class="discrete">Use case: UC07 - List Module</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Modules are added in Modulo .<br>
+Guarantees: A list of added Modules is displayed.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enter list module<br></p>
+</li>
+<li>
+<p>Modulo searches for all the modules that are added in the system and displayed in the left panel.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+User enters invalid command. e.g: list CS2103</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Module inform user the command is invalid and display correct format to user<br>
+Use case resumes from step 1.</p>
+</li>
+</ul>
+</div>
+<h3 id="UseCaseEight" class="discrete">Use case: UC08 - View Module</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Modules data are added in Modulo.<br>
+Guarantees: Details of selected module will be displayed.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <a href="#UseCaseSeven">list all the registered module (UC07)</a>.<br></p>
+</li>
+<li>
+<p>User enter view command, e.g view 1(index).<br></p>
+</li>
+<li>
+<p>Modulo will searches and for the correct index from module list and display the details of module at the right panel.
+Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a.
+User enters invalid index. e.g: view 1000</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a2. Module inform user that index is not valid.<br></p>
+</li>
+<li>
+<p>2b2. Step 2 repeated until user enters a valid index.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
+<h3 id="UseCaseNine" class="discrete">Use case: UC09 - View Event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong> Preconditions: Modules and events are added in Modulo .<br>
+Guarantees: Details of selected event will be displayed.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <a href="#UseCaseSix">list all the registered event (UC06)</a>.<br></p>
+</li>
+<li>
+<p>User enter view command, e.g view 1(index).<br></p>
+</li>
+<li>
+<p>Modulo will searches and for the correct index from the events list and display the details of event at the right panel.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a.
+User enters invalid index. e.g: view 1000</p>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a2. Module inform user that index is not valid.<br></p>
+</li>
+<li>
+<p>2b2. Step 2 repeated until user enters a valid index.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case resumes from step 2.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1552,4 +1816,4 @@ Expected: Shows the GUI with no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:16:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:00:52 UTC</div></div></div></body></html>
