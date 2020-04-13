@@ -23,7 +23,7 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#StatefulLogic">3.1. Stateful Logic Feature</a></li>
-<li><a href="#proposed-edit-feature">3.2. [Proposed] Edit Feature</a></li>
+<li><a href="#done-feature">3.2. Done Feature</a></li>
 <li><a href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo Feature</a></li>
 <li><a href="#logging">3.4. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
@@ -35,13 +35,13 @@
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
-<li><a href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></li>
+<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-module">G.2. Deleting a module</a></li>
+<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
 <li><a href="#saving-data">G.3. Saving data</a></li>
 </ul>
 </li>
@@ -565,9 +565,99 @@ If a new type of state is required, the changes required will be heavy as well, 
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-edit-feature"><a class="link" href="#proposed-edit-feature">3.2. [Proposed] Edit Feature</a></h3>
+<h3 id="done-feature"><a class="link" href="#done-feature">3.2. Done Feature</a></h3>
 <div class="paragraph">
-<p>Currently, Modulo does not allow for the editing of the details of modules, events and deadlines that have been created.</p>
+<p>This features allow user to set deadline&#8217;status to be completed or not completed.The user input is handled and retrieved by the <code>MainWindow</code> class in Ui first, after that passed to the <code>LogicManager</code> to process the input.
+First,<code>LogicManager</code> will call the <code>ModuleParser</code> which will pass the input to the <code>DoneCommandParser</code>.
+Then`DoneCommandParser` will invoked <code>DoneCommand</code> to set the status of deadline to be true(Completed) and update the model.
+Invalid input such as invalid index(i.e done 1000) also handled properly and error message will be displayed to user.
+The command is implemented corresponding to the operation in the logic module:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DoneCommand</code>&#8201;&#8212;&#8201;Set the status of the deadline to be true.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the command, a parser is implemented to parse the input into arguments.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DoneCommandParser</code> --Parse the done command input and generates <code>DoneCommand</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is a sequence diagram to show how the done mechanism behaves at each step.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Done_SequenceDiagram.png" alt="Done SequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Given below is a activity diagram to show how the how operations work.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Done_ActivityDiagram.png" alt="Done ActivityDiagram">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.1. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-done-features-executes"><a class="link" href="#aspect-how-done-features-executes">Aspect: How done features executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Done 1 deadline at one time</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement,not likely to create bugs.</p>
+</li>
+<li>
+<p>Cons: More steps required for user if she/he wants to complete different deadlines.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 :</strong> Done multiple deadlines at one time</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More time consuming for user to complete list of deadline at one time.</p>
+</li>
+<li>
+<p>Cons: User input will be complex as it required to check for different modules and events then finally can set the status to be true.
+Difficult to troubleshoot if bugs occur.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3 :</strong> Modulo will keep track of deadline&#8217;s status and send reminder to user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Remind user which deadline he/she have not completed yet.</p>
+</li>
+<li>
+<p>Cons: Hard to implement and it increase coupling.Difficult to write test cases.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Future Extension:</strong> Modulo can have another ui panel to display every deadline that needs to be done for every weeks, then user can enter done command to update deadlines' status from there.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -733,7 +823,7 @@ This is the behavior that most modern desktop applications follow.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -887,21 +977,21 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <p>has a need to manage their modules and the deadlines for these modules</p>
 </li>
 <li>
-<p>prefer desktop apps over other types of apps</p>
+<p>prefer desktop apps over other types</p>
 </li>
 <li>
-<p>can type fast and prefers typing over mouse input</p>
+<p>can type fast</p>
+</li>
+<li>
+<p>prefers typing over mouse input</p>
 </li>
 <li>
 <p>is reasonably comfortable using CLI apps</p>
 </li>
-<li>
-<p>is a current NUS student who is taking modules in AY19/20 Sem 2</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: Manage modules and related deadlines faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: manage modules and deadlines faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -931,31 +1021,19 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use Modulo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view my events for the week</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">never miss any event</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">busy user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">create deadlines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a deadline</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ensure I do not miss any of my module / assignment deadlines</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">complete deadlines</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">track the work I have done</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set routine deadlines based on events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">routinely prepare for these events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track all my daily events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">never miss any event</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -966,14 +1044,26 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add events to modules easily</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">get started on deadline planning earlier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can track the tutorials which I have done</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avoid clashes within my own schedule</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">export my data from this app</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access the data I’ve created from anywhere</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can assign a maximum number of deadlines within a timeframe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not get overwhelmed by my assigned workload</p></td>
 </tr>
 </tbody>
 </table>
@@ -986,17 +1076,17 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is <code>Modulo</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Modulo</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-uc01-add-a-a-href-deadline-deadline-a" class="discrete">Use case: UC01 - Add a <a href="#deadline">deadline</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong> Preconditions: Module data file is loaded properly.<br>
-Guarantees: Deadline is added under the correct <a href="#module">module</a> and <a href="#event">event</a>, with the correct details.<br></p>
+Guarantees: Deadline is added, tagged to the correct <a href="#module">module</a> and <a href="#event">event</a>, with the correct details.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User <a href="#UseCaseTwo">adds a module (UC02)</a>.</p>
+<p>User <u>adds a module (UC02)</u>.</p>
 </li>
 <li>
 <p>User adds a deadline to the correct <a href="#module">module</a> and <a href="#event">event</a>, with all the required details.</p>
@@ -1017,6 +1107,9 @@ Guarantees: Deadline is added under the correct <a href="#module">module</a> and
 <li>
 <p>2a.
 User enters incorrect information.</p>
+</li>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1030,31 +1123,27 @@ User enters incorrect information.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-<h3 id="UseCaseTwo" class="discrete">Use case: UC02 - Add a module</h3>
+<h3 id="use-case-uc02-add-a-module" class="discrete">Use case: UC02 - Add a module</h3>
 <div class="paragraph">
-<p><strong>MSS</strong> Preconditions: Module data files are loaded properly.<br>
-Guarantees: Module is added to the user&#8217;s Modulo.<br></p>
+<p><strong>MSS</strong> Preconditions: Module data file is loaded properly.<br>
+Guarantees: Module is added to the user&#8217;s modulo.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters a module code, e.g. CS2103.</p>
+<p>User enters a module code or module name.</p>
 </li>
 <li>
-<p>Modulo searches its data files for the module and creates the module using information from the data files.</p>
+<p>Modulo searches its data files for the closest matching module</p>
 </li>
 <li>
-<p>Modulo prompts user to enter the slot for an event type.</p>
+<p>Modulo prompts the user for his/her confirmation</p>
 </li>
 <li>
-<p>User enters their slot for the event type.<br>
-Steps 3-4 are repeated for as many times as required until the User has entered slots for all event types of the module.</p>
+<p>User enters ‘Y’ to confirm his/her module selection</p>
 </li>
 <li>
-<p>Modulo shows the newly created module.</p>
+<p>Modulo shows the newly created module in the user’s modulo</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1069,48 +1158,19 @@ Steps 3-4 are repeated for as many times as required until the User has entered 
 <li>
 <p>1a.
 User enters incorrect data and the wrong module is found.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Steps 2 to 4 are performed.</p>
-</li>
-<li>
-<p>1a2. User <a href="#UseCaseThree">deletes the added module (UC03)</a> and its events.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b.
-User enters invalid data and no modules are found.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b1. Modulo informs User that no modules with the given information can be found.</p>
+<p>1a1. Steps 2 and 3 are performed.</p>
 </li>
 <li>
-<p>1b2. Step 1 repeated until User enters a correct module code.</p>
-<div class="paragraph">
-<p>Use case resumes from step 2.</p>
-</div>
+<p>1a2. User enters ‘N’ to reject his/her module selection.</p>
 </li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
 <li>
-<p>3a.
-User added a module with no events.</p>
+<p>1a3. Steps 1 to 4 are repeated until the correct module is found and User enters ‘Y’.</p>
 <div class="paragraph">
 <p>Use case resumes from step 5.</p>
 </div>
@@ -1120,17 +1180,20 @@ User added a module with no events.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b.
-User exited Modulo before adding all events.</p>
+<p>1b.
+User enters invalid data and no modules are found.</p>
+</li>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. Modulo saves all events that were already added.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>1b1. Modulo informs User that no modules with the given information can be found.</p>
 </li>
-</ul>
+<li>
+<p>1b2. Steps 1 to 4 or 1 to 1b1 are repeated until User finds a module.</p>
+<div class="paragraph">
+<p>Use case resumes from step 3.</p>
 </div>
 </li>
 </ul>
@@ -1139,7 +1202,10 @@ User exited Modulo before adding all events.</p>
 <ul class="none">
 <li>
 <p>4a.
-User enters an invalid slot.</p>
+User enters something other than ‘Y’.</p>
+</li>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1153,14 +1219,10 @@ User enters an invalid slot.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-<h3 id="UseCaseThree" class="discrete">Use case: UC03 - Delete a module</h3>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></h2>
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1204,30 +1266,17 @@ User enters an invalid slot.</p>
 <dl>
 <dt class="hdlist1">Module</dt>
 <dd>
-<p>Modules that the User is taking for AY19/20 Semester 2.</p>
+<p>Modules that the User is taking for the current semester.</p>
 </dd>
 </dl>
 </div>
-<div id="event" class="dlist">
-<dl>
-<dt class="hdlist1">Event</dt>
-<dd>
-<p>There are two types of events: official and user-added.
-Official ones include events such as Lectures, Tutorials, Recitations, Sectionals etc.
-User-added are events that are not recognised.</p>
-</dd>
-</dl>
+<div id="event" class="paragraph">
+<p>Event These are default events for each module, such as Lectures, Tutorials, Recitations, Sectionals etc.
+All these events are automatically populated from NUS data upon module creation.</p>
 </div>
-<div class="paragraph">
-<p>Refer to <a href="UserGuide.html#EventTypes">here</a> for the list of recognised event types.</p>
-</div>
-<div id="deadline" class="dlist">
-<dl>
-<dt class="hdlist1">Deadline</dt>
-<dd>
-<p>Individual tasks to complete that can be tagged to a specific event.</p>
-</dd>
-</dl>
+<div id="deadline" class="paragraph">
+<p>Deadlines Individual tasks to complete that can be tagged to a specific event.
+These can be both recurring or just one-off.</p>
 </div>
 </div>
 </div>
@@ -1235,10 +1284,10 @@ User-added are events that are not recognised.</p>
 <h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>NUSMods</strong></p>
+<p><strong>Product Name</strong></p>
 </div>
 <div class="paragraph">
-<p>Author: Zhu Hanming</p>
+<p>Author: &#8230;&#8203;</p>
 </div>
 <div class="paragraph">
 <p>Pros:</p>
@@ -1246,13 +1295,10 @@ User-added are events that are not recognised.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Extremely clean and intuitive UI.</p>
+<p>&#8230;&#8203;</p>
 </li>
 <li>
-<p>Effortless data population and contains all the information I may need.</p>
-</li>
-<li>
-<p>Can save my data as a <code>.ics</code> file.</p>
+<p>&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -1262,10 +1308,10 @@ User-added are events that are not recognised.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Not a CLI app.</p>
+<p>&#8230;&#8203;</p>
 </li>
 <li>
-<p>Doesn&#8217;t help me plan my deadlines.</p>
+<p>&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -1302,7 +1348,7 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with no data. The window size may not be optimum.</p>
+Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
@@ -1316,21 +1362,8 @@ Expected: Shows the GUI with no data. The window size may not be optimum.</p>
 </li>
 <li>
 <p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Shutting down</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Launch the help window by typing <code>help</code>.</p>
-</li>
-<li>
-<p>Quit the app by typing <code>exit</code>.<br>
-Expected: Both the main window and the help window should close.</p>
+   Expected: The most recent window size and location is retained.
+<em>{ more test cases &#8230;&#8203; }</em></p>
 </li>
 </ol>
 </div>
@@ -1339,64 +1372,39 @@ Expected: Both the main window and the help window should close.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">G.2. Deleting a module</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a module using index while all modules are listed</p>
+<p>Deleting a person while all persons are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all modules using the <code>list modules</code> command. Multiple modules in the list.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First module is deleted from the list. All events of that module are deleted.
-Details of the deleted module shown in the status message.</p>
+Expected: First contact is deleted from the list.
+Details of the deleted contact shown in the status message.
+Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No module is deleted. No events deleted.
-Error details shown in the status message.</p>
+Expected: No person is deleted.
+Error details shown in the status message.
+Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size).<br>
-Expected: Similar to previous.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Deleting a module using search terms while all modules are listed</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all modules using the <code>list modules</code> command. CS2103 in the list. Other CS modules in the
-list.</p>
-</li>
-<li>
-<p>Test case: <code>delete CS2103</code><br>
-Expected: CS2103 is deleted from the list.
-Details of the deleted module shown in the status message.</p>
-</li>
-<li>
-<p>Test case: <code>delete cs</code><br>
-Expected: All CS modules are deleted.
-Number of deleted modules shown in the status message.</p>
-</li>
-<li>
-<p>Test case: <code>delete cs2199</code><br>
-Expected: No module is deleted.
-Information shown in the status message.</p>
-</li>
-<li>
-<p>Other incorrect delete commands to try: <code>delete x</code> (where x is a term that does not exist in the list).<br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -1408,12 +1416,8 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Corrupt the current save file under <code>./data/</code>. The easiest way is to type <code>-</code> somewhere in one of the saved
-modules' academic year. Another way may be to add random characters that make the JSON format unreadable.</p>
-</li>
-<li>
-<p>Double-click the jar file<br>
-Expected: Shows the GUI with no data.</p>
+<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em>
+<em>{ more test cases &#8230;&#8203; }</em></p>
 </li>
 </ol>
 </div>
@@ -1422,4 +1426,4 @@ Expected: Shows the GUI with no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:32:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:32:47 UTC</div></div></div></body></html>
