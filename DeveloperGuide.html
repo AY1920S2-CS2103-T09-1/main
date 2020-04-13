@@ -41,14 +41,26 @@
 <li><a href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#effort">Appendix G: Effort</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix H: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">H.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-module">H.2. Deleting a module</a></li>
-<li><a href="#saving-data">H.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
+<li><a href="#adding-a-module">G.2. Adding a module</a></li>
+<li><a href="#adding-an-event">G.3. Adding an event</a></li>
+<li><a href="#adding-a-deadline">G.4. Adding a deadline</a></li>
+<li><a href="#completing-a-deadline">G.5. Completing a deadline</a></li>
+<li><a href="#switching-lists">G.6. Switching lists</a></li>
+<li><a href="#view-event-or-module">G.7. View event or module</a></li>
+<li><a href="#find-event-or-module">G.8. Find event or module</a></li>
+<li><a href="#deleting-a-module">G.9. Deleting a module</a></li>
+<li><a href="#deleting-an-event">G.10. Deleting an event</a></li>
+<li><a href="#deleting-a-deadline">G.11. Deleting a deadline</a></li>
+<li><a href="#exporting-data-as-code-ics-code-file">G.12. Exporting data as <code>.ics</code> file</a></li>
+<li><a href="#viewing-help">G.13. Viewing help</a></li>
+<li><a href="#clearing-modulo">G.14. Clearing Modulo</a></li>
+<li><a href="#saving-data">G.15. Saving data</a></li>
 </ul>
 </li>
+<li><a href="#effort">Appendix H: Effort</a></li>
 </ul>
 </div>
 </div>
@@ -835,7 +847,100 @@ for the user.</p>
 </div>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.5.1. Proposed Implementation</a></h4>
-
+<div class="paragraph">
+<p>The Edit functionality will be achieved through the introduction of an <code>EditCommand</code> and its parser <code>EditCommandParser</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditCommandClassDiagram.png" alt="EditCommandClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>edit</code> command will have the following format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Editing events:
+<code>edit n/EVENT_NAME m/MODULE_CODE [nn/NEW_NAME] [s/NEW_START_DATETIME] [e/NEW_END_DATETIME] [v/NEW_VENUE]</code></p>
+</li>
+<li>
+<p>Editing deadlines:
+<code>edit d/INDEX m/MODULE_CODE e/EVENT_NAME nn/NEW_NAME</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The flow of the command parsing will be as such:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditCommandActivityDiagram.png" alt="EditCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>If an <code>EditCommand</code> is successfully created, it will be executed on the <code>Model</code>. It will work mainly through the
+<code>setEvent</code> method already exposed in the <code>Model</code> interface, as well as a <code>setDeadline</code> that will be exposed through
+the parent event.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of how it may look like if the <code>EditCommand</code> was to modify an event&#8217;s venue.</p>
+</div>
+<div class="paragraph">
+<p>User input: <code>edit n/Tutorial 1 m/CS2103 v/Home</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditCommandSequenceDiagram.png" alt="EditCommandSequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="limitations"><a class="link" href="#limitations">3.5.2. Limitations</a></h4>
+<div class="paragraph">
+<p>Due to the fact that repeated events are not currently being tagged or grouped in any way, it is difficult to allow
+mass editing of repeated events.</p>
+</div>
+<div class="paragraph">
+<p>If there&#8217;s a need to edit a repeated event, there would be a need to edit the events one by one.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.5.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-easily-modify-deadlines"><a class="link" href="#aspect-how-to-easily-modify-deadlines">Aspect: How to easily modify deadlines</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Manually fetch the deadline from the event and replace.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have slight performance issues in terms of speed, and a lot of coding to be done.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Consolidate the deadlines in a UniqueDeadlineList.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code to write <strong>for this feature</strong> specifically, in terms of the <code>setDeadline</code> method.</p>
+</li>
+<li>
+<p>Cons: Increases complexity of the application, since now three lists are maintained. There is also the same issue
+with events and modules in terms of the source of truth.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1001,7 +1106,7 @@ This is the behavior that most modern desktop applications follow.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">3.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1814,13 +1919,7 @@ User-added are events that are not recognised.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="effort"><a class="link" href="#effort">Appendix G: Effort</a></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix H: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -1838,7 +1937,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">H.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1887,7 +1986,216 @@ Expected: Both the main window and the help window should close.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">H.2. Deleting a module</a></h3>
+<h3 id="adding-a-module"><a class="link" href="#adding-a-module">G.2. Adding a module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding CS2103</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 not already added. If added, delete it.</p>
+</li>
+<li>
+<p>Test case: <code>module m/cs2103</code><br>
+Expected: CS2103 to appear in the list of modules, and app to prompt for further input.</p>
+</li>
+<li>
+<p>If prompt is for tutorial, test case: <code>3</code><br>
+Expected: Tutorial slot 3 should be added.</p>
+</li>
+<li>
+<p>If prompt is for lecture, test case: <code>1</code><br>
+Expected: Lecture slot 1 should be added.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-event"><a class="link" href="#adding-an-event">G.3. Adding an event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding Exam to CS2103</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 already added. No event named Exam has been added to CS2103 yet.</p>
+</li>
+<li>
+<p>Test case: <code>event n/Exam m/CS2103 s/2020-01-15 09:00 e/2020-01-15 10:00 v/Home</code><br>
+Expected: Event named Exam should appear in the list of events. To check, enter <code>list events</code>. It should be near the
+top of the list. The details should be as entered.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding recurring events to CS2103</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 already added. No recurring event named Self Study has been added to CS2103 yet.</p>
+</li>
+<li>
+<p>Test case: <code>event n/Self Study m/CS2103 s/2020-01-20 09:00 e/2020-01-20 10:00 v/Home r/YES until/2020-02-20</code><br>
+Expected: Events named Self Study 1, Self Study 2, until Self Study 5 should appear, with a frequency of 1 week, and
+stopping before 2020-02-20.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-deadline"><a class="link" href="#adding-a-deadline">G.4. Adding a deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a deadline to CS2103 Exam</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 added. Event named Exam added. No deadline named "Study hard for exam" has been added to
+the event yet.</p>
+</li>
+<li>
+<p>Test case: <code>deadline n/Study hard for exam m/CS2103 e/Exam</code><br>
+Expected: Deadline added to Exam. To check, first make sure you&#8217;re listing events with <code>list events</code>, then enter
+<code>view INDEX</code>, where <code>INDEX</code> is the index of the event on the list.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="completing-a-deadline"><a class="link" href="#completing-a-deadline">G.5. Completing a deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Complete Study hard for exam.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: CS2103 added. Event named Exam added. Deadline named Study hard for exam added, and is not completed.</p>
+</li>
+<li>
+<p>Test case: <code>done 2 m/CS2103 e/Exam</code><br>
+Expected: Deadline named Study hard for exam is completed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switching-lists"><a class="link" href="#switching-lists">G.6. Switching lists</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List events</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list events</code><br>
+Expected: If not already listing events, events will now be listed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>List modules</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>list modules</code><br>
+Expected: If not already listing modules, modules will not be listed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-event-or-module"><a class="link" href="#view-event-or-module">G.7. View event or module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View module</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all modules using the <code>list modules</code> command. At least one module.</p>
+</li>
+<li>
+<p>Test case: <code>view 1</code><br>
+Expected: Details of the first module should show on the right panel.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>View event</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all events using the <code>list events</code> command. At least one event.</p>
+</li>
+<li>
+<p>Test case: <code>view 1</code><br>
+Expected: Details of the first event should show on the right panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-event-or-module"><a class="link" href="#find-event-or-module">G.8. Find event or module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find event(s) with Self Study in their names</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all events using the <code>list events</code> command. Has event(s) named Self Study.</p>
+</li>
+<li>
+<p>Test case: <code>find self study</code><br>
+Expected: All events with Self Study in their names would appear. You can operate on this filtered list.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Find Software Engineering</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisite: List all modules using the <code>list modules</code> command. CS2103 added.</p>
+</li>
+<li>
+<p>Test case: <code>find software engineering</code><br>
+Expected: CS2103 should show, along with any other modules that may have Software Engineering in their names.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">G.9. Deleting a module</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1935,7 +2243,7 @@ Expected: All CS modules are deleted.
 Number of deleted modules shown in the status message.</p>
 </li>
 <li>
-<p>Test case: <code>delete cs2199</code><br>
+<p>Test case: <code>delete cs2999</code><br>
 Expected: No module is deleted.
 Information shown in the status message.</p>
 </li>
@@ -1950,7 +2258,158 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">H.3. Saving data</a></h3>
+<h3 id="deleting-an-event"><a class="link" href="#deleting-an-event">G.10. Deleting an event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting an event using index while all events are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all events using the <code>list events</code> command. Multiple events in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First event is deleted from the list.
+Details of the deleted event shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No event is deleted.
+Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting an event using search terms while all events are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all events using the <code>list events</code> command. At least one Tutorial 1 in the list.
+Other Tutorials in the list as well.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tutorial 1</code><br>
+Expected: All events with Tutorial 1 in their names are deleted from the list.
+Number of deleted events shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tutorial</code><br>
+Expected: All Tutorials are deleted.
+Number of deleted events shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tvtor!al</code><br>
+Expected: No event is deleted.
+Information shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete x</code> (where x is a term that does not exist in the list).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-deadline"><a class="link" href="#deleting-a-deadline">G.11. Deleting a deadline</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a deadline using index while an event is focused</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all events using the <code>list events</code> command. Events in the list. View first event with
+<code>view 1</code>. First event has a deadline.</p>
+</li>
+<li>
+<p>Test case: <code>delete d/1</code><br>
+Expected: First deadline is deleted from the list.
+Details of the deleted deadline shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No deadline is deleted.
+Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size).<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-data-as-code-ics-code-file"><a class="link" href="#exporting-data-as-code-ics-code-file">G.12. Exporting data as <code>.ics</code> file</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Export data</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>export</code><br>
+Expected: A <code>modulo.ics</code> file should be created in the same <code>./data/</code> folder. You can use this <code>.ics</code> file to add
+your events and deadlines into your calendar.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help"><a class="link" href="#viewing-help">G.13. Viewing help</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View help</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>help</code><br>
+Expected: Help window appears.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-modulo"><a class="link" href="#clearing-modulo">G.14. Clearing Modulo</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear all existing data in Modulo</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Some data has been added to Modulo.</p>
+</li>
+<li>
+<p>Test case: <code>clear</code><br>
+Expected: All data cleared.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.15. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1980,4 +2439,10 @@ Expected: Shows the GUI with no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:21:39 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix H: Effort</a></h2>
+<div class="sectionbody">
+
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:32:53 UTC</div></div></div></body></html>
