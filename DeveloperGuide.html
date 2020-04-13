@@ -22,10 +22,11 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#StatefulLogic">3.1. Stateful Logic Feature</a></li>
+<li><a href="#proposed-edit-feature">3.2. [Proposed] Edit Feature</a></li>
+<li><a href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo Feature</a></li>
+<li><a href="#logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -84,7 +85,8 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>.
+<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/Main.java"><code>Main</code></a> and
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/MainApp.java"><code>MainApp</code></a>.
 It is responsible for,</p>
 </div>
 <div class="ulist">
@@ -172,7 +174,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>ListPanel</code>, <code>StatusBarFilter</code>, <code>RightPanel</code> etc.
@@ -180,13 +182,17 @@ All these, including the <code>MainWindow</code>, inherit from the abstract <cod
 </div>
 <div class="paragraph">
 <p>The <code>ListPanel</code> is located at the left of the application and it consists of UI <code>EventCard</code>, <code>ModuleCard</code>, <code>TitleCard</code> to display list of events or modules.
-The <code>RightPanel</code> is located at the right of the application and it consists of UI <code>RightPanelDeadlineCard</code> , <code>RightPanelDescription</code>, and <code>RightPanelEvent</code> to display the details of the module or event.
-For the example, user can do <code>view</code> command to view the deadlines of the event in the <code>ListPanel</code> and the details and deadlines of the event will be displayed at the <code>RightPanel</code>.</p>
+The <code>RightPanel</code> is located at the right of the application and it consists of UI <code>RightPanelDeadlineCard</code> ,
+<code>RightPanelDescription</code>, and <code>RightPanelEventCard</code> to display the details of the module or event.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework.
+<p>For example, user can do <code>view</code> command to view the deadlines of the event in the <code>ListPanel</code> and the details and deadlines of the event will be displayed on the <code>RightPanel</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component uses the JavaFX UI framework.
 The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder.
-For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/ui/MainWindow.java"><code>MainWindow</code></a> is specified in
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -212,7 +218,7 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -233,40 +239,35 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-T09-1
 </li>
 </ol>
 </div>
+<div class="sect3">
+<h4 id="strong-statefullogic-strong-interface"><a class="link" href="#strong-statefullogic-strong-interface">2.3.1. <strong>StatefulLogic</strong> Interface:</a></h4>
 <div class="paragraph">
-<p><strong>STATEFUL LOGIC</strong> Interface:</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Stateful Logic is implemented by classes that only manages logic while a state exists.
-This state, within the AddModuleStatefulLogicManager, is created during the adding of modules by the <code>module m/MODULE_CODE</code> function.
-The state is depending on the number of event types (tutorial, lecture, lab etc) that each module has.
-Following the return of the AddModuleCommandResult, the existence of the AddModuleStatefulLogicManager allows the application to handle the tutorial, lecture, lab or recitation slot inputs that follows from the <code>module m/MODULE_CODE</code> function.
-</td>
-</tr>
-</table>
+<p><code>StatefulLogic</code> is implemented by classes that only manages logic while a state exists.
+This state would be loaded from special <code>CommandResult</code> subclasses, and allows this <code>StatefulLogicManager</code> to take priority over the default <code>LogicManager</code>.
+The exact implementation of state is up to the developer.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>WRITER</strong> Component:</p>
+<p>Currently, there is only one class that implements it: <code>AddModuleStatefulLogicManager</code>.
+Its state is loaded from a special <code>AddModuleCommandResult</code> created by the <code>AddModuleCommand</code>, i.e. when the user uses the
+<code>module m/MODULE_CODE</code> command.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The Writer component is activated when the ExportCommand is executed.
-It then calls the writeIcsFile function from the IcsWriter class which retrieves the current list of events from the Model component which, along with its deadlines, are converted into IcsEvent and IcsDeadline objects, which are then written into the ICS file.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>The state is created using a list of the event types (tutorial, lecture, lab etc.) that the added module has.
+Subsequently, while the list is not empty, the <code>AddModuleStatefulLogicManager</code> handles all inputs, thus allowing Modulo to add the relevant events.</p>
 </div>
+<div class="paragraph">
+<p>More details on the implementation can be found <a href="#StatefulLogic">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="strong-writer-strong-component"><a class="link" href="#strong-writer-strong-component">2.3.2. <strong>Writer</strong> Component:</a></h4>
+<div class="paragraph">
+<p>The Writer component is activated when the <code>ExportCommand</code> is executed.
+It then calls the <code>writeIcsFile()</code> function from the <code>IcsWriter</code> class which retrieves the current list of events from the <code>Model</code> component which, along with its deadlines, are converted into <code>IcsEvent</code> and <code>IcsDeadline</code> objects, which are then written into the ICS file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sample-interactions"><a class="link" href="#sample-interactions">2.3.3. Sample Interactions</a></h4>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
 </div>
@@ -289,6 +290,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </table>
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
@@ -298,7 +300,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -312,7 +314,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores Modulo data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Module&gt;</code> and <code>ObservableList&lt;Event&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Module&gt;</code> and <code>ObservableList&lt;Event&gt;</code> that can be 'observed' e.g. the UI can be bound to these lists so that the UI automatically updates when the data in the lists change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -326,11 +328,26 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As of now, there are two separate <code>ObservableList</code> being maintained, and with each individual <code>Module</code> keeping its own list of <code>Event</code> as well.
+As of now, there are two separate <code>ObservableList</code> being maintained, and with each individual module keeping its own list of events as well.
 In the future, to better enable the concept of a single source of truth, we can discard the use of a
-<code>ObservableList&lt;Event&gt;</code> and expose solely the unmodifiable <code>ObservableList&lt;Module&gt;</code>, and have <code>Event</code> accessed through its parent <code>Module</code>.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
+<code>ObservableList&lt;Event&gt;</code> and expose solely the unmodifiable <code>ObservableList&lt;Module&gt;</code>, and have events accessed through its parent module.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Alternatively, we can remove the list of events under each module and instead just maintain the two separate
+<code>UniqueModuleList</code> and <code>UniqueEventList</code>.
+This may, however, make it costly to render the module list, since we now need to search through the entire list of events to find relevant ones.
 </td>
 </tr>
 </table>
@@ -345,7 +362,7 @@ In the future, to better enable the concept of a single source of truth, we can 
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-T09-1/main/tree/master/src/main/java/modulo/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -364,7 +381,7 @@ In the future, to better enable the concept of a single source of truth, we can 
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>modulo.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -376,36 +393,215 @@ In the future, to better enable the concept of a single source of truth, we can 
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h3 id="StatefulLogic"><a class="link" href="#StatefulLogic">3.1. Stateful Logic Feature</a></h3>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
+<p>Multistep commands are facilitated by <code>StatefulLogic</code>.
+It is an interface with three methods exposed, and currently only has one class implementing it,
+<code>AddModuleStatefulLogicManager</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatefulLogicClassDiagram.png" alt="StatefulLogicClassDiagram">
+</div>
+<div class="title">Figure 9. Structure of the Stateful Logic Component</div>
+</div>
+<div class="paragraph">
+<p>Let us understand how <code>StatefulLogic</code> works.</p>
+</div>
+<div class="sect3">
+<h4 id="how-code-statefullogic-code-works"><a class="link" href="#how-code-statefullogic-code-works">3.1.1. How <code>StatefulLogic</code> works</a></h4>
+<div class="paragraph">
+<p>As long as a <code>StatefulLogicManager</code>, which is a class that implements <code>StatefulLogic</code>, has state, it will take over the <code>LogicManager</code> in executing the given <code>String</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddModuleHasStateSequenceDiagram.png" alt="AddModuleHasStateSequenceDiagram">
+</div>
+<div class="title">Figure 10. The current implementation</div>
+</div>
+<div class="paragraph">
+<p>Should there be more <code>StatefulLogicManager</code> instances in play, we will see something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MultipleHasStateSequenceDiagram.png" alt="MultipleHasStateSequenceDiagram">
+</div>
+<div class="title">Figure 11. If more Stateful Logic Managers are added</div>
+</div>
+<div class="paragraph">
+<p>At any point of time, only one <code>StatefulLogicManager</code> will have state.
+The <code>LogicManager</code> will thus check through them one by one, and will only directly parse the command itself should no <code>StatefulLogicManager</code> have state.
+We can think of these <code>StatefulLogicManager</code> as "consumers" that consume the input if it has state.</p>
+</div>
+<div class="paragraph">
+<p>The abstraction of how these <code>StatefulLogicManager</code> execute the given <code>String</code> helps to maintain the <strong>Single Responsibility Principle</strong>.
+The interaction between the <code>LogicManager</code> and <code>StatefulLogicManager</code> is also facilitated through the interface,
+<code>StatefulLogic</code>, which upholds the <strong>Dependency Inversion Principle</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-state-is-loaded-and-maintained"><a class="link" href="#how-state-is-loaded-and-maintained">3.1.2. How state is loaded and maintained</a></h4>
+<div class="paragraph">
+<p>State is loaded into <code>StatefulLogicManager</code> using special <code>CommandResult</code> subclasses.
+In the instance of the
+<code>AddModuleStatefulLogicManager</code>, its state is loaded by passing a <code>AddModuleCommandResult</code> into its
+<code>loadStateFromCommandResult</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Let us take a look at the full process, using <code>AddModuleCommand</code> as an example:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddModuleOverviewSequenceDiagram.png" alt="AddModuleOverviewSequenceDiagram">
+</div>
+<div class="title">Figure 12. Executing the <code>module m/CS2103</code> command</div>
+</div>
+<div class="paragraph">
+<p>There is no difference for the first part from a regular <code>Command</code> execution.
+The differences lie in the state preparation and state loading.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StatePreparationSequenceDiagram.png" alt="StatePreparationSequenceDiagram">
+</div>
+<div class="title">Figure 13. State Preparation for <code>AddModuleCommandResult</code></div>
+</div>
+<div class="paragraph">
+<p>The state is prepared during the initialising command, and that command will pack that state into a special subclass of <code>CommandResult</code>.
+This <code>CommandResult</code> is then passed back to the default <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>State loading is then done, if suitable.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StateLoadingSequenceDiagram.png" alt="StateLoadingSequenceDiagram">
+</div>
+<div class="title">Figure 14. State Loading for <code>AddModuleStatefulLogicManager</code></div>
+</div>
+<div class="paragraph">
+<p>The <code>eventList</code> is passed on to the <code>AddModuleStatefulLogicManager</code> to be used as state.
+As long as the list is not empty, it is considered to have state.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-statefullogic-code-should-be-positioned-with-respect-to-code-logic-code"><a class="link" href="#aspect-how-code-statefullogic-code-should-be-positioned-with-respect-to-code-logic-code">Aspect: How <code>StatefulLogic</code> should be positioned with respect to <code>Logic</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Have <code>StatefulLogic</code> exist as a sub-logic-circuit within <code>Logic</code> that activates when conditions are met.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reduce repeated code (<strong>DRY</strong>) and adheres to the <strong>Open Closed Principle</strong>, since the use of a simple interface makes it easy to create future <code>StatefulLogic</code> classes and integrate them.</p>
+</li>
+<li>
+<p>Cons: <code>Logic</code> now has to take care of checking for state prior to execution of command, as well as follow up on special subclasses of <code>CommandResult</code>, thus violating the Single Responsibility Principle.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have <code>StatefulLogic</code> extend <code>Logic</code> and have a separate <code>LogicDispatcher</code> class that decides which <code>Logic</code> to dispatch the command to.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Seems to follow the Single Responsibility Principle better.</p>
+</li>
+<li>
+<p>Cons: A lot of repeated code, and to some extent, this may be an adaptation of the current implementation, where the
+<code>Logic</code> class acts as the <code>LogicDispatcher</code>.
+Furthermore, it may not be correct to say that <code>Logic</code> and <code>StatefulLogic</code> are similar.
+<code>StatefulLogic</code> does operate quite differently from <code>Logic</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Future Extension:</strong> It may be worth looking into this and find a better way to handle this logic without breaking the existing Command Pattern.
+There may be more similarities that can be abstracted out and maximised using OOP.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-multistep-commands-should-be-implemented-and-achieved"><a class="link" href="#aspect-how-multistep-commands-should-be-implemented-and-achieved">Aspect: How multistep commands should be implemented and achieved</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>StatefulLogic</code> to keep relevant states and logic together.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Uses OOP to reduce complexity.
+Adheres to the <strong>Open Closed Principle</strong>, since each class can just implement
+<code>StatefulLogic</code>, and the exact management of its state is open.</p>
+</li>
+<li>
+<p>Cons: <code>Logic</code> now needs to handle the pre and post-command logic.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Maintain a global state that <code>Logic</code> listens to when executing commands.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: All commands can push state to this global state without having to go through <code>Logic</code>, reducing the pre and post-command handling.</p>
+</li>
+<li>
+<p>Cons: The implementation of this global state will be highly complex, since the logic required for different states is different as well. <code>Logic</code> would be overwhelmed.
+If a new type of state is required, the changes required will be heavy as well, thus violating the Open Closed Principle.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-edit-feature"><a class="link" href="#proposed-edit-feature">3.2. [Proposed] Edit Feature</a></h3>
+<div class="paragraph">
+<p>Currently, Modulo does not allow for the editing of the details of modules, events and deadlines that have been created.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo Feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.3.1. Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>The undo/redo mechanism is facilitated by <code>VersionedModulo</code>.
+It extends <code>Modulo</code> with an undo/redo history, stored internally as an <code>moduloStateList</code> and <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p><code>VersionedModulo#commit()</code>&#8201;&#8212;&#8201;Saves the current modulo state in its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
+<p><code>VersionedModulo#undo()</code>&#8201;&#8212;&#8201;Restores the previous modulo state from its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><code>VersionedModulo#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone modulo state from its history.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitModulo()</code>, <code>Model#undoModulo()</code> and
+<code>Model#redoModulo()</code> respectively.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time.
-The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
+<p>Step 1. The user launches the application, toggles to the event list and views an event.
+The <code>VersionedModulo</code> will be initialized with the initial modulo state, and the <code>currentStatePointer</code> pointing to that single modulo state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -413,8 +609,9 @@ The <code>VersionedAddressBook</code> will be initialized with the initial addre
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book.
-The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th event in Modulo.
+The <code>delete</code> command calls <code>Model#commitModulo()</code>, causing the modified state of Modulo after the <code>delete 5</code>
+command executes to be saved in the <code>moduloStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted Modulo state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -422,8 +619,8 @@ The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, ca
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person.
-The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>deadline n/Draw UML</code> to add a new deadline to the viewed event.
+The <code>deadline</code> command also calls <code>Model#commitModulo()</code>, causing another modified modulo state to be saved into the <code>moduloStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -437,14 +634,15 @@ The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+If a command fails its execution, it will not call <code>Model#commitModulo()</code>, so the Modulo state will not be saved into the <code>moduloStateList</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command.
-The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the deadline was a mistake, and decides to undo that action by executing the
+<code>undo</code> command.
+The <code>undo</code> command will call <code>Model#undoModulo()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous Modulo state, and restores Modulo to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -458,8 +656,8 @@ The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, wh
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore.
-The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case.
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial Modulo state, then there are no previous Modulo states to restore.
+The <code>undo</code> command uses <code>Model#canUndoModulo()</code> to check if this is the case.
 If so, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
@@ -486,7 +684,7 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoModulo()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores Modulo to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -495,17 +693,18 @@ The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore.
-The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case.
+If the <code>currentStatePointer</code> is at index <code>moduloStateList.size() - 1</code>, pointing to the latest Modulo state, then there are no undone Modulo states to restore.
+The <code>redo</code> command uses <code>Model#canRedoModulo()</code> to check if this is the case.
 If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>.
-Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>.
-Thus, the <code>addressBookStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list modules</code>.
+Commands that do not modify Modulo, such as <code>list</code>, will usually not call <code>Model#commitModulo()</code>,
+<code>Model#undoModulo()</code> or <code>Model#redoModulo()</code>.
+Thus, the <code>moduloStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -513,9 +712,10 @@ Thus, the <code>addressBookStateList</code> remains unchanged.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>.
-Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged.
-We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command.
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitModulo()</code>.
+Since the <code>currentStatePointer</code> is not pointing at the end of the <code>moduloStateList</code>, all modulo states after the
+<code>currentStatePointer</code> will be purged.
+We designed it this way because it no longer makes sense to redo the <code>deadline n/Draw UML</code> command.
 This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
@@ -533,13 +733,13 @@ This is the behavior that most modern desktop applications follow.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire Modulo.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -556,7 +756,7 @@ This is the behavior that most modern desktop applications follow.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the deadline being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -572,7 +772,7 @@ This is the behavior that most modern desktop applications follow.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of Modulo states.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -580,7 +780,7 @@ This is the behavior that most modern desktop applications follow.</p>
 </li>
 <li>
 <p>Cons: Logic is duplicated twice.
-For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedModulo</code>.</p>
 </li>
 </ul>
 </div>
@@ -605,13 +805,7 @@ Violates Single Responsibility Principle and Separation of Concerns as <code>His
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging.
 The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
@@ -619,7 +813,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -650,7 +844,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1100,13 +1294,13 @@ Expected: Shows the GUI with a set of sample contacts. The window size may not b
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-   Expected: First contact is deleted from the list.
+Expected: First contact is deleted from the list.
 Details of the deleted contact shown in the status message.
 Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-   Expected: No person is deleted.
+Expected: No person is deleted.
 Error details shown in the status message.
 Status bar remains the same.</p>
 </li>
@@ -1142,4 +1336,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 23:22:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 02:26:10 UTC</div></div></div></body></html>
